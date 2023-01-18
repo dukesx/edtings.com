@@ -106,13 +106,13 @@ const IndexPage = () => {
       <Box
         id="technology"
         sx={(theme) => ({
-          height: 570,
+          height: 600,
           ...generateGradient({
             color1: "indigo",
             color2: "pink",
           }),
 
-          [theme.fn.smallerThan(1400)]: {
+          [theme.fn.smallerThan(1200)]: {
             height: 500,
           },
         })}
@@ -225,7 +225,7 @@ const IndexPage = () => {
             <Carousel
               mt="md"
               w="100%"
-              height={440}
+              height={480}
               withControls={false}
               loop
               align="start"
@@ -234,8 +234,12 @@ const IndexPage = () => {
               slideGap="md"
               breakpoints={[
                 {
-                  maxWidth: 500,
+                  maxWidth: 400,
                   slideSize: "100%",
+                },
+                {
+                  maxWidth: 500,
+                  slideSize: "80%",
                 },
 
                 {
@@ -244,13 +248,18 @@ const IndexPage = () => {
                 },
                 {
                   maxWidth: 1000,
-                  slideSize: "33.3333%",
+                  slideSize: "43%",
                   slideGap: "xl",
                 },
 
                 {
                   maxWidth: 1200,
-                  slideSize: "50%",
+                  slideSize: "45%",
+                },
+
+                {
+                  maxWidth: 2000,
+                  slideSize: "34%",
                 },
               ]}
               sx={(theme) => ({
@@ -258,94 +267,9 @@ const IndexPage = () => {
                 [theme.fn.smallerThan(1200)]: {
                   height: 400,
                 },
+                cursor: "grab",
               })}
             >
-              <Carousel.Slide>
-                <Card
-                  w={"100%"}
-                  maw={430}
-                  radius="md"
-                  h={400}
-                  sx={(theme) => ({
-                    position: "relative",
-                    [theme.fn.smallerThan(1200)]: {
-                      height: 330,
-                    },
-                  })}
-                >
-                  <Card.Section>
-                    <EdtingImage
-                      priority
-                      style={{
-                        filter: "brightness(50%)",
-                      }}
-                      fill
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    />
-                  </Card.Section>
-                  <Center
-                    sx={{
-                      position: "absolute",
-                      height: "100%",
-                    }}
-                  >
-                    <Stack align="center">
-                      <Text size="md" weight={600} color="white">
-                        {format(Date.now(), "Do MMMM yyyy")}
-                      </Text>
-                      <Box
-                        h={250}
-                        sx={(theme) => ({
-                          [theme.fn.smallerThan(1200)]: {
-                            height: 190,
-                          },
-                        })}
-                      >
-                        <Text
-                          lineClamp={4}
-                          color="white"
-                          m="xl"
-                          weight={800}
-                          size={22}
-                        >
-                          51 AI tools you should be using for life, programming,
-                          content creation and
-                        </Text>
-                      </Box>
-
-                      <Avatar.Group
-                        sx={(theme) => ({
-                          [theme.fn.smallerThan(1000)]: {
-                            marginTop: -20,
-                          },
-                        })}
-                        mt={-40}
-                      >
-                        <Avatar size={40} radius="xl">
-                          <EdtingImage
-                            priority
-                            height={45}
-                            width={45}
-                            avatar
-                            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                          />
-                        </Avatar>
-
-                        <Avatar size={40} radius="xl">
-                          <EdtingImage
-                            priority
-                            height={45}
-                            width={45}
-                            avatar
-                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
-                          />
-                        </Avatar>
-                      </Avatar.Group>
-                    </Stack>
-                  </Center>
-                </Card>
-              </Carousel.Slide>
-
               <Carousel.Slide>
                 <ArticleCardWithBGMedium
                   title="51 AI tools you should be using for life, programming,
@@ -548,7 +472,7 @@ const IndexPage = () => {
                 },
                 {
                   maxWidth: 1000,
-                  slideSize: "33.3333%",
+                  slideSize: "50%",
                   slideGap: "xl",
                 },
 
@@ -564,92 +488,6 @@ const IndexPage = () => {
                 },
               })}
             >
-              <Carousel.Slide>
-                <Card
-                  w={"100%"}
-                  maw={430}
-                  radius="md"
-                  h={400}
-                  sx={(theme) => ({
-                    position: "relative",
-                    [theme.fn.smallerThan(1200)]: {
-                      height: 330,
-                    },
-                  })}
-                >
-                  <Card.Section>
-                    <EdtingImage
-                      priority
-                      style={{
-                        filter: "brightness(50%)",
-                      }}
-                      fill
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    />
-                  </Card.Section>
-                  <Center
-                    sx={{
-                      position: "absolute",
-                      height: "100%",
-                    }}
-                  >
-                    <Stack align="center">
-                      <Text size="md" weight={600} color="white">
-                        {format(Date.now(), "Do MMMM yyyy")}
-                      </Text>
-                      <Box
-                        h={250}
-                        sx={(theme) => ({
-                          [theme.fn.smallerThan(1200)]: {
-                            height: 190,
-                          },
-                        })}
-                      >
-                        <Text
-                          lineClamp={4}
-                          color="white"
-                          m="xl"
-                          weight={800}
-                          size={22}
-                        >
-                          51 AI tools you should be using for life, programming,
-                          content creation and
-                        </Text>
-                      </Box>
-
-                      <Avatar.Group
-                        sx={(theme) => ({
-                          [theme.fn.smallerThan(1000)]: {
-                            marginTop: -20,
-                          },
-                        })}
-                        mt={-40}
-                      >
-                        <Avatar size={40} radius="xl">
-                          <EdtingImage
-                            priority
-                            height={45}
-                            width={45}
-                            avatar
-                            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                          />
-                        </Avatar>
-
-                        <Avatar size={40} radius="xl">
-                          <EdtingImage
-                            priority
-                            height={45}
-                            width={45}
-                            avatar
-                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
-                          />
-                        </Avatar>
-                      </Avatar.Group>
-                    </Stack>
-                  </Center>
-                </Card>
-              </Carousel.Slide>
-
               <Carousel.Slide>
                 <ArticleCardWithBGMedium
                   title="51 AI tools you should be using for life, programming,

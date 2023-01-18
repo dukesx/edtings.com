@@ -53,6 +53,7 @@ const AppWrapper = ({
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   return (
     <AppShell
+      fixed={false}
       padding={padding == true ? "md" : 0}
       styles={{
         main: {
@@ -67,7 +68,16 @@ const AppWrapper = ({
       header={
         header == true ? (
           <>
-            <Header withBorder height={{ base: 60, md: 70 }} p="md">
+            <Header
+              zIndex={2000}
+              fixed={false}
+              withBorder
+              height={{ base: 60, md: 70 }}
+              p="md"
+              sx={{
+                position: "relative",
+              }}
+            >
               <Group
                 h="100%"
                 sx={(theme) => ({
@@ -230,6 +240,7 @@ const AppWrapper = ({
             pr={32}
             hiddenBreakpoint={"md"}
             hidden={!opened}
+            height={"100vh"}
             width={{
               xs: 0,
               sm: 0,
@@ -237,6 +248,7 @@ const AppWrapper = ({
               lg: 420,
             }}
             sx={(theme) => ({
+              position: "sticky",
               paddingTop: 50,
               paddingRight: 0,
               paddingLeft: 50,

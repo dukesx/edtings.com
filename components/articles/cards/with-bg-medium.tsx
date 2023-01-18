@@ -13,13 +13,16 @@ const ArticleCardWithBGMedium = ({
   return (
     <Card
       w={"100%"}
-      maw={430}
+      maw={380}
       radius="md"
       h={400}
       sx={(theme) => ({
         position: "relative",
         [theme.fn.smallerThan(1200)]: {
           height: 330,
+        },
+        [theme.fn.smallerThan(600)]: {
+          maxWidth: 350,
         },
       })}
     >
