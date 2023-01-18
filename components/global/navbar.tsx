@@ -36,6 +36,7 @@ import { createRef, ReactNode, Ref, useEffect, useState } from "react";
 import { AppNavbarLinks, AppNavbarProps } from "../../types/generics";
 import { nanoid } from "nanoid";
 import Link from "next/link";
+// @ts-ignore
 import ScrollSpy from "react-scrollspy-navigation";
 
 const AppNavbar = ({
