@@ -1,7 +1,11 @@
 import { useMantineColorScheme, useMantineTheme } from "@mantine/core";
 import { GradientGeneratorArgs } from "../types/generics";
 
-export const generateGradient = ({ color1, color2 }: GradientGeneratorArgs) => {
+export const generateGradient = ({
+  color1,
+  color2,
+  opacity = 0.2,
+}: GradientGeneratorArgs) => {
   const theme = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 
@@ -13,11 +17,11 @@ export const generateGradient = ({ color1, color2 }: GradientGeneratorArgs) => {
     90,
     theme.fn.rgba(
       theme.fn.themeColor(color1, colorScheme == "dark" ? 8 : 4),
-      0.2
+      opacity
     ),
     theme.fn.rgba(
       theme.fn.themeColor(color2, colorScheme == "dark" ? 8 : 4),
-      0.2
+      opacity
     )
   )},linear-gradient(to right,hsla(0,0%,100%,0),hsla(0,0%,100%,.1) 
   10%,hsla(0,0%,100%,.1) 

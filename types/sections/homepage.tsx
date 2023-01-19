@@ -6,8 +6,10 @@ export interface HomepageCategorySectionProps {
   articles: Array<EdtingArticle>;
   subscribers: number;
   title: string;
+  lazyLoadImages?: boolean;
   gradient: {
     from: MantineColor;
     to: MantineColor;
+    opacity?: number;
   };
 }

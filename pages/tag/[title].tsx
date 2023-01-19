@@ -125,6 +125,7 @@ const IndexPage = () => {
       padding={false}
     >
       <TagPageTrendingSection
+        lazyLoadImages={false}
         subscribers={100000000}
         gradient={{
           from: "blue",
@@ -179,6 +180,7 @@ const IndexPage = () => {
           cols={3}
         >
           <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
@@ -196,6 +198,7 @@ const IndexPage = () => {
           />
 
           <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
@@ -213,6 +216,7 @@ const IndexPage = () => {
           />
 
           <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
@@ -230,6 +234,7 @@ const IndexPage = () => {
           />
 
           <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
@@ -247,6 +252,7 @@ const IndexPage = () => {
           />
 
           <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
@@ -264,91 +270,7 @@ const IndexPage = () => {
           />
 
           <ArticleCardWithBGSmall
-            title="51 AI tools you should be using for life, programming,
-                    content creation and everything else"
-            cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
-            date={Date.now()}
-            authors={[
-              {
-                name: "Afridi",
-                dp: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-              {
-                name: "Maya",
-                dp: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-            ]}
-          />
-
-          <ArticleCardWithBGSmall
-            title="51 AI tools you should be using for life, programming,
-                    content creation and everything else"
-            cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
-            date={Date.now()}
-            authors={[
-              {
-                name: "Afridi",
-                dp: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-              {
-                name: "Maya",
-                dp: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-            ]}
-          />
-
-          <ArticleCardWithBGSmall
-            title="51 AI tools you should be using for life, programming,
-                    content creation and everything else"
-            cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
-            date={Date.now()}
-            authors={[
-              {
-                name: "Afridi",
-                dp: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-              {
-                name: "Maya",
-                dp: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-            ]}
-          />
-
-          <ArticleCardWithBGSmall
-            title="51 AI tools you should be using for life, programming,
-                    content creation and everything else"
-            cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
-            date={Date.now()}
-            authors={[
-              {
-                name: "Afridi",
-                dp: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-              {
-                name: "Maya",
-                dp: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-            ]}
-          />
-
-          <ArticleCardWithBGSmall
-            title="51 AI tools you should be using for life, programming,
-                    content creation and everything else"
-            cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"
-            date={Date.now()}
-            authors={[
-              {
-                name: "Afridi",
-                dp: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-              {
-                name: "Maya",
-                dp: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-              },
-            ]}
-          />
-
-          <ArticleCardWithBGSmall
+            lazyLoadImages
             title="51 AI tools you should be using for life, programming,
                     content creation and everything else"
             cover="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80"

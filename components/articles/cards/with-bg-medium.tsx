@@ -9,7 +9,9 @@ const ArticleCardWithBGMedium = ({
   date,
   cover,
   authors,
+  lazyLoadImages = false,
 }: ArticleCardWithBGMediumProps) => {
+  console.log(lazyLoadImages);
   return (
     <Card
       p={0}
@@ -29,7 +31,8 @@ const ArticleCardWithBGMedium = ({
     >
       <Card.Section>
         <EdtingImage
-          priority
+          loading={lazyLoadImages == true ? "lazy" : undefined}
+          priority={lazyLoadImages == true ? false : true}
           style={{
             filter: "brightness(50%)",
           }}

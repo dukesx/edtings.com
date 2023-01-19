@@ -15,27 +15,17 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import {
-  ChartBar,
-  ChartLine,
-  Check,
-  HandWaving,
-  Newspaper,
-  Rss,
-  User,
-} from "phosphor-react";
+import { Check, HandWaving, Newspaper } from "phosphor-react";
 import ArticleCardWithBGSmall from "../../components/articles/cards/with-bg-small";
 import EdtingImage from "../../components/global/image";
 import AppWrapper from "../../components/global/wrapper";
 import { generateGradient } from "../../utils/basic";
-import FacebookLogo from "../../public/facebook.svg";
-import InstagramLogo from "../../public/instagram.svg";
 import MediumLogo from "../../public/medium.svg";
 import Medium2Logo from "../../public/medium-2.svg";
-
 import TwitterLogo from "../../public/twitter.svg";
 import YoutubeLogo from "../../public/youtube.svg";
 import Image from "next/image";
+import UserPageSection from "../../components/user/section";
 
 const ABC = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -79,207 +69,20 @@ const ABC = () => {
         p={0}
         size="xl"
       >
-        <Paper
-          bg={"transparent"}
-          pt={30}
-          id="welcome"
-          sx={(theme) => ({
-            backgroundColor:
-              colorScheme == "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
-          })}
-        >
-          <Stack
-            sx={(theme) => ({
-              alignItems: "center",
-              alignContent: "center",
-              height: "100%",
-              justifyItems: "center",
-              justifyContent: "center",
-            })}
-            align="center"
-          >
-            <Group
-              sx={{
-                position: "relative",
-              }}
-              position="center"
-            >
-              <Avatar
-                sx={(theme) => ({
-                  borderRadius: "50%",
-                })}
-                radius="xl"
-                size={300}
-              >
-                <EdtingImage
-                  avatar
-                  height={300}
-                  width={300}
-                  src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                />
-              </Avatar>
-
-              <Group
-                spacing="xs"
-                sx={{
-                  position: "absolute",
-                  bottom: -62,
-                }}
-              >
-                <Tooltip label="@dukesx on Twitter">
-                  <ActionIcon
-                    color={colorScheme == "dark" ? "gray.8" : "gray.1"}
-                    variant="transparent"
-                    radius="xl"
-                    size="xl"
-                  >
-                    <Image
-                      priority
-                      alt=""
-                      width={35}
-                      height={35}
-                      src={TwitterLogo}
-                    />
-                  </ActionIcon>
-                </Tooltip>
-
-                <Tooltip label="@dukesx on Medium">
-                  <ActionIcon
-                    color={"gray.1"}
-                    variant={colorScheme == "dark" ? "filled" : "transparent"}
-                    radius="xl"
-                    size={35}
-                  >
-                    <Image
-                      priority
-                      alt=""
-                      width={colorScheme == "dark" ? 25 : 32}
-                      height={colorScheme == "dark" ? 25 : 32}
-                      src={colorScheme == "dark" ? Medium2Logo : MediumLogo}
-                    />
-                  </ActionIcon>
-                </Tooltip>
-
-                <Tooltip label="@dukesx on Youtube">
-                  <ActionIcon
-                    color={colorScheme == "dark" ? "gray.8" : "gray.1"}
-                    variant="transparent"
-                    radius="xl"
-                    size="xl"
-                  >
-                    <Image
-                      priority
-                      style={{
-                        borderRadius: "100%",
-                      }}
-                      alt=""
-                      width={35}
-                      height={35}
-                      src={YoutubeLogo}
-                    />
-                  </ActionIcon>
-                </Tooltip>
-              </Group>
-            </Group>
-            <Stack mt={45} p="xl" spacing={0}>
-              <Title
-                sx={(theme) => ({
-                  [theme.fn.smallerThan(600)]: {
-                    marginLeft: 0,
-                  },
-                })}
-                order={4}
-                transform="uppercase"
-                weight={800}
-                align="center"
-              >
-                Muhammad Afzaal Afridi
-              </Title>
-              <Text
-                my={8}
-                align="center"
-                color={colorScheme == "dark" ? "dimmed" : "gray.7"}
-                size="sm"
-                weight={500}
-              >
-                Administrator
-              </Text>
-              {/* <Button mt={6} color="dark" leftIcon={<Rss size={19} />}>
-                Follow
-              </Button> */}
-              <Button
-                variant="outline"
-                mt={6}
-                color={colorScheme == "dark" ? "gray.3" : "dark"}
-                leftIcon={<Check size={19} />}
-              >
-                Following
-              </Button>
-            </Stack>
-          </Stack>
-        </Paper>
-        <Paper
-          bg="transparent"
-          mt={20}
-          px="xl"
-          pb={50}
-          sx={(theme) => ({
-            // borderBottom: `1px solid ${theme.fn.themeColor(
-            //   theme.colors.dark[6]
-            // )}`,
-
-            backgroundColor:
-              colorScheme == "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
-          })}
-        >
-          <Group
-            noWrap
-            spacing={50}
-            position="center"
-            px="xl"
-            sx={(theme) => ({
-              height: "100%",
-              [theme.fn.smallerThan(400)]: {
-                gap: 30,
-              },
-            })}
-          >
-            <Stack spacing={5} align="center">
-              <Text transform="uppercase" size="md" weight={800}>
-                Views
-              </Text>
-              <Text size="md">
-                {Intl.NumberFormat("en-US", {
-                  notation: "compact",
-                  compactDisplay: "short",
-                }).format(1000000)}{" "}
-              </Text>
-            </Stack>
-
-            <Stack spacing={5} align="center">
-              <Text transform="uppercase" size="md" weight={800}>
-                Articles
-              </Text>
-              <Text size="md">5</Text>
-            </Stack>
-
-            <Stack spacing={5} align="center">
-              <Text transform="uppercase" size="md" weight={800}>
-                Followers
-              </Text>
-              <Text size="md">
-                {Intl.NumberFormat("en-US", {
-                  notation: "compact",
-                  compactDisplay: "short",
-                }).format(100000)}{" "}
-              </Text>
-            </Stack>
-          </Group>
-        </Paper>
+        <UserPageSection
+          followed={false}
+          author={{
+            cover:
+              "https://images.unsplash.com/photo-1596536220655-21429cf12ae0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            name: "Muhammad Afzaal Afridi",
+            status: "administrator",
+          }}
+          stats={{
+            articles: 10,
+            followers: 10000,
+            views: 2000000,
+          }}
+        />
 
         <Paper
           sx={(theme) => ({

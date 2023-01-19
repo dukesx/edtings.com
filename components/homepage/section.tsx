@@ -30,6 +30,7 @@ const HomepageCategorySection = ({
   gradient: { from, to },
   articles,
   subscribers,
+  lazyLoadImages = false,
 }: HomepageCategorySectionProps) => {
   const { colorScheme } = useMantineColorScheme();
   return (
@@ -40,6 +41,7 @@ const HomepageCategorySection = ({
         ...generateGradient({
           color1: from,
           color2: to,
+          opacity: 0.4,
         }),
 
         [theme.fn.smallerThan(1200)]: {
@@ -96,7 +98,7 @@ const HomepageCategorySection = ({
                             compactDisplay: "short",
                             notation: "compact",
                           }).format(173768760) + " "}
-                          subscribers
+                          followers
                         </Text>
                       </Stack>
                     </Group>
@@ -164,8 +166,9 @@ const HomepageCategorySection = ({
             })}
           >
             {articles.map((mapped) => (
-              <Carousel.Slide>
+              <Carousel.Slide key={nanoid()}>
                 <ArticleCardWithBGMedium
+                  lazyLoadImages={lazyLoadImages}
                   key={nanoid()}
                   title={mapped.title}
                   cover={mapped.cover}

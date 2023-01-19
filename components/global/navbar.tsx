@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Anchor,
   Box,
   Group,
   MantineColor,
@@ -103,8 +104,6 @@ const AppNavbar = ({
         <ScrollSpy className="active-nav" duration={100}>
           {links
             ? links.map((mapped) => {
-                console.log(path);
-                console.log(mapped.path);
                 var ref = createRef<any>();
                 return (
                   <NavLink

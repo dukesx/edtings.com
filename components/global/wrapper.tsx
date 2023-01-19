@@ -236,7 +236,43 @@ const AppWrapper = ({
               },
             })}
           >
-            <AppNavbar links={navbarProps.navbarLinks} path={path} />
+            <Navbar.Section>
+              <AppNavbar links={navbarProps.navbarLinks} path={path} />
+            </Navbar.Section>
+            <Navbar.Section
+              sx={{
+                position: "absolute",
+                top: "78%",
+              }}
+            >
+              <MediaQuery
+                smallerThan={1000}
+                styles={{
+                  display: "none",
+                }}
+              >
+                <Group p="sm" spacing="sm">
+                  <Anchor color="dimmed" size="xs">
+                    About
+                  </Anchor>
+                  <Anchor color="dimmed" size="xs">
+                    Press & Media
+                  </Anchor>
+                  <Anchor color="dimmed" size="xs">
+                    Terms of service
+                  </Anchor>
+                  <Anchor color="dimmed" size="xs">
+                    Privacy Policy
+                  </Anchor>
+                  <Anchor color="dimmed" size="xs">
+                    FAQ
+                  </Anchor>
+                  <Anchor color="dimmed" size="xs">
+                    Acknowledgements
+                  </Anchor>
+                </Group>
+              </MediaQuery>
+            </Navbar.Section>
           </Navbar>
         </MediaQuery>
       }

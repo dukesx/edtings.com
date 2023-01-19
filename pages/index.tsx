@@ -46,6 +46,7 @@ import ArticleCardWithBGSmall from "../components/articles/cards/with-bg-small";
 import ArticleCardWithBGMedium from "../components/articles/cards/with-bg-medium";
 import HomepageCategorySection from "../components/homepage/section";
 import { sampleArticles } from "../data/samples";
+import LazyLoad from "react-lazy-load";
 
 const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -117,8 +118,8 @@ const IndexPage = () => {
         }}
         title="Technology"
         articles={sampleArticles}
+        lazyLoadImages={false}
       />
-
       <HomepageCategorySection
         subscribers={100000}
         gradient={{
@@ -127,8 +128,8 @@ const IndexPage = () => {
         }}
         title="Reviews"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
-
       <HomepageCategorySection
         subscribers={200000000}
         gradient={{
@@ -137,6 +138,7 @@ const IndexPage = () => {
         }}
         title="Programming"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
       <HomepageCategorySection
         subscribers={1420000}
@@ -146,8 +148,8 @@ const IndexPage = () => {
         }}
         title="Lifestyle"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
-
       <HomepageCategorySection
         subscribers={1420000}
         gradient={{
@@ -156,6 +158,7 @@ const IndexPage = () => {
         }}
         title="General Health"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
 
       <HomepageCategorySection
@@ -166,16 +169,17 @@ const IndexPage = () => {
         }}
         title="Physiotherapy"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
-
       <HomepageCategorySection
         subscribers={1420000}
         gradient={{
-          from: "indigo",
-          to: "grape",
+          from: "teal",
+          to: "green",
         }}
         title="Medicine"
         articles={sampleArticles}
+        lazyLoadImages={true}
       />
     </AppWrapper>
   );

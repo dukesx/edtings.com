@@ -9,7 +9,9 @@ const ArticleCardWithBGSmall = ({
   date,
   cover,
   authors,
+  lazyLoadImages = false,
 }: ArticleCardWithBGSmallProps) => {
+  console.log("lazyLoadImages" + lazyLoadImages);
   return (
     <Card
       mx="auto"
@@ -74,7 +76,8 @@ const ArticleCardWithBGSmall = ({
               <Tooltip key={nanoid()} label={mapped.name}>
                 <Avatar size={"md"} radius="xl">
                   <EdtingImage
-                    priority
+                    loading={lazyLoadImages == true ? "lazy" : "eager"}
+                    priority={lazyLoadImages == true ? false : true}
                     height={40}
                     width={40}
                     avatar

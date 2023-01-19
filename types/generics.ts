@@ -5,6 +5,7 @@ import { CSSProperties, ReactNode } from "react";
 export interface GradientGeneratorArgs {
   color1: MantineColor;
   color2: MantineColor;
+  opacity?: number;
 }
 
 export interface AppWrapperProps {

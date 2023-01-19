@@ -5,6 +5,7 @@ export interface ArticleCardWithBGSmallProps {
   title: string;
   cover: string;
   date: number;
+  lazyLoadImages?: boolean;
 }
 
 export interface ArticleCardWithBGMediumProps {
@@ -12,4 +13,5 @@ export interface ArticleCardWithBGMediumProps {
   title: string;
   cover: string;
   date: number;
+  lazyLoadImages?: boolean;
 }

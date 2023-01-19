@@ -30,6 +30,7 @@ const TagPageTrendingSection = ({
   gradient: { from, to },
   articles,
   subscribers,
+  lazyLoadImages = false,
 }: HomepageCategorySectionProps) => {
   const { colorScheme } = useMantineColorScheme();
   return (
@@ -84,7 +85,7 @@ const TagPageTrendingSection = ({
                           compactDisplay: "short",
                           notation: "compact",
                         }).format(100000) + " "}
-                        subscribers
+                        followers
                       </Text>
                     </Stack>
                   </Group>
@@ -104,7 +105,7 @@ const TagPageTrendingSection = ({
                           compactDisplay: "short",
                           notation: "compact",
                         }).format(173768760) + " "}
-                        subscribers
+                        followers
                       </Text>
                     </Stack>
                   </Group>
@@ -173,6 +174,7 @@ const TagPageTrendingSection = ({
             {articles.map((mapped) => (
               <Carousel.Slide>
                 <ArticleCardWithBGMedium
+                  lazyLoadImages={lazyLoadImages}
                   key={nanoid()}
                   title={mapped.title}
                   cover={mapped.cover}
