@@ -251,7 +251,7 @@ const AppWrapper = ({
                   display: "none",
                 }}
               >
-                <Group p="sm" spacing="sm">
+                <Group px="xl" spacing="sm">
                   <Anchor color="dimmed" size="xs">
                     About
                   </Anchor>
