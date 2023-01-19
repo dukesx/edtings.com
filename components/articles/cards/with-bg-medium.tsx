@@ -12,6 +12,7 @@ const ArticleCardWithBGMedium = ({
 }: ArticleCardWithBGMediumProps) => {
   return (
     <Card
+      p={0}
       w={"100%"}
       maw={380}
       radius="md"
@@ -19,7 +20,7 @@ const ArticleCardWithBGMedium = ({
       sx={(theme) => ({
         position: "relative",
         [theme.fn.smallerThan(1200)]: {
-          height: 330,
+          height: 370,
         },
         [theme.fn.smallerThan(600)]: {
           maxWidth: 350,
@@ -54,19 +55,20 @@ const ArticleCardWithBGMedium = ({
               },
             })}
           >
-            <Text lineClamp={4} color="white" m="xl" weight={800} size={22}>
+            <Text
+              align="center"
+              lineClamp={4}
+              color="white"
+              my="xl"
+              mx="xl"
+              weight={800}
+              size={22}
+            >
               {title}
             </Text>
           </Box>
 
-          <Avatar.Group
-            sx={(theme) => ({
-              [theme.fn.smallerThan(1000)]: {
-                marginTop: -20,
-              },
-            })}
-            mt={-40}
-          >
+          <Avatar.Group>
             {authors.map((mapped) => (
               <Tooltip label={mapped.name} key={nanoid()}>
                 <Avatar size={40} radius="xl">

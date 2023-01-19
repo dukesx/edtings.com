@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Anchor,
   AppShell,
   Aside,
   Box,
@@ -22,6 +23,7 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
+import Link from "next/link";
 import {
   Archive,
   Hexagon,
@@ -45,8 +47,20 @@ const AppWrapper = ({
   footer = false,
   padding = true,
   path,
-  navbarLinks,
-  navbarTitle,
+  navbarProps = {
+    navbarPosition: "fixed",
+    navbarLinks: [],
+    navbarTitle: "Categories",
+  },
+  asideProps = {
+    asidePosition: "fixed",
+    asideLinks: [],
+    asideTitle: "",
+  },
+  headerProps = {
+    headerPosition: "static",
+    headerLinks: [],
+  },
 }: AppWrapperProps) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
@@ -75,7 +89,7 @@ const AppWrapper = ({
               height={{ base: 60, md: 70 }}
               p="md"
               sx={{
-                position: "relative",
+                position: headerProps.headerPosition,
               }}
             >
               <Group
@@ -97,79 +111,72 @@ const AppWrapper = ({
                     />
                   </ThemeIcon>
                 </MediaQuery>
-                {/* <Stack spacing={0}>
-                <Title weight={800} order={3}>
-                  Edtings
-                </Title>
-                <Text color="dimmed" size="xs">
-                  The Editor&apos;s Platform
-                </Text>
-              </Stack> */}
-
-                <Group spacing={3}>
-                  <ThemeIcon
-                    sx={(theme) => ({
-                      [theme.fn.smallerThan("sm")]: {
-                        minWidth: 32,
-                        minHeight: 32,
-                        width: 32,
-                        height: 32,
-                      },
-                    })}
-                    size={"xl"}
-                    radius="sm"
-                  >
-                    <Text
-                      size={"xl"}
+                <Anchor href="/" variant="text" component={Link}>
+                  <Group spacing={3}>
+                    <ThemeIcon
                       sx={(theme) => ({
-                        //   textDecoration: "underline",
-                        //   textDecorationStyle: "wavy",
-                        fontFamily: serif.style.fontFamily,
-                        textDecorationColor: theme.colors.blue[6],
                         [theme.fn.smallerThan("sm")]: {
-                          fontSize: theme.fontSizes.xl,
-                          fontWeight: 400,
+                          minWidth: 32,
+                          minHeight: 32,
+                          width: 32,
+                          height: 32,
                         },
                       })}
-                      weight={400}
+                      size={"xl"}
+                      radius="sm"
                     >
-                      E
-                    </Text>
-                    <Box component="span" mt={-10} ml={3}>
-                      <ThemeIcon
+                      <Text
+                        size={"xl"}
                         sx={(theme) => ({
+                          //   textDecoration: "underline",
+                          //   textDecorationStyle: "wavy",
+                          fontFamily: serif.style.fontFamily,
+                          textDecorationColor: theme.colors.blue[6],
                           [theme.fn.smallerThan("sm")]: {
-                            width: 5,
-                            height: 5,
-                            minWidth: 5,
-                            minHeight: 5,
+                            fontSize: theme.fontSizes.xl,
+                            fontWeight: 400,
                           },
                         })}
-                        size={7}
-                        color="blue"
-                        variant="filled"
-                      >
-                        <div />
-                      </ThemeIcon>
-                    </Box>
-                  </ThemeIcon>
-                  <MediaQuery smallerThan="md" styles={{ display: "none" }}>
-                    <Stack ml={6} mt={-4} spacing={0}>
-                      <Text
-                        sx={{
-                          fontFamily: serif.style.fontFamily,
-                        }}
-                        size="xl"
                         weight={400}
                       >
-                        Edtings
+                        E
                       </Text>
-                      <Text mt={-3} size={11} color="dimmed">
-                        The Editor&apos;s Platform
-                      </Text>
-                    </Stack>
-                  </MediaQuery>
-                </Group>
+                      <Box component="span" mt={-10} ml={3}>
+                        <ThemeIcon
+                          sx={(theme) => ({
+                            [theme.fn.smallerThan("sm")]: {
+                              width: 5,
+                              height: 5,
+                              minWidth: 5,
+                              minHeight: 5,
+                            },
+                          })}
+                          size={7}
+                          color="blue"
+                          variant="filled"
+                        >
+                          <div />
+                        </ThemeIcon>
+                      </Box>
+                    </ThemeIcon>
+                    <MediaQuery smallerThan="md" styles={{ display: "none" }}>
+                      <Stack ml={6} mt={-4} spacing={0}>
+                        <Text
+                          sx={{
+                            fontFamily: serif.style.fontFamily,
+                          }}
+                          size="xl"
+                          weight={400}
+                        >
+                          Edtings
+                        </Text>
+                        <Text mt={-3} size={11} color="dimmed">
+                          The Editor&apos;s Platform
+                        </Text>
+                      </Stack>
+                    </MediaQuery>
+                  </Group>
+                </Anchor>
 
                 <Group>
                   <ActionIcon
@@ -197,34 +204,6 @@ const AppWrapper = ({
                 </Group>
               </Group>
             </Header>
-            {/* <Header
-              withBorder
-              height={60}
-              mt={60}
-              p="xs"
-              sx={(theme) => ({
-                backgroundColor:
-                  colorScheme == "dark" ? theme.colors.dark[7] : theme.white,
-              })}
-            >
-              <Group position="apart">
-                <Button
-                  sx={{
-                    border: 0,
-                  }}
-                  leftIcon={<List size={18} />}
-                  color={colorScheme == "dark" ? "gray" : "dark"}
-                  variant="outline"
-                >
-                  <Text weight={700}>Profile</Text>
-                </Button>
-                <Group mr="lg">
-                  <ActionIcon color="dark">
-                    <MagnifyingGlass />
-                  </ActionIcon>
-                </Group>
-              </Group>
-            </Header> */}
           </>
         ) : undefined
       }
@@ -248,7 +227,7 @@ const AppWrapper = ({
               lg: 420,
             }}
             sx={(theme) => ({
-              position: "sticky",
+              position: navbarProps.navbarPosition,
               paddingTop: 50,
               paddingRight: 0,
               paddingLeft: 50,
@@ -257,14 +236,21 @@ const AppWrapper = ({
               },
             })}
           >
-            <AppNavbar links={navbarLinks} path={path} />
+            <AppNavbar links={navbarProps.navbarLinks} path={path} />
           </Navbar>
         </MediaQuery>
       }
       aside={
         aside == true ? (
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-            <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+            <Aside
+              sx={{
+                position: asideProps.asidePosition,
+              }}
+              p="md"
+              hiddenBreakpoint="sm"
+              width={{ sm: 200, lg: 300 }}
+            >
               <Text>Application sidebar</Text>
             </Aside>
           </MediaQuery>
@@ -285,7 +271,8 @@ const AppWrapper = ({
         }}
       >
         <Modal
-          overlayBlur={5}
+          overlayBlur={0}
+          overlayOpacity={0}
           centered
           withCloseButton={false}
           opened={opened}
@@ -299,8 +286,8 @@ const AppWrapper = ({
           }}
         >
           <AppNavbar
-            title={navbarTitle}
-            links={navbarLinks}
+            title={navbarProps.navbarTitle}
+            links={navbarProps.navbarLinks}
             path={path}
             navbar={opened}
             setNavbar={setOpened}
@@ -315,7 +302,8 @@ const AppWrapper = ({
         }}
       >
         <Drawer
-          overlayBlur={5}
+          overlayBlur={0}
+          overlayOpacity={0}
           padding={0}
           position="bottom"
           opened={opened}
@@ -336,8 +324,8 @@ const AppWrapper = ({
             }}
           >
             <AppNavbar
-              title={navbarTitle}
-              links={navbarLinks}
+              title={navbarProps.navbarTitle}
+              links={navbarProps.navbarLinks}
               path={path}
               navbar={opened}
               setNavbar={setOpened}

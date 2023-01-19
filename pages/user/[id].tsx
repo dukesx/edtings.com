@@ -43,25 +43,31 @@ const ABC = () => {
     <AppWrapper
       path="profile"
       padding={false}
-      navbarTitle="Muhammad Afzaal Afridi"
-      navbarLinks={[
-        {
-          color: "gray",
-          href: "#welcome",
-          active: true,
-          icon: HandWaving,
-          path: "welcome",
-          title: "Welcome",
-        },
+      headerProps={{
+        headerPosition: "relative",
+      }}
+      navbarProps={{
+        navbarPosition: "sticky",
+        navbarTitle: "Muhammad Afzaal Afridi",
+        navbarLinks: [
+          {
+            color: "gray",
+            href: "#welcome",
+            active: true,
+            icon: HandWaving,
+            path: "welcome",
+            title: "Welcome",
+          },
 
-        {
-          color: "gray",
-          href: "#published",
-          icon: Newspaper,
-          path: "published",
-          title: "Published works",
-        },
-      ]}
+          {
+            color: "gray",
+            href: "#published",
+            icon: Newspaper,
+            path: "published",
+            title: "Published works",
+          },
+        ],
+      }}
     >
       <Container
         sx={{

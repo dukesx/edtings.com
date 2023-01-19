@@ -31,6 +31,7 @@ specifiers:
   react-dom: ^18.2.0
   react-scrollspy-navigation: ^1.0.3
   typescript: 4.9.4
+  url-slug: ^3.0.4
 
 dependencies:
   '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
@@ -63,6 +64,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-scrollspy-navigation: 1.0.3
   typescript: 4.9.4
+  url-slug: 3.0.4
 
 packages:
 
@@ -3044,6 +3046,10 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+    dev: false
+
+  /url-slug/3.0.4:
+    resolution: {integrity: sha512-C880WJTo68O4J59i+w9Yp4P0iDUrMeCAVwNvHAYjSc59XsO4pkPfe8bsEHEyZrEfWWy8BDyxMQi6BPVHp/GEbg==}
     dev: false
 
   /use-composed-ref/1.3.0_react@18.2.0:

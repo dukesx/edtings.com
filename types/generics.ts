@@ -15,8 +15,20 @@ export interface AppWrapperProps {
   aside?: boolean;
   footer?: boolean;
   padding?: boolean;
-  navbarLinks?: Array<AppNavbarLinks>;
-  navbarTitle?: string;
+  navbarProps?: {
+    navbarLinks: Array<AppNavbarLinks>;
+    navbarTitle: string;
+    navbarPosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
+  };
+  asideProps?: {
+    asideLinks: Array<AppNavbarLinks>;
+    asideTitle: string;
+    asidePosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
+  };
+  headerProps?: {
+    headerLinks?: Array<AppNavbarLinks>;
+    headerPosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
+  };
 }
 export interface AppNavbarProps {
   navbar?: boolean;
