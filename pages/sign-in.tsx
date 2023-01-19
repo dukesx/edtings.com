@@ -257,38 +257,40 @@ const Signin = () => {
                 </Grid.Col>
               </MediaQuery>
               <Grid.Col span={12} xs={6}>
-                <Box maw={400} mx="auto" mt={50}>
-                  <Title
-                    transform="capitalize"
-                    align="center"
-                    mt="xl"
-                    order={4}
-                  >
-                    Forgot Password
-                  </Title>
-                  <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Re-called the password ?{" "}
-                    <Anchor weight={700} href="#sign-in" color="dimmed">
-                      {" "}
-                      Sign in
-                    </Anchor>
-                  </Text>
-                  <Stack p={"xl"}>
-                    <TextInput placeholder="Recovery Email" />
-                    <Button mt={20} color="dark" variant="filled" fullWidth>
-                      {" "}
-                      Send Recovery Link
-                    </Button>
-
+                <Center>
+                  <Box maw={400} w="100%" mt={50}>
+                    <Title
+                      transform="capitalize"
+                      align="center"
+                      mt="xl"
+                      order={4}
+                    >
+                      Forgot Password
+                    </Title>
                     <Text align="center" mt="xs" size="xs" color="dimmed">
-                      Don&apos;t have an account ?{" "}
-                      <Anchor weight={700} href="#register" color="dimmed">
+                      Re-called the password ?{" "}
+                      <Anchor weight={700} href="#sign-in" color="dimmed">
                         {" "}
-                        Register
+                        Sign in
                       </Anchor>
                     </Text>
-                  </Stack>
-                </Box>
+                    <Stack p={"xl"}>
+                      <TextInput placeholder="Recovery Email" />
+                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                        {" "}
+                        Send Recovery Link
+                      </Button>
+
+                      <Text align="center" mt="xs" size="xs" color="dimmed">
+                        Don&apos;t have an account ?{" "}
+                        <Anchor weight={700} href="#register" color="dimmed">
+                          {" "}
+                          Register
+                        </Anchor>
+                      </Text>
+                    </Stack>
+                  </Box>
+                </Center>
               </Grid.Col>
             </Grid>
           </Paper>
@@ -369,42 +371,44 @@ const Signin = () => {
                 </Grid.Col>
               </MediaQuery>
               <Grid.Col span={12} xs={6}>
-                <Box mt={30} maw={400} mx="auto">
-                  <Title
-                    transform="capitalize"
-                    align="center"
-                    mt="xl"
-                    order={4}
-                  >
-                    Register
-                  </Title>
-                  <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Already have an account?{" "}
-                    <Anchor weight={700} href="#sign-in" color="dimmed">
-                      {" "}
-                      Sign in
-                    </Anchor>
-                  </Text>
-                  <Stack p={"xl"}>
-                    <TextInput placeholder="Email" />
-                    <TextInput placeholder="Password" />
-                    <TextInput placeholder="Repeat Password" />
-                    <Button mt={20} color="dark" variant="filled" fullWidth>
-                      {" "}
-                      Register
-                    </Button>
-
-                    <Anchor
-                      color="dimmed"
-                      href="#forgot-password"
-                      mt={20}
-                      size="xs"
+                <Center w="100%" h="100%">
+                  <Box maw={400} w="100%">
+                    <Title
+                      transform="capitalize"
                       align="center"
+                      mt="xl"
+                      order={4}
                     >
-                      Forgot your password?
-                    </Anchor>
-                  </Stack>
-                </Box>
+                      Register
+                    </Title>
+                    <Text align="center" mt="xs" size="xs" color="dimmed">
+                      Already have an account?{" "}
+                      <Anchor weight={700} href="#sign-in" color="dimmed">
+                        {" "}
+                        Sign in
+                      </Anchor>
+                    </Text>
+                    <Stack p={"xl"}>
+                      <TextInput placeholder="Email" />
+                      <TextInput placeholder="Password" />
+                      <TextInput placeholder="Repeat Password" />
+                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                        {" "}
+                        Register
+                      </Button>
+
+                      <Anchor
+                        color="dimmed"
+                        href="#forgot-password"
+                        mt={20}
+                        size="xs"
+                        align="center"
+                      >
+                        Forgot your password?
+                      </Anchor>
+                    </Stack>
+                  </Box>
+                </Center>
               </Grid.Col>
             </Grid>
           </Paper>
