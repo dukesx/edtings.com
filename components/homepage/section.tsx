@@ -120,7 +120,7 @@ const HomepageCategorySection = ({
           <Carousel
             mt="md"
             w="100%"
-            height={480}
+            height={460}
             withControls={false}
             loop
             align="start"

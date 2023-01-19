@@ -188,7 +188,9 @@ const AppWrapper = ({
                     {colorScheme == "dark" ? <Sun /> : <MoonStars />}
                   </ActionIcon>
                   <MediaQuery smallerThan="xs" styles={{ display: "none" }}>
-                    <Button>Sign in</Button>
+                    <Button component={Link} href="/sign-in">
+                      Sign in
+                    </Button>
                   </MediaQuery>
 
                   <MediaQuery largerThan="xs" styles={{ display: "none" }}>
@@ -197,6 +199,8 @@ const AppWrapper = ({
                       color="blue"
                       variant="filled"
                       radius="xl"
+                      component={Link}
+                      href="/sign-in"
                     >
                       <SignIn size={16} />
                     </ActionIcon>
@@ -251,7 +255,7 @@ const AppWrapper = ({
                   display: "none",
                 }}
               >
-                <Group px="xl" spacing="sm">
+                <Group maw={350} px="xl" spacing="sm">
                   <Anchor color="dimmed" size="xs">
                     About
                   </Anchor>
