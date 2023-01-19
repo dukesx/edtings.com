@@ -5,7 +5,9 @@ import {
   Card,
   Center,
   Container,
+  Grid,
   Group,
+  MediaQuery,
   Paper,
   SimpleGrid,
   Stack,
@@ -38,7 +40,7 @@ const Signin = () => {
         navbarLinks: [
           {
             title: "Sign in",
-            color: "blue.5",
+            color: "gray",
             href: "#sign-in",
             icon: SignIn,
             path: "sign-in",
@@ -47,7 +49,7 @@ const Signin = () => {
 
           {
             title: "Forgot Password",
-            color: "cyan.6",
+            color: "gray",
             href: "#forgot-password",
             icon: CircleWavyQuestion,
             path: "forgot-password",
@@ -55,7 +57,7 @@ const Signin = () => {
           },
           {
             title: "Register",
-            color: "pink.5",
+            color: "gray",
             href: "#register",
             icon: UserCirclePlus,
             path: "register",
@@ -79,93 +81,108 @@ const Signin = () => {
       >
         <Center h="100%">
           <Paper p={0} w="100%" maw={900} h="100%" mah={500}>
-            <SimpleGrid cols={2}>
-              <Box
-                h={500}
-                sx={{
-                  position: "relative",
+            <Grid w="100%">
+              <MediaQuery
+                smallerThan={600}
+                styles={{
+                  display: "none",
                 }}
-                w={450}
               >
-                <EdtingImage
-                  priority
-                  style={{}}
-                  fill
-                  src="https://images.unsplash.com/photo-1529539795054-3c162aab037a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                />
-                <Paper
-                  radius="xs"
-                  p="md"
-                  w={"100%"}
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                  }}
-                >
-                  <Group position="center">
-                    <Text size="xs">
-                      Photo by{" "}
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        ml={1}
-                        mr={4}
-                        href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Martin Adams
-                      </Anchor>
-                      on
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        mr={4}
-                        ml={4}
-                        href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Unsplash
-                      </Anchor>
-                    </Text>
-                  </Group>
-                </Paper>
-              </Box>
-              <Box mt={50} w={450}>
-                <Title transform="capitalize" align="center" mt="xl" order={4}>
-                  Sign in
-                </Title>
-                <Text align="center" mt="xs" size="xs" color="dimmed">
-                  Don&apos;t have an account?{" "}
-                  <Anchor weight={700} href="#register" color="dimmed">
-                    {" "}
-                    Register
-                  </Anchor>
-                </Text>
-                <Stack p={50}>
-                  <TextInput placeholder="Email" />
-                  <TextInput placeholder="Password" />
-                  <Button color="blue" variant="filled" fullWidth>
-                    {" "}
-                    Sign in
-                  </Button>
-
-                  <Anchor
-                    color="dimmed"
-                    href="#forgot-password"
-                    mt={50}
-                    size="xs"
-                    align="center"
+                <Grid.Col span={0} xs={6}>
+                  <Box
+                    h={500}
+                    sx={(theme) => ({
+                      position: "relative",
+                    })}
                   >
-                    Forgot your password?
-                  </Anchor>
+                    <EdtingImage
+                      priority
+                      fill
+                      src="https://images.unsplash.com/photo-1588460789007-a79cfe129bcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                    />
+                    <Paper
+                      radius="xs"
+                      p="md"
+                      w={"100%"}
+                      sx={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                      }}
+                    >
+                      <Group position="center">
+                        <Text size="xs">
+                          Photo by{" "}
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            ml={1}
+                            mr={4}
+                            href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Martin Adams
+                          </Anchor>
+                          on
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            mr={4}
+                            ml={4}
+                            href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Unsplash
+                          </Anchor>
+                        </Text>
+                      </Group>
+                    </Paper>
+                  </Box>
+                </Grid.Col>
+              </MediaQuery>
+              <Grid.Col span={0} xs={6}>
+                <Stack w="100%" maw={400} mx="auto" mt={50}>
+                  <Title
+                    transform="capitalize"
+                    align="center"
+                    mt="xl"
+                    order={4}
+                  >
+                    Sign in
+                  </Title>
+                  <Text align="center" mt="xs" size="xs" color="dimmed">
+                    Don&apos;t have an account?{" "}
+                    <Anchor weight={700} href="#register" color="dimmed">
+                      {" "}
+                      Register
+                    </Anchor>
+                  </Text>
+                  <Stack p={"xl"}>
+                    <TextInput placeholder="Email" />
+                    <TextInput placeholder="Password" />
+                    <Button mt={20} color="dark" variant="filled" fullWidth>
+                      {" "}
+                      Sign in
+                    </Button>
+
+                    <Anchor
+                      color="dimmed"
+                      href="#forgot-password"
+                      mt={20}
+                      size="xs"
+                      align="center"
+                    >
+                      Forgot your password?
+                    </Anchor>
+                  </Stack>
                 </Stack>
-              </Box>
-            </SimpleGrid>
+              </Grid.Col>
+            </Grid>
           </Paper>
         </Center>
       </Paper>
+
       <Paper
         id="forgot-password"
         sx={{
@@ -179,87 +196,101 @@ const Signin = () => {
       >
         <Center h="100%">
           <Paper p={0} w="100%" maw={900} h="100%" mah={500}>
-            <SimpleGrid cols={2}>
-              <Box
-                h={500}
-                sx={{
-                  position: "relative",
+            <Grid w="100%">
+              <MediaQuery
+                smallerThan={600}
+                styles={{
+                  display: "none",
                 }}
-                w={450}
               >
-                <EdtingImage
-                  priority
-                  style={{}}
-                  fill
-                  src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
-                />
-                <Paper
-                  radius="xs"
-                  p="md"
-                  w={"100%"}
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                  }}
-                >
-                  <Group position="center">
-                    <Text size="xs">
-                      Photo by{" "}
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        ml={1}
-                        mr={4}
-                        href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Martin Adams
-                      </Anchor>
-                      on
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        mr={4}
-                        ml={4}
-                        href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Unsplash
-                      </Anchor>
-                    </Text>
-                  </Group>
-                </Paper>
-              </Box>
-              <Box mt={50} w={450}>
-                <Title transform="capitalize" align="center" mt="xl" order={4}>
-                  Forgot Password
-                </Title>
-                <Text align="center" mt="xs" size="xs" color="dimmed">
-                  Re-called the password ?{" "}
-                  <Anchor weight={700} href="#sign-in" color="dimmed">
-                    {" "}
-                    Sign in
-                  </Anchor>
-                </Text>
-                <Stack p={50}>
-                  <TextInput placeholder="Recovery Email" />
-                  <Button mt={10} color="cyan" variant="filled" fullWidth>
-                    {" "}
-                    Send Recovery Link
-                  </Button>
-
+                <Grid.Col span={12} xs={6}>
+                  <Box
+                    h={500}
+                    sx={{
+                      position: "relative",
+                    }}
+                  >
+                    <EdtingImage
+                      priority
+                      fill
+                      src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
+                    />
+                    <Paper
+                      radius="xs"
+                      p="md"
+                      w={"100%"}
+                      sx={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                      }}
+                    >
+                      <Group position="center">
+                        <Text size="xs">
+                          Photo by{" "}
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            ml={1}
+                            mr={4}
+                            href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Martin Adams
+                          </Anchor>
+                          on
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            mr={4}
+                            ml={4}
+                            href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Unsplash
+                          </Anchor>
+                        </Text>
+                      </Group>
+                    </Paper>
+                  </Box>
+                </Grid.Col>
+              </MediaQuery>
+              <Grid.Col span={12} xs={6}>
+                <Box maw={400} mx="auto" mt={50}>
+                  <Title
+                    transform="capitalize"
+                    align="center"
+                    mt="xl"
+                    order={4}
+                  >
+                    Forgot Password
+                  </Title>
                   <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Don&apos;t have an account ?{" "}
-                    <Anchor weight={700} href="#register" color="dimmed">
+                    Re-called the password ?{" "}
+                    <Anchor weight={700} href="#sign-in" color="dimmed">
                       {" "}
-                      Register
+                      Sign in
                     </Anchor>
                   </Text>
-                </Stack>
-              </Box>
-            </SimpleGrid>
+                  <Stack p={"xl"}>
+                    <TextInput placeholder="Recovery Email" />
+                    <Button mt={20} color="dark" variant="filled" fullWidth>
+                      {" "}
+                      Send Recovery Link
+                    </Button>
+
+                    <Text align="center" mt="xs" size="xs" color="dimmed">
+                      Don&apos;t have an account ?{" "}
+                      <Anchor weight={700} href="#register" color="dimmed">
+                        {" "}
+                        Register
+                      </Anchor>
+                    </Text>
+                  </Stack>
+                </Box>
+              </Grid.Col>
+            </Grid>
           </Paper>
         </Center>
       </Paper>
@@ -276,91 +307,106 @@ const Signin = () => {
       >
         <Center h="100%">
           <Paper p={0} w="100%" maw={900} h="100%" mah={500}>
-            <SimpleGrid cols={2}>
-              <Box
-                h={500}
-                sx={{
-                  position: "relative",
+            <Grid w="100%">
+              <MediaQuery
+                smallerThan={600}
+                styles={{
+                  display: "none",
                 }}
-                w={450}
               >
-                <EdtingImage
-                  priority
-                  style={{}}
-                  fill
-                  src="https://images.unsplash.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80"
-                />
-                <Paper
-                  radius="xs"
-                  p="md"
-                  w={"100%"}
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                  }}
-                >
-                  <Group position="center">
-                    <Text size="xs">
-                      Photo by{" "}
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        ml={1}
-                        mr={4}
-                        href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Martin Adams
-                      </Anchor>
-                      on
-                      <Anchor
-                        color={colorScheme == "dark" ? "gray.3" : "dark"}
-                        weight={700}
-                        size="xs"
-                        mr={4}
-                        ml={4}
-                        href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >
-                        Unsplash
-                      </Anchor>
-                    </Text>
-                  </Group>
-                </Paper>
-              </Box>
-              <Box mt={30} w={450}>
-                <Title transform="capitalize" align="center" mt="xl" order={4}>
-                  Register
-                </Title>
-                <Text align="center" mt="xs" size="xs" color="dimmed">
-                  Already have an account?{" "}
-                  <Anchor weight={700} href="#sign-in" color="dimmed">
-                    {" "}
-                    Sign in
-                  </Anchor>
-                </Text>
-                <Stack p={50}>
-                  <TextInput placeholder="Email" />
-                  <TextInput placeholder="Password" />
-                  <TextInput placeholder="Repeat Password" />
-                  <Button mt={20} color="grape" variant="filled" fullWidth>
-                    {" "}
-                    Register
-                  </Button>
-
-                  <Anchor
-                    color="dimmed"
-                    href="#forgot-password"
-                    mt={50}
-                    size="xs"
-                    align="center"
+                <Grid.Col span={12} xs={6}>
+                  <Box
+                    h={500}
+                    sx={{
+                      position: "relative",
+                    }}
                   >
-                    Forgot your password?
-                  </Anchor>
-                </Stack>
-              </Box>
-            </SimpleGrid>
+                    <EdtingImage
+                      priority
+                      style={{}}
+                      fill
+                      src="https://images.unsplash.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80"
+                    />
+                    <Paper
+                      radius="xs"
+                      p="md"
+                      w={"100%"}
+                      sx={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                      }}
+                    >
+                      <Group position="center">
+                        <Text size="xs">
+                          Photo by{" "}
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            ml={1}
+                            mr={4}
+                            href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Martin Adams
+                          </Anchor>
+                          on
+                          <Anchor
+                            color={colorScheme == "dark" ? "gray.3" : "dark"}
+                            weight={700}
+                            size="xs"
+                            mr={4}
+                            ml={4}
+                            href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                          >
+                            Unsplash
+                          </Anchor>
+                        </Text>
+                      </Group>
+                    </Paper>
+                  </Box>
+                </Grid.Col>
+              </MediaQuery>
+              <Grid.Col span={12} xs={6}>
+                <Box mt={30} maw={400} mx="auto">
+                  <Title
+                    transform="capitalize"
+                    align="center"
+                    mt="xl"
+                    order={4}
+                  >
+                    Register
+                  </Title>
+                  <Text align="center" mt="xs" size="xs" color="dimmed">
+                    Already have an account?{" "}
+                    <Anchor weight={700} href="#sign-in" color="dimmed">
+                      {" "}
+                      Sign in
+                    </Anchor>
+                  </Text>
+                  <Stack p={"xl"}>
+                    <TextInput placeholder="Email" />
+                    <TextInput placeholder="Password" />
+                    <TextInput placeholder="Repeat Password" />
+                    <Button mt={20} color="dark" variant="filled" fullWidth>
+                      {" "}
+                      Register
+                    </Button>
+
+                    <Anchor
+                      color="dimmed"
+                      href="#forgot-password"
+                      mt={20}
+                      size="xs"
+                      align="center"
+                    >
+                      Forgot your password?
+                    </Anchor>
+                  </Stack>
+                </Box>
+              </Grid.Col>
+            </Grid>
           </Paper>
         </Center>
       </Paper>
