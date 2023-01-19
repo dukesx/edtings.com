@@ -41,6 +41,7 @@ const TagPageTrendingSection = ({
         ...generateGradient({
           color1: from,
           color2: to,
+          opacity: 0.3,
         }),
 
         [theme.fn.smallerThan(1200)]: {

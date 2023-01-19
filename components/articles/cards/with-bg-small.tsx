@@ -11,7 +11,6 @@ const ArticleCardWithBGSmall = ({
   authors,
   lazyLoadImages = false,
 }: ArticleCardWithBGSmallProps) => {
-  console.log("lazyLoadImages" + lazyLoadImages);
   return (
     <Card
       mx="auto"

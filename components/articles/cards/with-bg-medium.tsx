@@ -11,7 +11,6 @@ const ArticleCardWithBGMedium = ({
   authors,
   lazyLoadImages = false,
 }: ArticleCardWithBGMediumProps) => {
-  console.log(lazyLoadImages);
   return (
     <Card
       p={0}
