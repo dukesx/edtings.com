@@ -197,7 +197,11 @@ const AppWrapper = ({
                     {colorScheme == "dark" ? <Sun /> : <MoonStars />}
                   </ActionIcon>
                   <MediaQuery smallerThan="xs" styles={{ display: "none" }}>
-                    <Button component={Link} href="/sign-in">
+                    <Button
+                      color={colorScheme == "dark" ? "dark.4" : "dark"}
+                      component={Link}
+                      href="/sign-in"
+                    >
                       Sign in
                     </Button>
                   </MediaQuery>
@@ -230,9 +234,10 @@ const AppWrapper = ({
           <Navbar
             pt={32}
             pr={32}
+            fixed={true}
             hiddenBreakpoint={"md"}
             hidden={!opened}
-            height={"100%"}
+            withBorder={true}
             width={{
               xs: 0,
               sm: 0,

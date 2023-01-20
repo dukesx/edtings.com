@@ -26,13 +26,14 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
   return (
     <Fragment>
       <Paper
+        withBorder={false}
         bg={"transparent"}
         pt={30}
         id="welcome"
-        sx={(theme) => ({
-          backgroundColor:
-            colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
-        })}
+        // sx={(theme) => ({
+        //   backgroundColor:
+        //     colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
+        // })}
       >
         <Stack
           sx={(theme) => ({

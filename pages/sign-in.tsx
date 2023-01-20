@@ -49,7 +49,7 @@ const Signin = () => {
       <Paper
         pt={10}
         sx={() => ({
-          height: "120.5%",
+          height: "100%",
           ["@media (min-width: 300px) and (max-width: 1200px)"]: {
             paddingTop: 0,
           },
