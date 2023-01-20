@@ -68,7 +68,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                     height: 300,
                   },
                   ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 400,
+                    height: 500,
                   },
                 })}
               >
