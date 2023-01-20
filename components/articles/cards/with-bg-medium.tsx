@@ -1,6 +1,7 @@
 import { Avatar, Box, Card, Center, Stack, Text, Tooltip } from "@mantine/core";
 import { format } from "date-fns";
 import { nanoid } from "nanoid";
+import Link from "next/link";
 import { ArticleCardWithBGMediumProps } from "../../../types/articles/cards";
 import EdtingImage from "../../global/image";
 
@@ -73,7 +74,7 @@ const ArticleCardWithBGMedium = ({
           <Avatar.Group>
             {authors.map((mapped) => (
               <Tooltip label={mapped.name} key={nanoid()}>
-                <Avatar size={40} radius="xl">
+                <Avatar component={Link} href="/user/1" size={40} radius="xl">
                   <EdtingImage
                     priority
                     height={45}
