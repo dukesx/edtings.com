@@ -97,9 +97,9 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                         size="xs"
                         ml={1}
                         mr={4}
-                        href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                       >
-                        Martin Adams
+                        Dan Nelson
                       </Anchor>
                       on
                       <Anchor
@@ -108,7 +108,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                         size="xs"
                         mr={4}
                         ml={4}
-                        href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                       >
                         Unsplash
                       </Anchor>
