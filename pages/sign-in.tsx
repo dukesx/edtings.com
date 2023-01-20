@@ -43,23 +43,13 @@ const Signin = () => {
       navbarProps={{
         navbarTitle: "Navigation",
         navbarPosition: "sticky",
-        navbarLinks: [
-          {
-            title: "Sign in",
-            icon: SignIn,
-            color: "gray",
-            href: "/sign-in",
-            path: "sign",
-            active: true,
-          },
-          ...DEFAULT_NAV_DATA,
-        ],
+        navbarLinks: [...DEFAULT_NAV_DATA],
       }}
     >
       <Paper
-        pt={0}
+        pt={30}
         sx={() => ({
-          height: "105%",
+          height: "114%",
           ["@media (min-width: 300px) and (max-width: 1200px)"]: {
             paddingTop: 0,
           },
