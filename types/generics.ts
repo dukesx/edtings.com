@@ -30,6 +30,14 @@ export interface AppWrapperProps {
     headerLinks?: Array<AppNavbarLinks>;
     headerPosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
   };
+  modalProps?: {
+    opacity: number;
+    blurIntensity: number;
+  };
+  drawerProps?: {
+    opacity: number;
+    blurIntensity: number;
+  };
 }
 export interface AppNavbarProps {
   navbar?: boolean;

@@ -61,6 +61,14 @@ const AppWrapper = ({
     headerPosition: "static",
     headerLinks: [],
   },
+  modalProps = {
+    blurIntensity: 0,
+    opacity: 0,
+  },
+  drawerProps = {
+    blurIntensity: 0,
+    opacity: 0,
+  },
 }: AppWrapperProps) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
@@ -128,8 +136,6 @@ const AppWrapper = ({
                       <Text
                         size={"xl"}
                         sx={(theme) => ({
-                          //   textDecoration: "underline",
-                          //   textDecorationStyle: "wavy",
                           fontFamily: serif.style.fontFamily,
                           textDecorationColor: theme.colors.blue[6],
                           [theme.fn.smallerThan("sm")]: {
@@ -311,8 +317,8 @@ const AppWrapper = ({
         }}
       >
         <Modal
-          overlayBlur={0}
-          overlayOpacity={0}
+          overlayBlur={modalProps.blurIntensity}
+          overlayOpacity={modalProps.opacity}
           centered
           withCloseButton={false}
           opened={opened}
@@ -342,8 +348,8 @@ const AppWrapper = ({
         }}
       >
         <Drawer
-          overlayBlur={0}
-          overlayOpacity={0}
+          overlayBlur={drawerProps.blurIntensity}
+          overlayOpacity={drawerProps.opacity}
           padding={0}
           position="bottom"
           opened={opened}
