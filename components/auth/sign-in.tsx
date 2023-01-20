@@ -216,63 +216,13 @@ const SignInComponent = ({ tab, setTab }: any) => {
                         priority
                         alt=""
                         src={AppleLogo}
-                        width={24}
-                        height={24}
+                        width={21}
+                        height={21}
                       />
                     </ActionIcon>
                   </Tooltip>
                 </Group>
 
-                {/* <Stack spacing={10} mt="xl">
-                  <Button
-                    maw={320}
-                    w="100%"
-                    mx="auto"
-                    leftIcon={
-                      <Image
-                        priority
-                        alt=""
-                        src={GoogleLogo}
-                        width={17}
-                        height={17}
-                      />
-                    }
-                    color={colorScheme == "dark" ? "dark.4" : "gray.3"}
-                    variant="outline"
-                  >
-                    <Text
-                      size="xs"
-                      weight={600}
-                      color={colorScheme == "dark" ? "dark.1" : "gray.6"}
-                    >
-                      Google
-                    </Text>
-                  </Button>
-                  <Button
-                    maw={320}
-                    w="100%"
-                    mx="auto"
-                    leftIcon={
-                      <Image
-                        priority
-                        alt=""
-                        src={FacebookLogo}
-                        width={20}
-                        height={20}
-                      />
-                    }
-                    color={colorScheme == "dark" ? "dark.4" : "blue.6"}
-                    variant="outline"
-                  >
-                    <Text
-                      size="xs"
-                      weight={600}
-                      color={colorScheme == "dark" ? "dark.1" : "blue.6"}
-                    >
-                      Facebook
-                    </Text>
-                  </Button>
-                </Stack> */}
                 <Stack mt={0} p={"xl"}>
                   <TextInput placeholder="Email" />
                   <TextInput placeholder="Password" />

@@ -167,7 +167,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                       }}
                       color="dimmed"
                       href="#"
-                      mt={20}
+                      mt={10}
                       size="xs"
                       align="center"
                     >
