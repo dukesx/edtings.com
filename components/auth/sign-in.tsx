@@ -118,7 +118,18 @@ const SignInComponent = ({ tab, setTab }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Stack w="100%" maw={400} mx="auto" mt={0}>
+              <Stack
+                mt={50}
+                spacing={0}
+                w="100%"
+                maw={400}
+                mx="auto"
+                sx={(theme) => ({
+                  ["@media (min-width: 300px) and (max-width: 1000px)"]: {
+                    marginTop: 0,
+                  },
+                })}
+              >
                 <Title transform="capitalize" align="center" mt="xl" order={4}>
                   Sign in
                 </Title>
@@ -136,7 +147,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                     Register
                   </Anchor>
                 </Text>
-                <Stack p={"xl"}>
+                <Stack mt="xl" p={"xl"}>
                   <TextInput placeholder="Email" />
                   <TextInput placeholder="Password" />
                   <Button mt={20} color="dark" variant="filled" fullWidth>

@@ -119,12 +119,22 @@ const RegisterComponent = ({ tab, setTab }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Center w="100%" h="100%">
+              <Stack
+                mt={50}
+                align="center"
+                sx={(theme) => ({
+                  ["@media (min-width: 300px) and (max-width: 1000px)"]: {
+                    marginTop: 0,
+                  },
+                })}
+                w="100%"
+                h="100%"
+              >
                 <Box maw={400} w="100%">
                   <Title
                     transform="capitalize"
                     align="center"
-                    mt="xl"
+                    mt={"xl"}
                     order={4}
                   >
                     Register
@@ -143,7 +153,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                       Sign in
                     </Anchor>
                   </Text>
-                  <Stack my="md" p={"xl"}>
+                  <Stack mt="xl" p={"xl"}>
                     <TextInput placeholder="Email" />
                     <TextInput placeholder="Password" />
                     <TextInput placeholder="Repeat Password" />
@@ -166,7 +176,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                     </Anchor>
                   </Stack>
                 </Box>
-              </Center>
+              </Stack>
             </Grid.Col>
           </Grid>
         </Paper>

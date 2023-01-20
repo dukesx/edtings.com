@@ -68,7 +68,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                     height: 300,
                   },
                   ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 600,
+                    height: 400,
                   },
                 })}
               >
@@ -118,7 +118,16 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Center id="forgot-password">
+              <Stack
+                mt={50}
+                align="center"
+                sx={(theme) => ({
+                  ["@media (min-width: 300px) and (max-width: 1000px)"]: {
+                    marginTop: 0,
+                  },
+                })}
+                id="forgot-password"
+              >
                 <Box maw={400} w="100%" mt={0}>
                   <Title
                     transform="capitalize"
@@ -142,7 +151,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                       Sign in
                     </Anchor>
                   </Text>
-                  <Stack p={"xl"}>
+                  <Stack mt="sm" p={"xl"}>
                     <TextInput placeholder="Recovery Email" />
                     <Button mt={20} color="dark" variant="filled" fullWidth>
                       {" "}
@@ -165,7 +174,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                     </Text>
                   </Stack>
                 </Box>
-              </Center>
+              </Stack>
             </Grid.Col>
           </Grid>
         </Paper>
