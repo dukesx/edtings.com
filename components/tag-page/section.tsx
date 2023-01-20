@@ -173,7 +173,7 @@ const TagPageTrendingSection = ({
             })}
           >
             {articles.map((mapped) => (
-              <Carousel.Slide>
+              <Carousel.Slide key={nanoid()}>
                 <ArticleCardWithBGMedium
                   lazyLoadImages={lazyLoadImages}
                   key={nanoid()}

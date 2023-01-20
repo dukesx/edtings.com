@@ -58,11 +58,10 @@ const ABC = () => {
     >
       <Container
         sx={{
-          // height: 650,
           ...generateGradient({
             color1: "blue",
             color2: "teal",
-            opacity: 0.1,
+            opacity: 0.3,
           }),
         }}
         p={0}
@@ -92,7 +91,7 @@ const ABC = () => {
           p="xl"
           id="published"
         >
-          <Title mb="md" pt={20} order={3}>
+          <Title mb="md" pt={10} order={3}>
             <Text
               sx={(theme) => ({
                 [theme.fn.smallerThan(600)]: {

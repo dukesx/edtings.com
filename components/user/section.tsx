@@ -25,21 +25,12 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <Fragment>
-      <Paper
-        withBorder={false}
-        bg={"transparent"}
-        pt={30}
-        id="welcome"
-        // sx={(theme) => ({
-        //   backgroundColor:
-        //     colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
-        // })}
-      >
+      <Paper withBorder={false} bg={"transparent"} pt={30} id="welcome">
         <Stack
           sx={(theme) => ({
+            height: 520,
             alignItems: "center",
             alignContent: "center",
-            height: "100%",
             justifyItems: "center",
             justifyContent: "center",
           })}

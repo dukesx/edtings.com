@@ -12,10 +12,17 @@ import {
   TextInput,
   Button,
   useMantineColorScheme,
+  ActionIcon,
+  Tooltip,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
 import { Fade } from "react-awesome-reveal";
 import EdtingImage from "../global/image";
+import GoogleLogo from "../../public/google.svg";
+import Image from "next/image";
+import FacebookLogo from "../../public/facebook.svg";
+import NotionLogo from "../../public/notion.svg";
+import AppleLogo from "../../public/apple-logo.svg";
 
 const SignInComponent = ({ tab, setTab }: any) => {
   const { colorScheme } = useMantineColorScheme();
@@ -119,7 +126,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
               <Stack
-                mt={50}
+                mt={25}
                 spacing={0}
                 w="100%"
                 maw={400}
@@ -147,10 +154,129 @@ const SignInComponent = ({ tab, setTab }: any) => {
                     Register
                   </Anchor>
                 </Text>
-                <Stack mt="xl" p={"xl"}>
+
+                <Group mt="lg" position="center">
+                  <Tooltip label="Sign in with Google">
+                    <ActionIcon
+                      size="lg"
+                      variant="filled"
+                      radius="xl"
+                      color="gray.0"
+                    >
+                      <Image
+                        priority
+                        alt=""
+                        src={GoogleLogo}
+                        width={22}
+                        height={22}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+                  <Tooltip label="Sign in with Facebook">
+                    <ActionIcon
+                      size="lg"
+                      variant="filled"
+                      radius="xl"
+                      color="gray.0"
+                    >
+                      <Image
+                        priority
+                        alt=""
+                        src={FacebookLogo}
+                        width={24}
+                        height={24}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+
+                  <Tooltip label="Sign in with Notion">
+                    <ActionIcon
+                      size="lg"
+                      variant="filled"
+                      radius="xl"
+                      color="gray.0"
+                    >
+                      <Image
+                        priority
+                        alt=""
+                        src={NotionLogo}
+                        width={24}
+                        height={24}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+                  <Tooltip label="Sign in with Apple">
+                    <ActionIcon
+                      size="lg"
+                      variant="filled"
+                      radius="xl"
+                      color="gray.0"
+                    >
+                      <Image
+                        priority
+                        alt=""
+                        src={AppleLogo}
+                        width={24}
+                        height={24}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+                </Group>
+
+                {/* <Stack spacing={10} mt="xl">
+                  <Button
+                    maw={320}
+                    w="100%"
+                    mx="auto"
+                    leftIcon={
+                      <Image
+                        priority
+                        alt=""
+                        src={GoogleLogo}
+                        width={17}
+                        height={17}
+                      />
+                    }
+                    color={colorScheme == "dark" ? "dark.4" : "gray.3"}
+                    variant="outline"
+                  >
+                    <Text
+                      size="xs"
+                      weight={600}
+                      color={colorScheme == "dark" ? "dark.1" : "gray.6"}
+                    >
+                      Google
+                    </Text>
+                  </Button>
+                  <Button
+                    maw={320}
+                    w="100%"
+                    mx="auto"
+                    leftIcon={
+                      <Image
+                        priority
+                        alt=""
+                        src={FacebookLogo}
+                        width={20}
+                        height={20}
+                      />
+                    }
+                    color={colorScheme == "dark" ? "dark.4" : "blue.6"}
+                    variant="outline"
+                  >
+                    <Text
+                      size="xs"
+                      weight={600}
+                      color={colorScheme == "dark" ? "dark.1" : "blue.6"}
+                    >
+                      Facebook
+                    </Text>
+                  </Button>
+                </Stack> */}
+                <Stack mt={0} p={"xl"}>
                   <TextInput placeholder="Email" />
                   <TextInput placeholder="Password" />
-                  <Button mt={20} color="dark" variant="filled" fullWidth>
+                  <Button mt={15} color="dark" variant="filled" fullWidth>
                     {" "}
                     Sign in
                   </Button>
@@ -161,7 +287,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                     }}
                     color="dimmed"
                     href="#"
-                    mt={20}
+                    mt={10}
                     size="xs"
                     align="center"
                   >
