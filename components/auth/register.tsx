@@ -74,7 +74,6 @@ const RegisterComponent = ({ tab, setTab }: any) => {
               >
                 <EdtingImage
                   priority
-                  style={{}}
                   fill
                   src="https://images.unsplash.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80"
                 />

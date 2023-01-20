@@ -84,6 +84,9 @@ const AppWrapper = ({
               ? theme.colors.dark[8]
               : theme.colors.gray[0],
         },
+        body: {
+          height: "100%",
+        },
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
