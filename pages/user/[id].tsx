@@ -61,7 +61,7 @@ const ABC = () => {
           ...generateGradient({
             color1: "blue",
             color2: "teal",
-            opacity: 0.2,
+            opacity: 0.3,
           }),
         }}
         p={0}
