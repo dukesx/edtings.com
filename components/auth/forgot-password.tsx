@@ -135,7 +135,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                         setTab("sign-in");
                       }}
                       weight={700}
-                      href="#sign-in"
+                      href="#"
                       color="dimmed"
                     >
                       {" "}
@@ -153,7 +153,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                       Don&apos;t have an account ?{" "}
                       <Anchor
                         weight={700}
-                        href="#register"
+                        href="#"
                         color="dimmed"
                         onClick={() => {
                           setTab("register");

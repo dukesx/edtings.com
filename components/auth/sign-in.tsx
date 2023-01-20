@@ -125,11 +125,11 @@ const SignInComponent = ({ tab, setTab }: any) => {
                 <Text align="center" mt="xs" size="xs" color="dimmed">
                   Don&apos;t have an account?{" "}
                   <Anchor
-                    onClick={() => {
+                    onClick={(e) => {
                       setTab("register");
                     }}
                     weight={700}
-                    href="#register"
+                    href="#"
                     color="dimmed"
                   >
                     {" "}
@@ -149,7 +149,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                       setTab("forgot-password");
                     }}
                     color="dimmed"
-                    href="#forgot-password"
+                    href="#"
                     mt={20}
                     size="xs"
                     align="center"

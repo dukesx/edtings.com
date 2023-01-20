@@ -136,7 +136,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                         setTab("sign-in");
                       }}
                       weight={700}
-                      href="#sign-in"
+                      href="#"
                       color="dimmed"
                     >
                       {" "}
@@ -157,7 +157,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                         setTab("forgot-password");
                       }}
                       color="dimmed"
-                      href="#forgot-password"
+                      href="#"
                       mt={20}
                       size="xs"
                       align="center"
