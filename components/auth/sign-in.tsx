@@ -27,7 +27,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
         width: "100%",
       }}
     >
-      <Center key={nanoid()} id="sign-in" h="100%">
+      <Center h="100%" key={nanoid()} id="sign-in">
         <Paper
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
@@ -68,7 +68,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                     height: 300,
                   },
                   ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 600,
+                    height: 400,
                   },
                 })}
               >
@@ -118,7 +118,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Stack w="100%" maw={400} mx="auto" mt={50}>
+              <Stack w="100%" maw={400} mx="auto" mt={0}>
                 <Title transform="capitalize" align="center" mt="xl" order={4}>
                   Sign in
                 </Title>

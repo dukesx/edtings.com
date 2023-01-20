@@ -119,7 +119,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
               <Center id="forgot-password">
-                <Box maw={400} w="100%" mt={50}>
+                <Box maw={400} w="100%" mt={0}>
                   <Title
                     transform="capitalize"
                     align="center"

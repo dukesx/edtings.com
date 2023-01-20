@@ -55,6 +55,7 @@ const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();
   const router = useRouter();
   const { title }: any = router.query;
+
   return (
     <AppWrapper
       path={title}

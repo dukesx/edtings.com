@@ -243,12 +243,7 @@ const AppWrapper = ({
             <Navbar.Section>
               <AppNavbar links={navbarProps.navbarLinks} path={path} />
             </Navbar.Section>
-            <Navbar.Section
-              sx={{
-                position: "absolute",
-                top: "120%",
-              }}
-            >
+            <Navbar.Section mt={"13%"}>
               <MediaQuery
                 smallerThan={1000}
                 styles={{

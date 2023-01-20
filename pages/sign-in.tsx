@@ -40,9 +40,6 @@ const Signin = () => {
     <AppWrapper
       path="sign"
       padding={false}
-      headerProps={{
-        headerPosition: "fixed",
-      }}
       navbarProps={{
         navbarTitle: "Navigation",
         navbarPosition: "sticky",
@@ -60,9 +57,9 @@ const Signin = () => {
       }}
     >
       <Paper
-        pt={70}
+        pt={0}
         sx={() => ({
-          height: "100vh",
+          height: "105%",
           ["@media (min-width: 300px) and (max-width: 1200px)"]: {
             paddingTop: 0,
           },

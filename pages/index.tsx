@@ -47,16 +47,18 @@ import ArticleCardWithBGMedium from "../components/articles/cards/with-bg-medium
 import HomepageCategorySection from "../components/homepage/section";
 import { sampleArticles } from "../data/samples";
 import LazyLoad from "react-lazy-load";
-import { DEFAULT_NAV_DATA } from "../data/generics";
+import { DEFAULT_NAV_DATA, HOME_NAV_DATA } from "../data/generics";
 
 const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();
+  var navLinks = HOME_NAV_DATA;
+  navLinks = navLinks.filter((mapped) => mapped.title != "home");
   return (
     <AppWrapper
       navbarProps={{
         navbarTitle: "Categories",
         navbarPosition: "sticky",
-        navbarLinks: DEFAULT_NAV_DATA,
+        navbarLinks: navLinks,
       }}
       path=""
       padding={false}

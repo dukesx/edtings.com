@@ -68,7 +68,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                     height: 300,
                   },
                   ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 600,
+                    height: 400,
                   },
                 })}
               >
