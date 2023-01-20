@@ -129,7 +129,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                     Forgot Password
                   </Title>
                   <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Re-called the password ?{" "}
+                    Recalled the password ?{" "}
                     <Anchor
                       onClick={() => {
                         setTab("sign-in");
