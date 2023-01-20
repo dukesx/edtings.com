@@ -47,6 +47,7 @@ import ArticleCardWithBGMedium from "../components/articles/cards/with-bg-medium
 import HomepageCategorySection from "../components/homepage/section";
 import { sampleArticles } from "../data/samples";
 import LazyLoad from "react-lazy-load";
+import { DEFAULT_NAV_DATA } from "../data/generics";
 
 const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -55,57 +56,7 @@ const IndexPage = () => {
       navbarProps={{
         navbarTitle: "Categories",
         navbarPosition: "sticky",
-        navbarLinks: [
-          {
-            title: "technology",
-            href: "#technology",
-            icon: Cloud,
-            color: "gray",
-            path: "technology",
-          },
-          {
-            title: "reviews",
-            href: "#reviews",
-            icon: StarHalf,
-            color: "gray",
-            path: "reviews",
-          },
-          {
-            title: "programming",
-            href: "#programming",
-            icon: Terminal,
-            color: "gray",
-            path: "programming",
-          },
-          {
-            title: "lifestyle",
-            href: "#lifestyle",
-            icon: MaskHappy,
-            color: "gray",
-            path: "lifestyle",
-          },
-          {
-            title: "general health",
-            href: "#general-health",
-            icon: Heartbeat,
-            color: "gray",
-            path: "general-health",
-          },
-          {
-            title: "physiotherapy",
-            href: "#physiotherapy",
-            icon: PersonSimpleRun,
-            color: "gray",
-            path: "physiotherapy",
-          },
-          {
-            title: "medicine",
-            href: "#medicine",
-            icon: Pill,
-            color: "gray",
-            path: "medicine",
-          },
-        ],
+        navbarLinks: DEFAULT_NAV_DATA,
       }}
       path=""
       padding={false}

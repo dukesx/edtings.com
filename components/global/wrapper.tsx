@@ -223,7 +223,7 @@ const AppWrapper = ({
             pr={32}
             hiddenBreakpoint={"md"}
             hidden={!opened}
-            height={"100vh"}
+            height={"100%"}
             width={{
               xs: 0,
               sm: 0,
@@ -246,7 +246,7 @@ const AppWrapper = ({
             <Navbar.Section
               sx={{
                 position: "absolute",
-                top: "78%",
+                top: "120%",
               }}
             >
               <MediaQuery

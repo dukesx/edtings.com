@@ -49,6 +49,7 @@ import { useRouter } from "next/router";
 import HomepageCategorySection from "../../components/homepage/section";
 import { sampleArticles } from "../../data/samples";
 import TagPageTrendingSection from "../../components/tag-page/section";
+import { DEFAULT_NAV_DATA } from "../../data/generics";
 
 const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -63,64 +64,7 @@ const IndexPage = () => {
       navbarProps={{
         navbarTitle: "",
         navbarPosition: "sticky",
-        navbarLinks: [
-          {
-            title: "home",
-            href: "/",
-            icon: GlobeSimple,
-            color: "gray",
-            path: "home",
-          },
-          {
-            title: "technology",
-            href: "/tag/technology",
-            icon: Cloud,
-            color: "gray",
-            path: "technology",
-          },
-          {
-            title: "reviews",
-            href: "/tag/reviews",
-            icon: StarHalf,
-            color: "gray",
-            path: "reviews",
-          },
-          {
-            title: "programming",
-            href: "/tag/programming",
-            icon: Terminal,
-            color: "gray",
-            path: "programming",
-          },
-          {
-            title: "lifestyle",
-            href: "/tag/lifestyle",
-            icon: MaskHappy,
-            color: "gray",
-            path: "lifestyle",
-          },
-          {
-            title: "general health",
-            href: "/tag/general-health",
-            icon: Heartbeat,
-            color: "gray",
-            path: "general-health",
-          },
-          {
-            title: "physiotherapy",
-            href: "/tag/physiotherapy",
-            icon: PersonSimpleRun,
-            color: "gray",
-            path: "physiotherapy",
-          },
-          {
-            title: "medicine",
-            href: "/tag/medicine",
-            icon: Pill,
-            color: "gray",
-            path: "medicine",
-          },
-        ],
+        navbarLinks: DEFAULT_NAV_DATA,
       }}
       padding={false}
     >
