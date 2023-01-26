@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import Link from "next/link";
 import { ArticleCardWithBGMediumProps } from "../../../types/articles/cards";
 import EdtingImage from "../../global/image";
+import Balancer from "react-wrap-balancer";
 
 const ArticleCardWithBGMedium = ({
   title,
@@ -41,6 +42,7 @@ const ArticleCardWithBGMedium = ({
         />
       </Card.Section>
       <Center
+        w="100%"
         sx={{
           position: "absolute",
           height: "100%",
@@ -59,6 +61,8 @@ const ArticleCardWithBGMedium = ({
             })}
           >
             <Text
+              ratio={0.43}
+              component={Balancer}
               align="center"
               lineClamp={4}
               color="white"

@@ -17,7 +17,7 @@ import { nanoid } from "nanoid";
 import { Fade } from "react-awesome-reveal";
 import EdtingImage from "../global/image";
 
-const ForgotPasswordComponent = ({ tab, setTab }: any) => {
+const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <Fade
@@ -73,7 +73,7 @@ const ForgotPasswordComponent = ({ tab, setTab }: any) => {
                 })}
               >
                 <EdtingImage
-                  priority
+                  placeholder={placeholder}
                   fill
                   src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
                 />

@@ -9,3 +9,58 @@ html {
 .active-nav {
   background-color: #f8f9fa !important;
 }
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  font-size: 0.9rem;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror p {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  font-family: "__DM_Serif_Text_696bbb", "__DM_Serif_Text_Fallback_696bbb";
+}
+p {
+  font-weight: 400;
+}
+
+.ProseMirror {
+  height: 100%;
+  outline: unset;
+  margin: 1em 0;
+  padding: 1rem;
+  padding-bottom: 10em !important;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .ProseMirror {
+    height: 100%;
+    outline: unset;
+    margin: 1em 0;
+    padding: 2rem;
+  }
+}
+.animate {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

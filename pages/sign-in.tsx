@@ -1,39 +1,16 @@
-import {
-  Anchor,
-  Box,
-  Button,
-  Card,
-  Center,
-  Container,
-  Grid,
-  Group,
-  MediaQuery,
-  Paper,
-  SimpleGrid,
-  Stack,
-  Text,
-  TextInput,
-  Title,
-  useMantineColorScheme,
-} from "@mantine/core";
-import {
-  CircleWavyQuestion,
-  SignIn,
-  UserCirclePlus,
-  UserPlus,
-} from "phosphor-react";
-import EdtingImage from "../components/global/image";
+import { Paper, useMantineColorScheme } from "@mantine/core";
+
 import AppWrapper from "../components/global/wrapper";
 import { generateGradient } from "../utils/basic";
-import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import { useState } from "react";
-import { nanoid } from "nanoid";
 import { DEFAULT_NAV_DATA } from "../data/generics";
 import SignInComponent from "../components/auth/sign-in";
 import ForgotPasswordComponent from "../components/auth/forgot-password";
 import RegisterComponent from "../components/auth/register";
+import { getBase64ImageUrl } from "../data/blur";
+import { getPlaiceholder } from "plaiceholder";
 
-const Signin = () => {
+const Signin = ({ first, second, third }: any) => {
   const { colorScheme } = useMantineColorScheme();
   const [tab, setTab] = useState("sign-in");
   return (
@@ -81,11 +58,15 @@ const Signin = () => {
         })}
       >
         {tab == "sign-in" ? (
-          <SignInComponent tab={tab} setTab={setTab} />
+          <SignInComponent placeholder={first} tab={tab} setTab={setTab} />
         ) : tab == "forgot-password" ? (
-          <ForgotPasswordComponent tab={tab} setTab={setTab} />
+          <ForgotPasswordComponent
+            placeholder={second}
+            tab={tab}
+            setTab={setTab}
+          />
         ) : tab == "register" ? (
-          <RegisterComponent tab={tab} setTab={setTab} />
+          <RegisterComponent placeholder={third} tab={tab} setTab={setTab} />
         ) : null}
       </Paper>
     </AppWrapper>
@@ -93,3 +74,25 @@ const Signin = () => {
 };
 
 export default Signin;
+
+export const getStaticProps = async () => {
+  const { base64: first } = await getPlaiceholder(
+    "https://images.unsplash.com/photo-1588460789007-a79cfe129bcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=75&max-w=600&max-h=600"
+  );
+
+  const { base64: second } = await getPlaiceholder(
+    "https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=75&max-w=600&max-h=600"
+  );
+
+  const { base64: third } = await getPlaiceholder(
+    "https://images.unsplash.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=75&max-w=600&max-h=600"
+  );
+
+  return {
+    props: {
+      first: first,
+      second: second,
+      third: third,
+    },
+  };
+};

@@ -10,6 +10,12 @@ import {
 import { NotificationsProvider } from "@mantine/notifications";
 import { DM_Serif_Text, Inter } from "@next/font/google";
 import "../styles/globals.css";
+import {
+  createBrowserSupabaseClient,
+  Session,
+} from "@supabase/auth-helpers-nextjs";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
+import { Provider } from "react-wrap-balancer";
 
 export const sans = Inter({
   subsets: ["latin"],
@@ -20,11 +26,16 @@ export const serif = DM_Serif_Text({
   weight: ["400"],
 });
 
-export default function App(props: AppProps & { colorScheme: ColorScheme }) {
+export default function App(
+  props: AppProps<{
+    initialSession: Session;
+  }> & { colorScheme: ColorScheme }
+) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
     props.colorScheme
   );
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
 
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme =
@@ -72,7 +83,14 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withNormalizeCSS
         >
           <NotificationsProvider>
-            <Component {...pageProps} />
+            <SessionContextProvider
+              supabaseClient={supabaseClient}
+              initialSession={pageProps.initialSession}
+            >
+              <Provider>
+                <Component {...pageProps} />
+              </Provider>
+            </SessionContextProvider>
           </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>

@@ -16,23 +16,25 @@ const EdtingImage = ({
   const theme = useMantineTheme();
   return (
     <Image
-      loading={priority == true ? undefined : "lazy"}
+      loading={priority == true ? "eager" : "lazy"}
       width={fill ? undefined : width}
       height={fill ? undefined : height}
       fill={fill}
       alt="image"
       placeholder={placeholder ? "blur" : "empty"}
       blurDataURL={placeholder ? placeholder : undefined}
-      priority={priority ?? false}
+      priority={priority == true ? true : false}
       quality={75}
       src={src}
       loader={({ src, width, quality }) => {
         if (src.includes("unsplash")) {
           return (
             src.split("&fit=crop")[0] +
-            `&fit=crop${height ? `&h=${height}` : ``}&q=${quality}${
-              fill == true ? "&max-w=1280&max-h=1280" : ""
-            }${avatar == true ? "&ar=1:1" : ""}`
+            `&fit=crop${height ? `&h=${height}&` : ``}${
+              width ? `` : ``
+            }&q=${quality}${fill == true ? "&max-w=1024&max-h=1024" : ""}${
+              avatar == true ? "&ar=1:1" : ""
+            }`
           );
         }
 

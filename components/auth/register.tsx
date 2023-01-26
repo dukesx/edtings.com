@@ -17,7 +17,7 @@ import { nanoid } from "nanoid";
 import { Fade } from "react-awesome-reveal";
 import EdtingImage from "../global/image";
 
-const RegisterComponent = ({ tab, setTab }: any) => {
+const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <Fade
@@ -62,6 +62,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
             >
               <Box
                 h={500}
+                w={"100%"}
                 sx={(theme) => ({
                   position: "relative",
                   ["@media (min-width: 300px) and (max-width: 600px)"]: {
@@ -73,7 +74,7 @@ const RegisterComponent = ({ tab, setTab }: any) => {
                 })}
               >
                 <EdtingImage
-                  priority
+                  placeholder={placeholder}
                   fill
                   src="https://images.unsplash.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80"
                 />

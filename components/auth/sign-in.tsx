@@ -24,7 +24,7 @@ import FacebookLogo from "../../public/facebook.svg";
 import NotionLogo from "../../public/notion.svg";
 import AppleLogo from "../../public/apple-logo.svg";
 
-const SignInComponent = ({ tab, setTab }: any) => {
+const SignInComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <Fade
@@ -80,7 +80,7 @@ const SignInComponent = ({ tab, setTab }: any) => {
                 })}
               >
                 <EdtingImage
-                  priority
+                  placeholder={placeholder}
                   fill
                   src="https://images.unsplash.com/photo-1588460789007-a79cfe129bcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                 />

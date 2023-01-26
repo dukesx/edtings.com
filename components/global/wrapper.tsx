@@ -235,14 +235,14 @@ const AppWrapper = ({
             pt={32}
             pr={32}
             fixed={true}
-            hiddenBreakpoint={"md"}
+            hiddenBreakpoint={navbar == false ? 8000 : "md"}
             hidden={!opened}
             withBorder={true}
             width={{
               xs: 0,
               sm: 0,
-              md: 370,
-              lg: 420,
+              md: navbar == false ? 0 : 370,
+              lg: navbar == false ? 0 : 420,
             }}
             sx={(theme) => ({
               position: navbarProps.navbarPosition,
