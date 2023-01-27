@@ -101,10 +101,12 @@ const MantineEmbeds = (props: any) => {
 
   return (
     <NodeViewWrapper>
-      <Box h={400} my="xl" maw={700} mx="auto">
+      <Box my="xl">
         {loading ? (
           <Card
-            h={500}
+            maw={800}
+            mx="auto"
+            h={400}
             sx={(theme) => ({
               borderColor:
                 colorScheme == "dark"
@@ -127,7 +129,7 @@ const MantineEmbeds = (props: any) => {
         ) : //@ts-ignore
         embed && embed.html ? (
           //@ts-ignore
-          <ScrollArea>
+          <ScrollArea mx="auto" maw={800}>
             <div dangerouslySetInnerHTML={{ __html: embed.html }} />
           </ScrollArea>
         ) : embed && embed.meta ? (
@@ -183,6 +185,8 @@ const MantineEmbeds = (props: any) => {
           //   </Center>
           // </Card>
           <TextInput
+            mx="auto"
+            maw={700}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Enter URL and Press Enter"
           />

@@ -7,7 +7,6 @@ const CreateArticle = () => {
   const [value, setValue] = useState("");
   return (
     <AppWrapper
-      navbar={false}
       navbarProps={{
         navbarPosition: "sticky",
         navbarTitle: "",
@@ -16,7 +15,7 @@ const CreateArticle = () => {
       padding={false}
       path="create"
     >
-      <Container size="md">
+      <Container bg="transparent" size={800}>
         <TextEditor
           placeholder="Let's Write Something 🤓"
           setValue={setValue}

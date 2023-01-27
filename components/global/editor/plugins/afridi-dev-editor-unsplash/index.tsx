@@ -2,12 +2,14 @@ import {
   ActionIcon,
   Anchor,
   Blockquote,
+  Box,
   Button,
   Card,
   Center,
   Divider,
   Group,
   Loader,
+  MediaQuery,
   Paper,
   ScrollArea,
   SimpleGrid,
@@ -31,9 +33,12 @@ import {
 } from "@tiptap/react";
 import { Placeholder, SmileyXEyes, X } from "phosphor-react";
 import { Fragment, useEffect, useState } from "react";
-import EdtingImage from "../../image";
-import UnsplashLogo from "../../../../public/unsplash.svg";
+import EdtingImage from "../../../image";
+import UnsplashLogo from "../../../../../public/unsplash.svg";
 import Image from "next/image";
+import { nanoid } from "nanoid";
+import AfridiEditorUnsplashSingleImage from "./unsplash-single-image";
+import AfridiDevEditorUnsplashGridImage from "./unsplash-grid-image";
 
 export default Node.create({
   name: "afridi-dev-editor-unsplash",
@@ -62,7 +67,7 @@ export default Node.create({
       src: {
         default: null,
       },
-      blurhash: {
+      blurHash: {
         default: null,
       },
       credits: {
@@ -101,6 +106,7 @@ const Unsplash = (props: any) => {
       total: data.total,
       total_pages: data.total_pages,
     });
+
     setLoading(false);
   };
 
@@ -121,7 +127,7 @@ const Unsplash = (props: any) => {
   return (
     <NodeViewWrapper>
       <Stack mih={400} mx="auto" my="xl">
-        <Stack mx="auto" w="100%" maw={700}>
+        <Stack mx="auto" w="100%" maw={800}>
           {!image && (
             <TextInput
               w="100%"
@@ -182,22 +188,33 @@ const Unsplash = (props: any) => {
             <Stack align="center">
               <Card
                 p={0}
-                maw={"100%"}
-                h={"100%"}
-                sx={{
-                  position: "relative",
+                style={{
+                  aspectRatio: image.width / image.height,
+                  maxWidth: 650,
                 }}
               >
-                <EdtingImage
-                  height={image.height / 4.5}
-                  width={image.width / 4.5}
-                  src={image.urls.regular}
-                  placeholder={image.blur_hash}
-                  style={{
-                    aspectRatio: image.width / image.height,
-                    objectFit: "unset",
-                  }}
-                />
+                <Box
+                  sx={(theme) => ({
+                    [theme.fn.smallerThan(600)]: {
+                      ["img"]: {
+                        width: "100%",
+                        height: "100%",
+                      },
+                    },
+                  })}
+                >
+                  <AfridiEditorUnsplashSingleImage
+                    height={650 / (image.width / image.height)}
+                    width={650}
+                    src={image.urls.regular}
+                    placeholder={image.blur_hash}
+                    style={{
+                      objectFit: "unset",
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                    }}
+                  />
+                </Box>
               </Card>
               <Text color={colorScheme == "dark" ? "dimmed" : "dark"} size="xs">
                 Photo by{" "}
@@ -223,12 +240,27 @@ const Unsplash = (props: any) => {
           ) : images.length > 0 ? (
             <Fragment>
               {gridProps && (
-                <Group maw={700} mx="auto" pb="xl" position="apart">
+                <Group
+                  sx={(theme) => ({
+                    [theme.fn.smallerThan(1000)]: {
+                      maxWidth: 600,
+                    },
+                  })}
+                  mx="auto"
+                  maw={680}
+                  pb="xl"
+                  position="apart"
+                >
                   {page > 1 ? (
                     <Text
                       size="xs"
                       sx={{
                         cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        setPage(page - 1);
+                        setImages([]);
+                        getPhotos(page - 1);
                       }}
                       weight={500}
                     >
@@ -253,19 +285,39 @@ const Unsplash = (props: any) => {
                   }
                 </Group>
               )}
-              <Group position="center">
-                {images.map((mapped: any) => {
+              <Group
+                maw={750}
+                sx={(theme) => ({
+                  display: "block",
+                  columnGap: 2,
+                  columns: 3,
+                  [theme.fn.smallerThan(1000)]: {
+                    columns: 3,
+                  },
+                })}
+                spacing="xs"
+                mx="auto"
+              >
+                {images.map((mapped: any, index: any) => {
                   return (
                     <Card
-                      sx={(theme) => ({
-                        [theme.fn.smallerThan(1000)]: {
-                          width: 200,
+                      key={nanoid()}
+                      className="hover-unsplash-card"
+                      style={{
+                        aspectRatio: mapped.width / mapped.height,
+                      }}
+                      p={0}
+                      sx={() => ({
+                        cursor: "pointer",
+                        border: "4px solid transparent",
+                        [":hover"]: {
+                          outlineColor: "blue",
+                          outlineWidth: 2,
+                          borderColor: theme.colors.blue[6],
                         },
                       })}
-                      w={220}
-                      p={0}
-                      h="350px"
                       onClick={async () => {
+                        console.log(mapped);
                         const fetcher = await fetch(
                           mapped.links.download_location +
                             "&client_id=wJfdCZ1eIo3wcotiSDT0xNInM3mUXZ4yeUOPmwRd3Bg"
@@ -284,15 +336,85 @@ const Unsplash = (props: any) => {
                         });
                       }}
                     >
-                      <EdtingImage
-                        height={350}
-                        width={mapped.width / 14}
+                      {/* <AfridiDevEditorUnsplashGridImage
+                        key={nanoid()}
+                        placeholder={mapped.blur_hash}
+                        width={300}
+                        height={300 / (mapped.width / mapped.height)}
                         src={mapped.urls.regular}
-                        placeholder={mapped.blurHash}
-                        style={{
-                          aspectRatio: mapped.width / mapped.height,
+                      /> */}
+                      <MediaQuery
+                        largerThan={599}
+                        styles={{
+                          display: "none",
                         }}
-                      />
+                      >
+                        <AfridiDevEditorUnsplashGridImage
+                          key={nanoid()}
+                          placeholder={mapped.blur_hash}
+                          width={100}
+                          height={100 / (mapped.width / mapped.height)}
+                          src={mapped.urls.regular}
+                        />
+                      </MediaQuery>
+
+                      <MediaQuery
+                        smallerThan={600}
+                        largerThan={1299}
+                        styles={{
+                          display: "none",
+                        }}
+                      >
+                        <AfridiDevEditorUnsplashGridImage
+                          key={nanoid()}
+                          placeholder={mapped.blur_hash}
+                          width={200}
+                          height={200 / (mapped.width / mapped.height)}
+                          src={mapped.urls.regular}
+                        />
+                      </MediaQuery>
+
+                      <MediaQuery
+                        smallerThan={1300}
+                        styles={{
+                          display: "none",
+                        }}
+                      >
+                        <AfridiDevEditorUnsplashGridImage
+                          key={nanoid()}
+                          placeholder={mapped.blur_hash}
+                          width={300}
+                          height={300 / (mapped.width / mapped.height)}
+                          src={mapped.urls.regular}
+                        />
+                      </MediaQuery>
+
+                      <Box
+                        className="hovered-unsplash-meta"
+                        sx={(theme) => ({
+                          display: "none",
+                          bottom: 0,
+                          position: "absolute",
+                          background: theme.fn.rgba(theme.colors.dark[8], 0.5),
+                          height: "100%",
+                          width: "100%",
+                        })}
+                      >
+                        <Anchor
+                          href={mapped.user.links.html}
+                          sx={{
+                            bottom: 15,
+                            position: "absolute",
+                            left: 10,
+                            color: "white",
+                          }}
+                          size="sm"
+                        >
+                          {`${mapped.user.first_name} ${
+                            mapped.user.last_name ? mapped.user.last_name : ""
+                          }`}
+                        </Anchor>
+                      </Box>
                     </Card>
                   );
                 })}

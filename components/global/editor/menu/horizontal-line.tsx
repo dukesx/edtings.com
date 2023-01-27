@@ -9,7 +9,7 @@ const AfridiDevEditorHorizontalLine = ({
   theme,
 }: AfridiDevEditorMenuProps) => {
   return (
-    <Tooltip label="Add a vertical divider">
+    <Tooltip label="Add a horizontal line">
       <ActionIcon
         onClick={() => {
           editor

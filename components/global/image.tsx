@@ -26,11 +26,11 @@ const EdtingImage = ({
       priority={priority == true ? true : false}
       quality={75}
       src={src}
-      loader={({ src, width, quality }) => {
+      loader={({ src, width: width2, quality }) => {
         if (src.includes("unsplash")) {
           return (
-            src.split("&fit=crop")[0] +
-            `&fit=crop${height ? `&h=${height}&` : ``}${
+            src.split("&")[0] +
+            `&fit=crop${height ? `&h=${height}` : ``}${
               width ? `` : ``
             }&q=${quality}${fill == true ? "&max-w=1024&max-h=1024" : ""}${
               avatar == true ? "&ar=1:1" : ""

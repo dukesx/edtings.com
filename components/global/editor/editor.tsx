@@ -93,7 +93,7 @@ import {
   TextHThree,
 } from "phosphor-react";
 import { Fade } from "react-awesome-reveal";
-import AfridiDevEditorUnsplash from "./plugins/unsplash";
+import AfridiDevEditorUnsplash from "./plugins/afridi-dev-editor-unsplash";
 
 /**
  *  @property {String}   value
@@ -550,9 +550,13 @@ export const TextEditor = ({
         >
           <Box
             sx={(theme) => ({
-              marginLeft: "-50px",
+              marginLeft: "-80px",
               [`@media (min-width: 600px) and (max-width: 900px)`]: {
                 marginLeft: -45,
+              },
+
+              [`@media (min-width: 300px) and (max-width: 599px)`]: {
+                marginLeft: -25,
               },
             })}
           >
@@ -565,13 +569,14 @@ export const TextEditor = ({
               <Menu.Target>
                 <ActionIcon
                   radius="xl"
+                  size={42}
                   color={colorScheme == "dark" ? "blue" : "dark"}
                   variant="filled"
                   onClick={() => {
                     setFloating(true);
                   }}
                 >
-                  <Plus />
+                  <Plus size={18} />
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown
@@ -589,7 +594,7 @@ export const TextEditor = ({
                         });
                         editor.commands.enter();
                       }}
-                      size="lg"
+                      size={"lg"}
                       variant="filled"
                       color={"dark"}
                       sx={(theme) => ({
