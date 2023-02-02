@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconBlockquote, IconList, IconQuote } from "@tabler/icons-react";
+import { Quotes } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorBlockquoteMenu = ({
@@ -27,7 +27,7 @@ const AfridiDevEditorBlockquoteMenu = ({
         radius="xl"
         size={"lg"}
       >
-        <IconQuote
+        <Quotes
           color={
             editor.isActive("afridi-dev-editor-blockquote")
               ? theme.white

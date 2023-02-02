@@ -7,7 +7,7 @@ import {
   TextInput,
   Tooltip,
 } from "@mantine/core";
-import { IconCheck, IconLink, IconUnlink } from "@tabler/icons-react";
+import { Link, LinkBreak } from "phosphor-react";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
@@ -38,7 +38,7 @@ const AfridiDevEditorLink = ({
             size={"lg"}
           >
             {editor.isActive("link") ? (
-              <IconUnlink
+              <LinkBreak
                 color={
                   editor.isActive("link")
                     ? theme.white
@@ -49,7 +49,7 @@ const AfridiDevEditorLink = ({
                 size={18}
               />
             ) : (
-              <IconLink
+              <Link
                 color={
                   editor.isActive("link")
                     ? theme.white
@@ -86,7 +86,7 @@ const AfridiDevEditorLink = ({
             variant="light"
             color="blue"
           >
-            <IconCheck size={16} />
+            <Link size={16} />
           </ActionIcon>
         </Group>
       </Menu.Dropdown>

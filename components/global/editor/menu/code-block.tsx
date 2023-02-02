@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconCode, IconCodeCircle2, IconList } from "@tabler/icons-react";
+import { Code, CodeSimple } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorInsertCodeBlock = ({
@@ -28,7 +28,7 @@ const AfridiDevEditorInsertCodeBlock = ({
         radius="xl"
         size={"lg"}
       >
-        <IconCodeCircle2
+        <CodeSimple
           color={
             colorScheme == "dark" ? theme.colors.gray[4] : theme.colors.gray[8]
           }

@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconListNumbers } from "@tabler/icons-react";
+import { ListNumbers } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorOrderedList = ({
@@ -18,7 +18,7 @@ const AfridiDevEditorOrderedList = ({
         radius="xl"
         size={"lg"}
       >
-        <IconListNumbers
+        <ListNumbers
           color={
             editor.isActive("orderedList")
               ? theme.white

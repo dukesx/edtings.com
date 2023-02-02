@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconCode, IconList } from "@tabler/icons-react";
+import { Code } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorCode = ({
@@ -16,7 +16,7 @@ const AfridiDevEditorCode = ({
         radius="xl"
         size={"lg"}
       >
-        <IconCode
+        <Code
           color={
             editor.isActive("code")
               ? theme.white

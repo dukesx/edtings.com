@@ -1,9 +1,6 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import {
-  IconCornerDownRight,
-  IconLetterP,
-  IconRowInsertBottom,
-} from "@tabler/icons-react";
+import { TextT } from "phosphor-react";
+
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorInsertRowBelow = ({
@@ -39,7 +36,7 @@ const AfridiDevEditorInsertRowBelow = ({
         radius="xl"
         size={"lg"}
       >
-        <IconLetterP
+        <TextT
           color={
             editor.isActive("paragraph") &&
             !editor.isActive("bulletList") &&

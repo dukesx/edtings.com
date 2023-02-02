@@ -1,8 +1,8 @@
 import { ActionIcon, Menu, Tooltip } from "@mantine/core";
-import { IconMoodSmile } from "@tabler/icons-react";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import Picker from "@emoji-mart/react";
+import { Smiley } from "phosphor-react";
 
 const AfridiDevEditorEmojiSelector = ({
   editor,
@@ -26,7 +26,7 @@ const AfridiDevEditorEmojiSelector = ({
             size="lg"
             onClick={() => setEmojiMenuOpened(!emojiMenuOpened)}
           >
-            <IconMoodSmile
+            <Smiley
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]

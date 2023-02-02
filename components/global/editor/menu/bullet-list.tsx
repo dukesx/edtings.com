@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconList } from "@tabler/icons-react";
+import { List } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorBulletList = ({
@@ -16,7 +16,7 @@ const AfridiDevEditorBulletList = ({
         radius="xl"
         size={"lg"}
       >
-        <IconList
+        <List
           color={
             editor.isActive("bulletList")
               ? theme.white

@@ -1,7 +1,6 @@
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import { useContext, useState } from "react";
 import { ActionIcon, Menu, ScrollArea, Tooltip } from "@mantine/core";
-import { IconGif } from "@tabler/icons-react";
 import { IGif } from "@giphy/js-types";
 import {
   Grid, // our UI Component to display the results
@@ -12,6 +11,7 @@ import {
 } from "@giphy/react-components";
 import Giphy from "../../../../public/giphy.svg";
 import Image from "next/image";
+import { Gif } from "phosphor-react";
 
 // the search experience consists of the manager and its child components that use SearchContext
 const SearchExperience = (props: any) => (
@@ -80,7 +80,7 @@ const AfridiDevEditorGiphySelector = ({
             size="lg"
             onClick={() => setGiphyOpened(!giphyOpened)}
           >
-            <IconGif
+            <Gif
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]

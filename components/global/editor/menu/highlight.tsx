@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconHighlight } from "@tabler/icons-react";
+import { HighlighterCircle } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHighlight = ({
@@ -18,7 +18,7 @@ const AfridiDevEditorHighlight = ({
         radius="xl"
         size="lg"
       >
-        <IconHighlight
+        <HighlighterCircle
           color={
             editor.isActive("highlight")
               ? theme.colors.gray[8]

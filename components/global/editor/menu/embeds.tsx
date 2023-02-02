@@ -11,12 +11,7 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import {
-  IconCaretLeft,
-  IconCaretRight,
-  IconChevronLeft,
-  IconChevronRight,
-} from "@tabler/icons-react";
+
 import { BracketsAngle, Code } from "phosphor-react";
 import { Fragment, useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";

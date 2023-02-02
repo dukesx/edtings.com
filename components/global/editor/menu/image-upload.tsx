@@ -19,8 +19,8 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
-import { IconPhoto, IconPhotoUp, IconUpload, IconX } from "@tabler/icons-react";
 import { Editor } from "@tiptap/react";
+import { CloudArrowUp, Image, Upload, X } from "phosphor-react";
 import { useState } from "react";
 
 export interface AfridiDevEditorMenuProps {
@@ -57,7 +57,7 @@ const AfridiDevEditorImageUpload = ({
             radius="xl"
             size="lg"
           >
-            <IconPhotoUp
+            <CloudArrowUp
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -191,9 +191,8 @@ const AfridiDevEditorImageUpload = ({
               >
                 <Dropzone.Accept>
                   <ThemeIcon variant="light" size={100}>
-                    <IconUpload
+                    <Upload
                       size={100}
-                      stroke={1.5}
                       color={
                         theme.colors[theme.primaryColor][
                           theme.colorScheme === "dark" ? 4 : 6
@@ -203,9 +202,8 @@ const AfridiDevEditorImageUpload = ({
                   </ThemeIcon>
                 </Dropzone.Accept>
                 <Dropzone.Reject>
-                  <IconX
+                  <X
                     size={50}
-                    stroke={1.5}
                     color={
                       theme.colors.red[theme.colorScheme === "dark" ? 4 : 6]
                     }
@@ -213,7 +211,7 @@ const AfridiDevEditorImageUpload = ({
                 </Dropzone.Reject>
                 <Dropzone.Idle>
                   <ThemeIcon variant="light" color="gray" size={100}>
-                    <IconPhoto size={50} stroke={1.5} />
+                    <Image size={50} />
                   </ThemeIcon>
                 </Dropzone.Idle>
 

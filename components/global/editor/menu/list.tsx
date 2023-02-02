@@ -1,5 +1,5 @@
 import { ActionIcon, Group, Menu, Stack, Text } from "@mantine/core";
-import { IconList, IconListDetails } from "@tabler/icons-react";
+import { ListBullets } from "phosphor-react";
 import AfridiDevEditorBulletList from "./bullet-list";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import AfridiDevEditorOrderedList from "./ordered-list";
@@ -13,7 +13,7 @@ const AfridiDevEditorList = ({
     <Menu withArrow width={220}>
       <Menu.Target>
         <ActionIcon variant="subtle" color="gray" radius="xl" size="lg">
-          <IconListDetails
+          <ListBullets
             color={
               colorScheme == "dark"
                 ? theme.colors.gray[4]

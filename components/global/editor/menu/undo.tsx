@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconArrowBack } from "@tabler/icons-react";
+import { ArrowArcLeft } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorUndo = ({
@@ -17,7 +17,7 @@ const AfridiDevEditorUndo = ({
         size={32}
         onClick={() => editor.chain().undo().run()}
       >
-        <IconArrowBack
+        <ArrowArcLeft
           color={
             colorScheme == "dark" ? theme.colors.gray[4] : theme.colors.gray[8]
           }
