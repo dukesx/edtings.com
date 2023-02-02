@@ -8,7 +8,14 @@ import {
   ColorSchemeProvider,
 } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
-import { DM_Serif_Text, Inter } from "@next/font/google";
+import {
+  DM_Serif_Text,
+  Inter,
+  Libre_Baskerville,
+  Oswald,
+  Playfair_Display,
+  Source_Serif_Pro,
+} from "@next/font/google";
 import "../styles/globals.css";
 import {
   createBrowserSupabaseClient,
@@ -18,6 +25,10 @@ import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { Provider } from "react-wrap-balancer";
 
 export const sans = Inter({
+  subsets: ["latin"],
+});
+
+export const condensed = Oswald({
   subsets: ["latin"],
 });
 

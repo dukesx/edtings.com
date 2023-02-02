@@ -52,13 +52,7 @@ import graphql from "highlight.js/lib/languages/graphql";
 import kotlin from "highlight.js/lib/languages/kotlin";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  IconCheck,
-  IconClipboard,
-  IconClipboardCheck,
-  IconClipboardText,
-  IconCopy,
-} from "@tabler/icons";
+import { Check, Clipboard } from "phosphor-react";
 
 // Then register them with lowlight
 Lowlight.registerLanguage("javascript", javascript);
@@ -210,11 +204,7 @@ const MantineCode = (props: any) => {
                     onClick={copy}
                     size="lg"
                   >
-                    {copied ? (
-                      <IconClipboardCheck size={22} />
-                    ) : (
-                      <IconClipboardText size={22} />
-                    )}
+                    {copied ? <Check size={22} /> : <Clipboard size={22} />}
                   </ActionIcon>
                 </Tooltip>
               )}

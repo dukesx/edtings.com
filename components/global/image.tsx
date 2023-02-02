@@ -30,9 +30,11 @@ const EdtingImage = ({
         if (src.includes("unsplash")) {
           return (
             src.split("&")[0] +
-            `&fit=crop${height ? `&h=${height}` : ``}${
-              width ? `` : ``
-            }&q=${quality}${fill == true ? "&max-w=1024&max-h=1024" : ""}${
+            `&fit=${avatar ? `faces` : `crop`}${
+              height ? (avatar ? `` : `&h=${height}`) : ``
+            }${width ? (avatar ? `&w=${width}` : ``) : ``}&q=${
+              avatar ? 100 : quality
+            }${fill == true ? "&max-w=1024&max-h=1024" : ""}${
               avatar == true ? "&ar=1:1" : ""
             }`
           );

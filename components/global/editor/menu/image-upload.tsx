@@ -19,7 +19,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
-import { IconPhoto, IconPhotoUp, IconUpload, IconX } from "@tabler/icons";
+import { IconPhoto, IconPhotoUp, IconUpload, IconX } from "@tabler/icons-react";
 import { Editor } from "@tiptap/react";
 import { useState } from "react";
 

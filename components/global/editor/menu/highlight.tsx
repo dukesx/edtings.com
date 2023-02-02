@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconHighlight } from "@tabler/icons";
+import { IconHighlight } from "@tabler/icons-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHighlight = ({

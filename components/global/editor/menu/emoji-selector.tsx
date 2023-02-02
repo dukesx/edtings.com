@@ -1,5 +1,5 @@
 import { ActionIcon, Menu, Tooltip } from "@mantine/core";
-import { IconMoodSmile } from "@tabler/icons";
+import { IconMoodSmile } from "@tabler/icons-react";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import Picker from "@emoji-mart/react";

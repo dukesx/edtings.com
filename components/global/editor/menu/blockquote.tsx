@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconBlockquote, IconList, IconQuote } from "@tabler/icons";
+import { IconBlockquote, IconList, IconQuote } from "@tabler/icons-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorBlockquoteMenu = ({

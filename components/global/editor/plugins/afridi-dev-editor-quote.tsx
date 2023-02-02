@@ -7,13 +7,13 @@ import {
   TextInput,
   useMantineTheme,
 } from "@mantine/core";
-import { IconBlockquote, IconQuote } from "@tabler/icons";
 import {
   mergeAttributes,
   Node,
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from "@tiptap/react";
+import { Quotes } from "phosphor-react";
 
 export default Node.create({
   name: "afridi-dev-editor-blockquote",
@@ -69,7 +69,7 @@ const MantineQuote = (props: any) => {
             },
           }}
           icon={
-            <IconQuote
+            <Quotes
               style={{
                 transform: "scale(-1,-1) rotate(2deg)",
               }}

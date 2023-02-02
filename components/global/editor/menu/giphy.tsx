@@ -1,8 +1,7 @@
-import { GiphyFetch } from "@giphy/js-fetch-api";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import { useContext, useState } from "react";
 import { ActionIcon, Menu, ScrollArea, Tooltip } from "@mantine/core";
-import { IconGif } from "@tabler/icons";
+import { IconGif } from "@tabler/icons-react";
 import { IGif } from "@giphy/js-types";
 import {
   Grid, // our UI Component to display the results

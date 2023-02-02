@@ -1,6 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconUnderline } from "@tabler/icons";
-import { TextUnderline } from "phosphor-react";
+import { IconUnderline } from "@tabler/icons-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorUnderline = ({
@@ -16,8 +15,7 @@ const AfridiDevEditorUnderline = ({
       radius="xl"
       size="lg"
     >
-      <TextUnderline
-        weight="bold"
+      <IconUnderline
         color={
           colorScheme == "dark" ? theme.colors.gray[4] : theme.colors.gray[1]
         }

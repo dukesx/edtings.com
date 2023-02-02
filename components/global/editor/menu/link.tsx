@@ -7,14 +7,7 @@ import {
   TextInput,
   Tooltip,
 } from "@mantine/core";
-import {
-  IconCheck,
-  IconCornerDownRight,
-  IconLetterP,
-  IconLink,
-  IconRowInsertBottom,
-  IconUnlink,
-} from "@tabler/icons";
+import { IconCheck, IconLink, IconUnlink } from "@tabler/icons-react";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 

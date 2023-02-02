@@ -9,6 +9,7 @@ export interface GradientGeneratorArgs {
 }
 
 export interface AppWrapperProps {
+  logo?: ReactNode;
   children: ReactNode;
   path: string;
   navbar?: boolean;
@@ -50,7 +51,7 @@ export interface AppNavbarProps {
 export interface AppNavbarLinks {
   title: string;
   href: string;
-  icon: React.ForwardRefExoticComponent<
+  icon?: React.ForwardRefExoticComponent<
     IconProps & React.RefAttributes<SVGSVGElement>
   >;
   color: MantineColor;

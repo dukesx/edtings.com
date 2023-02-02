@@ -15,7 +15,6 @@ import {
   Title,
   useMantineColorScheme,
 } from "@mantine/core";
-import { IconAlertCircle, IconBug, IconError404 } from "@tabler/icons";
 import {
   mergeAttributes,
   Node,

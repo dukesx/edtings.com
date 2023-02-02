@@ -8,7 +8,7 @@ import {
   IconH6,
   IconHeading,
   IconLetterP,
-} from "@tabler/icons";
+} from "@tabler/icons-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHeadersSize = ({

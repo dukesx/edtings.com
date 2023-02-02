@@ -1,5 +1,4 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconSeparator, IconSeparatorHorizontal } from "@tabler/icons";
 import { ArrowsOutLineVertical } from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 

@@ -11,21 +11,13 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-
 import {
-  ArrowDown,
-  BracketsAngle,
-  FacebookLogo,
-  GithubLogo,
-  InstagramLogo,
-  PinterestLogo,
-  RedditLogo,
-  SpotifyLogo,
-  TiktokLogo,
-  TwitchLogo,
-  TwitterLogo,
-  YoutubeLogo,
-} from "phosphor-react";
+  IconCaretLeft,
+  IconCaretRight,
+  IconChevronLeft,
+  IconChevronRight,
+} from "@tabler/icons-react";
+import { BracketsAngle, Code } from "phosphor-react";
 import { Fragment, useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
@@ -148,7 +140,9 @@ const AfridiDevEditorInsertEmbeds = ({
           })}
           radius="xl"
         >
-          <BracketsAngle size={18} />
+          <Group w="full" position="center" noWrap spacing={-40}>
+            <BracketsAngle size={18} />
+          </Group>
         </ActionIcon>
       </Tooltip>
     </div>

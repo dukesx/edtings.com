@@ -40,6 +40,7 @@ import { AppWrapperProps } from "../../types/generics";
 import AppNavbar from "./navbar";
 
 const AppWrapper = ({
+  logo,
   children,
   navbar = true,
   header = true,
@@ -122,70 +123,74 @@ const AppWrapper = ({
                     />
                   </ThemeIcon>
                 </MediaQuery>
-                <Anchor href="/" variant="text" component={Link}>
-                  <Group spacing={3}>
-                    <ThemeIcon
-                      sx={(theme) => ({
-                        [theme.fn.smallerThan("sm")]: {
-                          minWidth: 32,
-                          minHeight: 32,
-                          width: 32,
-                          height: 32,
-                        },
-                      })}
-                      size={"xl"}
-                      radius="sm"
-                    >
-                      <Text
-                        size={"xl"}
+                {logo ? (
+                  logo
+                ) : (
+                  <Anchor href="/" variant="text" component={Link}>
+                    <Group spacing={3}>
+                      <ThemeIcon
                         sx={(theme) => ({
-                          fontFamily: serif.style.fontFamily,
-                          textDecorationColor: theme.colors.blue[6],
                           [theme.fn.smallerThan("sm")]: {
-                            fontSize: theme.fontSizes.xl,
-                            fontWeight: 400,
+                            minWidth: 32,
+                            minHeight: 32,
+                            width: 32,
+                            height: 32,
                           },
                         })}
-                        weight={400}
+                        size={"xl"}
+                        radius="sm"
                       >
-                        E
-                      </Text>
-                      <Box component="span" mt={-10} ml={3}>
-                        <ThemeIcon
+                        <Text
+                          size={"xl"}
                           sx={(theme) => ({
+                            fontFamily: serif.style.fontFamily,
+                            textDecorationColor: theme.colors.blue[6],
                             [theme.fn.smallerThan("sm")]: {
-                              width: 5,
-                              height: 5,
-                              minWidth: 5,
-                              minHeight: 5,
+                              fontSize: theme.fontSizes.xl,
+                              fontWeight: 400,
                             },
                           })}
-                          size={7}
-                          color="blue"
-                          variant="filled"
-                        >
-                          <div />
-                        </ThemeIcon>
-                      </Box>
-                    </ThemeIcon>
-                    <MediaQuery smallerThan="md" styles={{ display: "none" }}>
-                      <Stack ml={6} mt={-4} spacing={0}>
-                        <Text
-                          sx={{
-                            fontFamily: serif.style.fontFamily,
-                          }}
-                          size="xl"
                           weight={400}
                         >
-                          Edtings
+                          E
                         </Text>
-                        <Text mt={-3} size={11} color="dimmed">
-                          The Editor&apos;s Platform
-                        </Text>
-                      </Stack>
-                    </MediaQuery>
-                  </Group>
-                </Anchor>
+                        <Box component="span" mt={-10} ml={3}>
+                          <ThemeIcon
+                            sx={(theme) => ({
+                              [theme.fn.smallerThan("sm")]: {
+                                width: 5,
+                                height: 5,
+                                minWidth: 5,
+                                minHeight: 5,
+                              },
+                            })}
+                            size={7}
+                            color="blue"
+                            variant="filled"
+                          >
+                            <div />
+                          </ThemeIcon>
+                        </Box>
+                      </ThemeIcon>
+                      <MediaQuery smallerThan="md" styles={{ display: "none" }}>
+                        <Stack ml={6} mt={-4} spacing={0}>
+                          <Text
+                            sx={{
+                              fontFamily: serif.style.fontFamily,
+                            }}
+                            size="xl"
+                            weight={400}
+                          >
+                            Edtings
+                          </Text>
+                          <Text mt={-3} size={11} color="dimmed">
+                            The Editor&apos;s Platform
+                          </Text>
+                        </Stack>
+                      </MediaQuery>
+                    </Group>
+                  </Anchor>
+                )}
 
                 <Group>
                   <ActionIcon

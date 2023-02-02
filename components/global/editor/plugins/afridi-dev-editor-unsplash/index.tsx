@@ -24,21 +24,21 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useDebouncedValue, useWindowEvent } from "@mantine/hooks";
-import { IconBlockquote, IconQuote } from "@tabler/icons";
 import {
   mergeAttributes,
   Node,
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from "@tiptap/react";
-import { Placeholder, SmileyXEyes, X } from "phosphor-react";
 import { Fragment, useEffect, useState } from "react";
 import EdtingImage from "../../../image";
-import UnsplashLogo from "../../../../../public/unsplash.svg";
+// import UnsplashLogo from "../../../../../public/unsplash.svg";
 import Image from "next/image";
 import { nanoid } from "nanoid";
 import AfridiEditorUnsplashSingleImage from "./unsplash-single-image";
 import AfridiDevEditorUnsplashGridImage from "./unsplash-grid-image";
+import { Placeholder, X } from "phosphor-react";
+import { Unsplash as UnsplashLogo } from "@icons-pack/react-simple-icons";
 
 export default Node.create({
   name: "afridi-dev-editor-unsplash",
@@ -167,7 +167,14 @@ const Unsplash = (props: any) => {
                         borderRadius: "50%",
                       }}
                     >
-                      <Image
+                      <UnsplashLogo
+                        height={35}
+                        width={35}
+                        className="animate"
+                        color="black"
+                      />
+
+                      {/* <Image
                         className="animate"
                         src={UnsplashLogo}
                         style={{}}
@@ -175,7 +182,7 @@ const Unsplash = (props: any) => {
                         width={50}
                         priority
                         height={50}
-                      />
+                      /> */}
                     </ThemeIcon>
                   </Group>
                   <Title mt="xs" order={5} align="center">

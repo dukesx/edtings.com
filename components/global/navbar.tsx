@@ -128,19 +128,21 @@ const AppNavbar = ({
                       },
                     })}
                     icon={
-                      <ThemeIcon
-                        color={
-                          colorScheme == "dark"
-                            ? mapped.color + ".4"
-                            : mapped.color + ".7"
-                        }
-                        variant="light"
-                        sx={{
-                          backgroundColor: "transparent",
-                        }}
-                      >
-                        <mapped.icon size={25} />
-                      </ThemeIcon>
+                      mapped.icon ? (
+                        <ThemeIcon
+                          color={
+                            colorScheme == "dark"
+                              ? mapped.color + ".4"
+                              : mapped.color + ".7"
+                          }
+                          variant="light"
+                          sx={{
+                            backgroundColor: "transparent",
+                          }}
+                        >
+                          <mapped.icon size={25} />
+                        </ThemeIcon>
+                      ) : null
                     }
                   />
                 );

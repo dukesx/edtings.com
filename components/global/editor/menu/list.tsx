@@ -1,5 +1,5 @@
 import { ActionIcon, Group, Menu, Stack, Text } from "@mantine/core";
-import { IconList, IconListDetails } from "@tabler/icons";
+import { IconList, IconListDetails } from "@tabler/icons-react";
 import AfridiDevEditorBulletList from "./bullet-list";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import AfridiDevEditorOrderedList from "./ordered-list";

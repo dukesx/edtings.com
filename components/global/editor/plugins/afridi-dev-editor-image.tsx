@@ -13,12 +13,7 @@ import {
   TextInput,
   useMantineTheme,
 } from "@mantine/core";
-import {
-  IconMaximize,
-  IconMinimize,
-  IconRectangle,
-  IconSquare,
-} from "@tabler/icons";
+
 import {
   mergeAttributes,
   Node,
@@ -26,6 +21,7 @@ import {
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from "@tiptap/react";
+import { Rectangle, Square } from "phosphor-react";
 import { useState } from "react";
 
 export default Node.create({
@@ -79,7 +75,7 @@ const AfridiDevImage = (props: any) => {
                   size: "landscape",
                 })
               }
-              leftIcon={<IconRectangle size={18} />}
+              leftIcon={<Rectangle size={18} />}
               color={props.node.attrs.size == "landscape" ? "blue" : "cyan"}
             >
               Landscape
@@ -91,7 +87,7 @@ const AfridiDevImage = (props: any) => {
                 });
               }}
               color={props.node.attrs.size == "square" ? "blue" : "cyan"}
-              leftIcon={<IconSquare size={18} />}
+              leftIcon={<Square size={18} />}
             >
               Square
             </Button>

@@ -3,7 +3,7 @@ import {
   IconCornerDownRight,
   IconLetterP,
   IconRowInsertBottom,
-} from "@tabler/icons";
+} from "@tabler/icons-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorInsertRowBelow = ({
