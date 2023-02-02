@@ -11,8 +11,8 @@ import {
   Title,
   useMantineColorScheme,
 } from "@mantine/core";
-import { IconBug } from "@tabler/icons";
 import Image from "next/image";
+import { Bug } from "phosphor-react";
 import { useEffect, useState } from "react";
 
 const EditorRendererEmbeds = ({ src }: any) => {
@@ -97,7 +97,7 @@ const EditorRendererEmbeds = ({ src }: any) => {
           <Center>
             <Stack align="center">
               <ThemeIcon radius="xl" size={100} color="red" variant="light">
-                <IconBug size={40} />
+                <Bug size={40} />
               </ThemeIcon>
               <Text size="sm" weight={600} align="center">
                 {embed && embed.error}

@@ -14,7 +14,6 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
-import { IconAt } from "@tabler/icons";
 import { nanoid } from "nanoid";
 import { useRouter } from "next/router";
 import { useEffect } from "react";

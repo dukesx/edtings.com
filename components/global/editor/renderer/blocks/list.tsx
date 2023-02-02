@@ -5,8 +5,8 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
-import { IconPoint } from "@tabler/icons";
 import { nanoid } from "nanoid";
+import { WifiNone } from "phosphor-react";
 import EditorRendererParagraph from "./paragraph";
 
 const EditorRendererListItem = ({ data, order, type }: any) => {
@@ -27,7 +27,7 @@ const EditorRendererListItem = ({ data, order, type }: any) => {
                   radius="xl"
                   color={colorScheme == "dark" ? "gray" : "dark"}
                 >
-                  <IconPoint color={colorScheme == "dark" ? "gray" : "dark"} />
+                  <WifiNone color={colorScheme == "dark" ? "gray" : "dark"} />
                 </ThemeIcon>
               ) : null
             }

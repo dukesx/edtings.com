@@ -15,9 +15,9 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
-import { IconAt } from "@tabler/icons";
 import { nanoid } from "nanoid";
 import { useRouter } from "next/router";
+import { At } from "phosphor-react";
 import slugify from "slugify";
 import EdtingImage from "../../../image";
 
@@ -43,7 +43,7 @@ const EditorRendererHeading = ({ data, level }: any) => {
               mt="md"
               size="md"
               variant="dot"
-              leftSection={<IconAt size={16} color={theme.colors.blue[6]} />}
+              leftSection={<At size={16} color={theme.colors.blue[6]} />}
               color="blue"
               radius="xl"
               key={nanoid()}
