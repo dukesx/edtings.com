@@ -1,7 +1,7 @@
 //@ts-ignore
 import { useMantineTheme } from "@mantine/core";
 import Image from "next/image";
-import useNextBlurhash from "../../../../../data/use-next-blurhash/src/index";
+import useNextBlurhash from "use-next-blurhash";
 import { AfridiEditorUnsplashSingleImageProps } from "../../../../../types/images/unsplash";
 
 const AfridiEditorUnsplashSingleImage = ({
