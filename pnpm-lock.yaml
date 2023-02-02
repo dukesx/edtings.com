@@ -86,7 +86,7 @@ specifiers:
   tippy.js: ^6.3.7
   typescript: 4.9.4
   url-slug: ^3.0.4
-  use-next-blurhash: ^1.0.5
+  use-next-blurhash: ^1.0.4
   y-prosemirror: ^1.2.0
   y-webrtc: ^10.2.4
   yjs: ^13.5.44

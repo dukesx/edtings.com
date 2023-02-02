@@ -4,7 +4,7 @@ import EdtingImage from "../../../image";
 import Image from "next/image";
 import { AfridiDevEditorUnsplashGridImageProps } from "../../../../../types/images/unsplash";
 import { useMantineTheme } from "@mantine/core";
-import useNextBlurhash from "../../../../../data/use-next-blurhash/src/index";
+import useNextBlurhash from "use-next-blurhash";
 
 const AfridiDevEditorUnsplashGridImage = ({
   width,
@@ -15,6 +15,7 @@ const AfridiDevEditorUnsplashGridImage = ({
   const theme = useMantineTheme();
   const [blurDataUrl] = useNextBlurhash(placeholder ? placeholder : "12345678");
 
+  console.log(blurDataUrl);
   return (
     <Image
       width={width}
