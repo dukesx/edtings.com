@@ -1,14 +1,13 @@
 import { ActionIcon, Group, Menu, Tooltip } from "@mantine/core";
 import {
-  IconH1,
-  IconH2,
-  IconH3,
-  IconH4,
-  IconH5,
-  IconH6,
-  IconHeading,
-  IconLetterP,
-} from "@tabler/icons-react";
+  TextH,
+  TextHFive,
+  TextHFour,
+  TextHOne,
+  TextHSix,
+  TextHThree,
+  TextHTwo,
+} from "phosphor-react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHeadersSize = ({
@@ -26,7 +25,7 @@ const AfridiDevEditorHeadersSize = ({
             radius="xl"
             size="lg"
           >
-            <IconHeading
+            <TextH
               color={
                 editor.isActive("heading")
                   ? theme.white
@@ -44,7 +43,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 1 }).run()}
           >
-            <IconH1
+            <TextHOne
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -57,7 +56,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 2 }).run()}
           >
-            <IconH2
+            <TextHTwo
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -70,7 +69,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 3 }).run()}
           >
-            <IconH3
+            <TextHThree
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -83,7 +82,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 4 }).run()}
           >
-            <IconH4
+            <TextHFour
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -96,7 +95,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 5 }).run()}
           >
-            <IconH5
+            <TextHFive
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
@@ -109,7 +108,7 @@ const AfridiDevEditorHeadersSize = ({
           <Menu.Item
             onClick={() => editor.chain().toggleHeading({ level: 6 }).run()}
           >
-            <IconH6
+            <TextHSix
               color={
                 colorScheme == "dark"
                   ? theme.colors.gray[4]
