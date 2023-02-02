@@ -450,8 +450,27 @@ const SingleArticle = ({ placeholder }: any) => {
           </Center>
         </Group>
       </Box>
-      <Paper p="xl" pt={50}>
-        <Stack px="xl" mx="auto" maw={700}>
+      <Paper
+        sx={(theme) => ({
+          [theme.fn.smallerThan("xs")]: {
+            paddingLeft: 0,
+            paddingRight: 0,
+          },
+        })}
+        p="xl"
+        pt={50}
+      >
+        <Stack
+          px="xl"
+          sx={(theme) => ({
+            [theme.fn.smallerThan("xs")]: {
+              paddingLeft: 0,
+              paddingRight: 0,
+            },
+          })}
+          mx="auto"
+          maw={700}
+        >
           <Stack
             p="xl"
             sx={(theme) => ({
