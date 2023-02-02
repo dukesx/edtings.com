@@ -1,3 +1,4 @@
+//@ts-ignore
 import { useMantineTheme } from "@mantine/core";
 import Image from "next/image";
 import useNextBlurhash from "../../../../../data/use-next-blurhash/src/index";

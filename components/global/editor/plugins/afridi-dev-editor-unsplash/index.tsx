@@ -31,9 +31,6 @@ import {
   ReactNodeViewRenderer,
 } from "@tiptap/react";
 import { Fragment, useEffect, useState } from "react";
-import EdtingImage from "../../../image";
-// import UnsplashLogo from "../../../../../public/unsplash.svg";
-import Image from "next/image";
 import { nanoid } from "nanoid";
 import AfridiEditorUnsplashSingleImage from "./unsplash-single-image";
 import AfridiDevEditorUnsplashGridImage from "./unsplash-grid-image";
