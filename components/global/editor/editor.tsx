@@ -66,6 +66,7 @@ import {
 import { Markdown, Unsplash } from "@icons-pack/react-simple-icons";
 import UnsplashLogo from "../../../public/unsplash.svg";
 import Imager from "next/image";
+import AfridiDevEditorGiphySelector from "./menu/giphy";
 
 /**
  *  @property {String}   value
@@ -329,6 +330,7 @@ export const TextEditor = ({
           data: json,
           words: editor.storage.characterCount.words(),
         });
+        console.log(json);
       }
     },
   });
@@ -697,6 +699,12 @@ export const TextEditor = ({
                   />
 
                   <AfridiDevEditorInsertEmbeds
+                    colorScheme={colorScheme}
+                    editor={editor}
+                    theme={theme}
+                  />
+
+                  <AfridiDevEditorGiphySelector
                     colorScheme={colorScheme}
                     editor={editor}
                     theme={theme}

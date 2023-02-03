@@ -321,7 +321,6 @@ const Unsplash = (props: any) => {
                         },
                       })}
                       onClick={async () => {
-                        console.log(mapped);
                         const fetcher = await fetch(
                           mapped.links.download_location +
                             "&client_id=wJfdCZ1eIo3wcotiSDT0xNInM3mUXZ4yeUOPmwRd3Bg"

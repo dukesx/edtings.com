@@ -1,5 +1,5 @@
-import { Card, Container, Text } from "@mantine/core";
-import { useState } from "react";
+import { Card, Center, Container, Loader, Stack, Text } from "@mantine/core";
+import { Suspense, useState } from "react";
 import TextEditor from "../../components/global/editor/editor";
 import AppWrapper from "../../components/global/wrapper";
 
@@ -16,10 +16,21 @@ const CreateArticle = () => {
       path="create"
     >
       <Container bg="transparent" size={800}>
-        <TextEditor
-          placeholder="Let's Write Something 🤓"
-          setValue={setValue}
-        />
+        <Suspense
+          fallback={
+            <Center h="100%" w="100%">
+              <Stack>
+                <Loader variant="bars" />
+                <Text>Loading Editor</Text>
+              </Stack>
+            </Center>
+          }
+        >
+          <TextEditor
+            placeholder="Let's Write Something 🤓"
+            setValue={setValue}
+          />
+        </Suspense>
       </Container>
     </AppWrapper>
   );

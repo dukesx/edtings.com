@@ -15,7 +15,6 @@ const AfridiDevEditorUnsplashGridImage = ({
   const theme = useMantineTheme();
   const [blurDataUrl] = useNextBlurhash(placeholder ? placeholder : "12345678");
 
-  console.log(blurDataUrl);
   return (
     <Image
       width={width}

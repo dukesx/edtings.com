@@ -64,40 +64,36 @@ const AfridiDevEditorGiphySelector = ({
 }: AfridiDevEditorMenuProps) => {
   const [giphyOpened, setGiphyOpened] = useState(false);
   return (
-    <Menu
-      onClose={() => {
-        setGiphyOpened(false);
-      }}
-      opened={giphyOpened}
-      position="bottom"
-      withArrow
-    >
-      <Menu.Target>
-        <Tooltip label="Insert Gif">
-          <ActionIcon
-            variant="subtle"
-            radius="xl"
-            size="lg"
-            onClick={() => setGiphyOpened(!giphyOpened)}
-          >
-            <Gif
-              color={
-                colorScheme == "dark"
-                  ? theme.colors.gray[4]
-                  : theme.colors.dark[6]
-              }
-            />
-          </ActionIcon>
-        </Tooltip>
-      </Menu.Target>
-      <Menu.Dropdown
-        style={{
-          height: 100,
+    <Tooltip label="Insert a GIF">
+      <ActionIcon
+        onClick={() => {
+          editor.commands.insertContent({
+            type: "afridi-dev-editor-gif",
+          });
+          editor.commands.enter();
         }}
+        size={"lg"}
+        variant="filled"
+        color={"dark"}
+        sx={(theme) => ({
+          backgroundColor:
+            colorScheme == "dark" ? theme.white : theme.colors.dark[8],
+          color: colorScheme == "dark" ? theme.colors.dark[8] : theme.white,
+          [":hover"]: {
+            backgroundColor:
+              colorScheme == "dark" ? theme.white : theme.colors.dark[8],
+          },
+        })}
+        radius="xl"
       >
-        <SearchExperience editor={editor} setGiphyOpened={setGiphyOpened} />
-      </Menu.Dropdown>
-    </Menu>
+        <Gif
+          color={
+            colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.gray[3]
+          }
+          size={colorScheme == "dark" ? 20 : 20}
+        />
+      </ActionIcon>
+    </Tooltip>
   );
 };
 
