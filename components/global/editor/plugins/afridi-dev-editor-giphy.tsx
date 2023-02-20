@@ -1,6 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Gif } from "@giphy/react-components";
-import { Box, Card, Group, useMantineColorScheme } from "@mantine/core";
+import {
+  Box,
+  Card,
+  Group,
+  ScrollArea,
+  Text,
+  useMantineColorScheme,
+} from "@mantine/core";
 import {
   mergeAttributes,
   Node,
@@ -16,6 +23,10 @@ import {
 } from "@giphy/react-components";
 import { useContext, useState } from "react";
 import { IGif } from "@giphy/js-types";
+import GiphyLogo from "../../../../public/giphy.png";
+import Image from "next/image";
+import { ArrowRight } from "phosphor-react";
+import emoji from "react-easy-emoji";
 
 export default Node.create({
   name: "afridi-dev-editor-gif",
@@ -56,23 +67,66 @@ const MantineEmbeds = (props: any) => {
     const { fetchGifs, searchKey } = useContext(SearchContext);
 
     return (
-      <div>
-        <SearchBar />
-        <SuggestionBar />
-        <Grid
-          key={searchKey}
-          columns={600 < 400 ? 2 : 4}
-          width={600}
-          fetchGifs={fetchGifs}
-          noLink
-          onGifClick={(gif, e) => {
-            setGif(gif);
-            props.updateAttributes({
-              gif: gif.id,
-            });
+      <Box
+        sx={{
+          position: "relative",
+        }}
+      >
+        <SearchBar placeholder="Search for a GIF" />
+        <Group
+          spacing={"xs"}
+          mt="sm"
+          sx={{
+            alignItems: "center",
+            alignContent: "center",
+            justifyContent: "center",
+            justifyItems: "center",
           }}
-        />
-      </div>
+          position="center"
+        >
+          <Text size="sm" weight={500}>
+            Powered by
+          </Text>
+          <Box
+            sx={{
+              position: "relative",
+              height: 30,
+              width: 95,
+            }}
+          >
+            <Image
+              src={GiphyLogo}
+              placeholder="blur"
+              alt=""
+              fill
+              style={{
+                margin: "auto",
+              }}
+            />
+          </Box>
+        </Group>
+
+        <ScrollArea
+          mt="xl"
+          sx={{
+            width: "100%",
+          }}
+        >
+          <Grid
+            key={searchKey}
+            columns={600 < 400 ? 2 : 4}
+            width={700}
+            fetchGifs={fetchGifs}
+            noLink
+            onGifClick={(gif, e) => {
+              setGif(gif);
+              props.updateAttributes({
+                gif: gif.id,
+              });
+            }}
+          />
+        </ScrollArea>
+      </Box>
     );
   };
 

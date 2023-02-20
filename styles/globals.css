@@ -39,7 +39,9 @@ p {
   height: 100%;
   outline: unset;
   margin: 1em 0;
-  padding: 3rem;
+  padding-left: 3rem;
+  padding-right: 3em;
+  padding-top: 0px;
   padding-bottom: 10em !important;
 }
 
@@ -48,7 +50,9 @@ p {
     height: 100%;
     outline: unset;
     margin: 1em 0;
-    padding: 3rem;
+    padding-left: 3rem;
+    padding-right: 3em;
+    padding-top: 0px;
   }
 }
 
@@ -77,4 +81,9 @@ p {
 
 .hover-unsplash-card:hover .hovered-unsplash-meta {
   display: block;
+}
+
+.giphy-search-bar > div > svg {
+  height: 45%;
+  width: 45%;
 }

@@ -62,6 +62,8 @@ import {
   Link as IconLink,
   X,
   Plus,
+  TextHOne,
+  TextHThree,
 } from "phosphor-react";
 import { Markdown, Unsplash } from "@icons-pack/react-simple-icons";
 import UnsplashLogo from "../../../public/unsplash.svg";
@@ -330,7 +332,6 @@ export const TextEditor = ({
           data: json,
           words: editor.storage.characterCount.words(),
         });
-        console.log(json);
       }
     },
   });
@@ -483,7 +484,7 @@ export const TextEditor = ({
                       },
                     })}
                   >
-                    <TextH weight="regular" size={20} />
+                    <TextHOne weight="bold" size={20} />
                   </ActionIcon>
 
                   <ActionIcon
@@ -514,7 +515,7 @@ export const TextEditor = ({
                       },
                     })}
                   >
-                    <TextH weight="bold" size={16} />
+                    <TextHThree weight="bold" size={16} />
                   </ActionIcon>
 
                   <Divider
@@ -610,7 +611,7 @@ export const TextEditor = ({
           tippyOptions={{
             arrow: true,
             duration: 100,
-            hideOnClick: true,
+            hideOnClick: false,
             zIndex: 100,
           }}
         >
@@ -721,23 +722,20 @@ export const TextEditor = ({
       <Paper
         //@ts-ignore
         component={isScrollable == true ? ScrollArea : "div"}
-        mih={"100vh"}
+        mih={"calc(100vh - 150px)"}
         style={{
           height: height ?? "100%",
         }}
+        sx={(theme) => ({
+          [theme.fn.smallerThan("lg")]: {
+            minHeight: "calc(100vh - 50px)",
+          },
+        })}
       >
         <EditorContent height={"100%"} editor={editor} />
       </Paper>
 
-      <Group mt="xl">
-        <Group spacing={5}>
-          <Text color="dimmed" size="sm">
-            Supports
-          </Text>
-          <Markdown color={theme.colors.gray[5]} strokeWidth={1.5} />
-        </Group>
-
-        <Divider />
+      <Group pb="xl" mt="xl">
         <Text color="dimmed" size="sm">
           {editor && editor.storage.characterCount.characters()} characters
         </Text>

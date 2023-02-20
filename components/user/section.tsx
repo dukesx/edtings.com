@@ -53,7 +53,7 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
                 avatar
                 height={300}
                 width={300}
-                src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                src="https://unsplash-cache.edtings.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
               />
             </Avatar>
 

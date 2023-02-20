@@ -327,7 +327,10 @@ const Unsplash = (props: any) => {
                         );
                         setImage(mapped);
                         props.updateAttributes({
-                          src: mapped.urls.regular,
+                          src: mapped.urls.regular.replaceAll(
+                            "https://images.unsplash.com",
+                            "https://unsplash-cache.edtings.com"
+                          ),
                           blurHash: mapped.blur_hash,
                           credits: {
                             authorName:
@@ -339,13 +342,6 @@ const Unsplash = (props: any) => {
                         });
                       }}
                     >
-                      {/* <AfridiDevEditorUnsplashGridImage
-                        key={nanoid()}
-                        placeholder={mapped.blur_hash}
-                        width={300}
-                        height={300 / (mapped.width / mapped.height)}
-                        src={mapped.urls.regular}
-                      /> */}
                       <MediaQuery
                         largerThan={599}
                         styles={{

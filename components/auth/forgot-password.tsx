@@ -75,7 +75,7 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
                 <EdtingImage
                   placeholder={placeholder}
                   fill
-                  src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
+                  src="https://unsplash-cache.edtings.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
                 />
                 <Paper
                   radius="xs"

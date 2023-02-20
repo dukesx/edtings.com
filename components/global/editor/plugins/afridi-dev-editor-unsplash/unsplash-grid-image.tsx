@@ -23,7 +23,10 @@ const AfridiDevEditorUnsplashGridImage = ({
       placeholder={"blur"}
       blurDataURL={blurDataUrl}
       quality={75}
-      src={src}
+      src={src.replaceAll(
+        "https://images.unsplash.com",
+        "https://unsplash-cache.edtings.com"
+      )}
       loader={({ src, width: width2, quality }) => {
         return (
           src.split("&")[0] +

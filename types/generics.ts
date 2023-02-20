@@ -1,6 +1,6 @@
 import { MantineColor } from "@mantine/core";
 import { IconProps } from "phosphor-react";
-import { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 
 export interface GradientGeneratorArgs {
   color1: MantineColor;
@@ -9,9 +9,10 @@ export interface GradientGeneratorArgs {
 }
 
 export interface AppWrapperProps {
+  admin?: boolean;
   logo?: ReactNode;
   children: ReactNode;
-  path: string;
+  path?: string;
   navbar?: boolean;
   header?: boolean;
   aside?: boolean;
@@ -23,9 +24,10 @@ export interface AppWrapperProps {
     navbarPosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
   };
   asideProps?: {
-    asideLinks: Array<AppNavbarLinks>;
-    asideTitle: string;
+    asideLinks?: Array<AppNavbarLinks>;
+    asideTitle?: string;
     asidePosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
+    render?: ReactNode;
   };
   headerProps?: {
     headerLinks?: Array<AppNavbarLinks>;
@@ -40,23 +42,38 @@ export interface AppWrapperProps {
     blurIntensity: number;
   };
 }
+
+export interface AdminWrapperProps {
+  path: string;
+  children: any;
+}
 export interface AppNavbarProps {
   navbar?: boolean;
+  admin?: boolean;
   setNavbar?: any;
-  path: string;
+  path?: string;
   links?: Array<AppNavbarLinks>;
   title?: string;
 }
 
+export interface EditorOutput {
+  data?: { type: "doc"; content: [] };
+  words: number;
+}
+
 export interface AppNavbarLinks {
   title: string;
+  count?: number;
   href: string;
   icon?: React.ForwardRefExoticComponent<
     IconProps & React.RefAttributes<SVGSVGElement>
   >;
-  color: MantineColor;
+  color?: MantineColor;
   path: string;
   active?: boolean;
+  type?: "default" | "React Node";
+  render?: ReactNode;
+  subLinks?: Array<AppNavbarLinks>;
 }
 
 export interface EditingImageProps {

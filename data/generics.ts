@@ -8,6 +8,7 @@ import {
   StarHalf,
   Terminal,
 } from "phosphor-react";
+import { AppNavbarLinks } from "../types/generics";
 
 export const HOME_NAV_DATA = [
   {
@@ -61,7 +62,7 @@ export const HOME_NAV_DATA = [
   },
 ];
 
-export const DEFAULT_NAV_DATA = [
+export const DEFAULT_NAV_DATA: Array<AppNavbarLinks> = [
   {
     title: "home",
     href: "/",

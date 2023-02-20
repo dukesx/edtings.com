@@ -3,15 +3,11 @@ import {
   Avatar,
   Badge,
   Box,
-  Card,
   Center,
-  Col,
-  Divider,
   Group,
   List,
   Paper,
   Rating,
-  SimpleGrid,
   Stack,
   Text,
   ThemeIcon,
@@ -19,49 +15,43 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import { Oswald } from "@next/font/google";
-import { format, formatDistance, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import { GetStaticPathsContext } from "next";
+import Link from "next/link";
 import {
+  ArrowRight,
   BookOpen,
   Check,
-  Cloud,
-  Diamond,
-  DotsThree,
-  GenderFemale,
+  Hash,
   Hexagon,
-  MagnifyingGlass,
-  MaskHappy,
-  MaskSad,
-  PictureInPicture,
-  Star,
+  Image,
   StarHalf,
-  Trophy,
+  TextH,
   WifiNone,
   X,
 } from "phosphor-react";
+import { getPlaiceholder } from "plaiceholder";
 import EdtingImage from "../../components/global/image";
 import AppWrapper from "../../components/global/wrapper";
 import { getBase64ImageUrl } from "../../data/blur";
-import { generateGradient, generateGradient2 } from "../../utils/basic";
-import { condensed, serif } from "../_app";
+import { serif, condensed } from "../_app";
 
 const verticalImagePath =
-  "https://images.unsplash.com/photo-1502301197179-65228ab57f78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80";
+  "https://unsplash-cache.edtings.com/photo-1587749090881-1ea18126ab3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80";
 
 const squareImagePath =
-  "https://images.unsplash.com/photo-1587749091230-fb8a034d695c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80";
+  "https://unsplash-cache.edtings.com/photo-1587749091230-fb8a034d695c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80";
 
 const landscapeImagePath =
-  "https://images.unsplash.com/photo-1645005513751-e22717a66ae6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+  "https://unsplash-cache.edtings.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80";
 
 //Feminine
 
 const verticalImage =
-  "https://images.unsplash.com/photo-1581122584612-713f89daa8eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80";
+  "https://unsplash-cache.edtings.com/photo-1581122584612-713f89daa8eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80";
 
 const landscapeImage =
-  "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80";
+  "https://unsplash-cache.edtings.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80";
 
 //
 //
@@ -72,96 +62,65 @@ const SingleArticle = ({ placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <AppWrapper
+      headerProps={{
+        headerPosition: "sticky",
+      }}
       logo={
-        <Group spacing={8}>
-          <Text
-            size="xl"
-            sx={{
-              fontFamily: serif.style.fontFamily,
-              fontSize: 23,
-            }}
-          >
-            Edtings
-          </Text>
+        <Anchor
+          component={Link}
+          style={{
+            textDecoration: "unset",
+          }}
+          href="/"
+        >
+          <Group noWrap spacing={8}>
+            <Text
+              color={colorScheme == "dark" ? "gray" : "dark"}
+              size="xl"
+              sx={(theme) => ({
+                fontFamily: serif.style.fontFamily,
+                fontSize: 23,
+                [theme.fn.smallerThan(650)]: {
+                  fontSize: 22,
+                },
+              })}
+            >
+              Edtings
+            </Text>
 
-          <ThemeIcon
-            mt={4}
-            radius="xl"
-            color={colorScheme == "dark" ? "dark.3" : "dark"}
-            variant="gradient"
-            // gradient={{
-            //   from: "blue",
-            //   to: "teal",
-            // }}
-            // gradient={{
-            //   from: "pink.4",
-            //   to: "grape.6",
-            // }}
+            <ThemeIcon
+              mt={4}
+              radius="xl"
+              color={colorScheme == "dark" ? "dark.3" : "dark"}
+              variant="gradient"
+              gradient={{
+                from: "red.5",
+                to: "pink.5",
+              }}
+              sx={{
+                border: 0,
+              }}
+            >
+              <X size={18} />
+            </ThemeIcon>
 
-            // gradient={{
-            //   from: "yellow.5",
-            //   to: "orange.6",
-            // }}
-            gradient={{
-              from: "red.5",
-              to: "pink.5",
-            }}
-            sx={{
-              // backgroundColor: "transparent",
-              border: 0,
-            }}
-          >
-            <X size={18} />
-          </ThemeIcon>
-
-          {/* <Text
-            transform="uppercase"
-            mt={2}
-            weight={400}
-            // variant="gradient"
-            // gradient={{
-            //   from: "yellow.5",
-            //   to: "orange.6",
-            // }}
-            size="xl"
-            sx={{
-              fontFamily: condensed.style.fontFamily,
-            }}
-          >
-            Lifestyle
-          </Text> */}
-
-          {/* <Text
-            transform="uppercase"
-            mt={2}
-            weight={400}
-            // variant="gradient"
-            // gradient={{
-            //   from: "pink.4",
-            //   to: "grape.6",
-            // }}
-            sx={{
-              fontFamily: condensed.style.fontFamily,
-            }}
-            size="xl"
-          >
-            Women&apos;s Health
-          </Text> */}
-
-          <Text
-            transform="uppercase"
-            mt={4}
-            weight={700}
-            // variant="gradient"
-            // gradient={{
-            //   from: "blue",
-            //   to: "teal",
-            // }}
-            size="lg"
-          >
-            Reviews
-          </Text>
-        </Group>
+            <Text
+              color={colorScheme == "dark" ? "gray" : "dark"}
+              transform="uppercase"
+              mt={4}
+              weight={700}
+              size="lg"
+              sx={(theme) => ({
+                fontFamily: serif.style.fontFamily,
+                [theme.fn.smallerThan(650)]: {
+                  fontSize: 18,
+                },
+              })}
+            >
+              Reviews
+            </Text>
+          </Group>
+        </Anchor>
       }
       padding={false}
       navbarProps={{
@@ -184,6 +143,14 @@ const SingleArticle = ({ placeholder }: any) => {
             href: "#intro",
             path: "intro",
             color: "gray",
+            // icon: ArrowRight,
+          },
+          {
+            title: "To do",
+            href: "#khan",
+            path: "khan",
+            color: "gray",
+            // icon: ArrowRight,
           },
         ],
         navbarTitle: "",
@@ -214,7 +181,7 @@ const SingleArticle = ({ placeholder }: any) => {
               maxWidth: 600,
             },
           })}
-          spacing={30}
+          spacing={20}
           w="100%"
         >
           <Box
@@ -229,7 +196,6 @@ const SingleArticle = ({ placeholder }: any) => {
               },
 
               [theme.fn.smallerThan("xs")]: {
-                maxHeight: 400,
                 borderRadius: 0,
               },
             })}
@@ -238,12 +204,13 @@ const SingleArticle = ({ placeholder }: any) => {
               style={{
                 objectFit: "cover",
                 borderRadius: 0,
-                width: "100%",
+                maxWidth: "100%",
+                maxHeight: 610,
               }}
-              priority
-              src={squareImagePath}
-              width={610}
-              height={610}
+              src={landscapeImagePath}
+              width={710}
+              height={710}
+              placeholder={placeholder}
             />
           </Box>
 
@@ -271,9 +238,18 @@ const SingleArticle = ({ placeholder }: any) => {
               maw={440}
             >
               <Group mt="xs" position="center">
-                <Stack spacing={0} align="center">
+                <Stack spacing={4} align="center">
                   <Text weight={500}> Final Verdict</Text>
-                  <Badge size="lg" color="gray.0">
+                  <Badge
+                    sx={(theme) => ({
+                      backgroundColor:
+                        colorScheme == "dark"
+                          ? theme.colors.dark[7]
+                          : theme.colors.gray[1],
+                    })}
+                    size="lg"
+                    color="gray.0"
+                  >
                     <Rating value={4} count={5} sx={{}} readOnly />
                   </Badge>
                   <Text weight={800}>GREAT</Text>
@@ -286,9 +262,6 @@ const SingleArticle = ({ placeholder }: any) => {
                 weight={800}
                 lineClamp={3}
                 sx={(theme) => ({
-                  //   fontFamily: serif.style.fontFamily,
-                  //   fontWeight: 400,
-                  //   fontSize: 35,
                   [theme.fn.smallerThan("xs")]: {
                     fontSize: theme.fontSizes.xl * 1.1,
                   },
@@ -340,7 +313,7 @@ const SingleArticle = ({ placeholder }: any) => {
                           }}
                           priority
                           src={
-                            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+                            "https://unsplash-cache.edtings.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
                           }
                           width={200}
                           height={200}
@@ -359,7 +332,7 @@ const SingleArticle = ({ placeholder }: any) => {
                           }}
                           priority
                           src={
-                            "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                            "https://unsplash-cache.edtings.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
                           }
                           width={200}
                           height={200}
@@ -378,7 +351,7 @@ const SingleArticle = ({ placeholder }: any) => {
                           }}
                           priority
                           src={
-                            "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                            "https://unsplash-cache.edtings.com/photo-1639149888905-fb39731f2e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
                           }
                           width={200}
                           height={200}
@@ -472,14 +445,19 @@ const SingleArticle = ({ placeholder }: any) => {
           maw={700}
         >
           <Stack
-            p="xl"
+            p={30}
             sx={(theme) => ({
-              border: `1px solid ${
+              boxShadow:
                 colorScheme == "dark"
-                  ? theme.colors.dark[6]
-                  : theme.colors.gray[2]
-              }`,
+                  ? `0 1px 3px ${theme.fn.rgba(
+                      theme.colors.dark[4],
+                      1
+                    )}, 0 1px 2px ${theme.fn.rgba(theme.colors.gray[8], 1)}`
+                  : theme.shadows.xs,
               borderRadius: theme.radius.lg,
+              [theme.fn.smallerThan("xs")]: {
+                boxShadow: "none",
+              },
             })}
             id="score"
           >
@@ -514,7 +492,7 @@ const SingleArticle = ({ placeholder }: any) => {
                 </Text>
               </Group>
             </Group>
-            <Text mx="auto" align="center" maw={500} size="sm">
+            <Text mx="auto" align="justify" maw={500} size="sm">
               Nice device in terms of design (especially the screen to body
               ratio). An eye catcher that can also offer quality. I doubted
               whether the switch of an s9 is really an upgrade and it turned out
@@ -604,46 +582,19 @@ const SingleArticle = ({ placeholder }: any) => {
                 </List>
               </Stack>
             </Group>
-
-            {/* <Stack>
-              <Text weight={700}>Awards</Text>
-              <Group>
-                <Group
-                  p="xs"
-                  px="lg"
-                  position="center"
-                  spacing="xs"
-                  sx={(theme) => ({
-                    position: "relative",
-                    backgroundColor:
-                      colorScheme == "dark"
-                        ? theme.colors.dark[6]
-                        : theme.colors.dark[8],
-                    // boxShadow: theme.shadows.xl,
-                    borderRadius: theme.radius.xl,
-                  })}
-                >
-                  <ThemeIcon
-                    size={20}
-                    bg="transparent"
-                    variant="outline"
-                    sx={(theme) => ({
-                      border: 0,
-                      color: theme.colors.gray[4],
-                    })}
-                  >
-                    <MagnifyingGlass size={100} />
-                  </ThemeIcon>
-
-                  <Text color="white" size="xs" weight={800}>
-                    Most Searched
-                  </Text>
-                </Group>
-              </Group>
-            </Stack> */}
           </Stack>
 
-          <Stack mt="xl" id="intro">
+          <Stack
+            sx={(theme) => ({
+              [theme.fn.smallerThan("xs")]: {
+                padding: theme.spacing.sm,
+              },
+            })}
+            mt="xl"
+            id="intro"
+          >
+            <Title>Introduction</Title>
+
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
               non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
@@ -653,6 +604,37 @@ const SingleArticle = ({ placeholder }: any) => {
               Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
               fermentum mollis.
             </Text>
+
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
+              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
+              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
+              dignissim magna sed justo molestie egestas at eu risus.
+              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
+              fermentum mollis.
+            </Text>
+
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
+              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
+              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
+              dignissim magna sed justo molestie egestas at eu risus.
+              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
+              fermentum mollis.
+            </Text>
+          </Stack>
+          <Stack
+            sx={(theme) => ({
+              [theme.fn.smallerThan("xs")]: {
+                padding: theme.spacing.sm,
+              },
+            })}
+            mt="xl"
+            id="khan"
+          >
+            <Title>To Do</Title>
 
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -693,18 +675,19 @@ const SingleArticle = ({ placeholder }: any) => {
 export default SingleArticle;
 
 export const getStaticProps = async ({}: GetStaticPathsContext) => {
-  const placeholder = await getBase64ImageUrl(squareImagePath);
+  // const placeholder = await getBase64ImageUrl(squareImagePath);
+  const { css, blurhash, base64, img } = await getPlaiceholder(squareImagePath);
 
   return {
     props: {
-      placeholder: placeholder,
+      placeholder: base64,
     },
   };
 };
 
 export const getStaticPaths = () => {
   return {
-    paths: ["/article/123"],
+    paths: ["/review/123"],
     fallback: false,
   };
 };

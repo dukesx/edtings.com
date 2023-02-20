@@ -17,7 +17,7 @@ const ArticleCardWithBGMedium = ({
     <Card
       p={0}
       w={"100%"}
-      maw={380}
+      maw={340}
       radius="md"
       h={400}
       sx={(theme) => ({

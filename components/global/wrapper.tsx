@@ -3,9 +3,11 @@ import {
   Anchor,
   AppShell,
   Aside,
+  Badge,
   Box,
   Burger,
   Button,
+  Card,
   Drawer,
   Footer,
   Group,
@@ -23,18 +25,10 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
+import { nanoid } from "nanoid";
 import Link from "next/link";
-import {
-  Archive,
-  Hexagon,
-  List,
-  MagnifyingGlass,
-  MoonStars,
-  SignIn,
-  Sun,
-  Terminal,
-} from "phosphor-react";
-import { useState } from "react";
+import { MoonStars, SignIn, Sun } from "phosphor-react";
+import { Fragment, useState } from "react";
 import { serif } from "../../pages/_app";
 import { AppWrapperProps } from "../../types/generics";
 import AppNavbar from "./navbar";
@@ -57,6 +51,7 @@ const AppWrapper = ({
     asidePosition: "fixed",
     asideLinks: [],
     asideTitle: "",
+    render: null,
   },
   headerProps = {
     headerPosition: "static",
@@ -70,7 +65,9 @@ const AppWrapper = ({
     blurIntensity: 0,
     opacity: 0,
   },
+  admin,
 }: AppWrapperProps) => {
+  console.log(path);
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -105,6 +102,7 @@ const AppWrapper = ({
               }}
             >
               <Group
+                noWrap
                 h="100%"
                 sx={(theme) => ({
                   alignItems: "center",
@@ -192,7 +190,17 @@ const AppWrapper = ({
                   </Anchor>
                 )}
 
-                <Group>
+                <Group noWrap>
+                  <Group position="right" maw={300}>
+                    {headerProps &&
+                      headerProps.headerLinks &&
+                      headerProps.headerLinks.map((mapped) => {
+                        return (
+                          <Fragment key={nanoid()}>{mapped.render}</Fragment>
+                        );
+                      })}
+                  </Group>
+
                   <ActionIcon
                     radius="xl"
                     size="lg"
@@ -239,7 +247,6 @@ const AppWrapper = ({
           <Navbar
             pt={32}
             pr={32}
-            fixed={true}
             hiddenBreakpoint={navbar == false ? 8000 : "md"}
             hidden={!opened}
             withBorder={true}
@@ -260,12 +267,16 @@ const AppWrapper = ({
             })}
           >
             <Navbar.Section>
-              <AppNavbar links={navbarProps.navbarLinks} path={path} />
+              <AppNavbar
+                admin={admin}
+                links={navbarProps.navbarLinks}
+                path={path}
+              />
             </Navbar.Section>
             <Navbar.Section
               sx={{
                 position: "absolute",
-                bottom: "calc(100% - 580px)",
+                bottom: "calc(100% - 88vh)",
               }}
             >
               <MediaQuery
@@ -303,14 +314,15 @@ const AppWrapper = ({
         aside == true ? (
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
             <Aside
+              height="100%"
               sx={{
-                position: asideProps.asidePosition,
+                position: asideProps.asidePosition ?? "sticky",
               }}
               p="md"
               hiddenBreakpoint="sm"
-              width={{ sm: 200, lg: 300 }}
+              width={{ sm: 300, md: 350, lg: 500 }}
             >
-              <Text>Application sidebar</Text>
+              {asideProps.render ? asideProps.render : null}
             </Aside>
           </MediaQuery>
         ) : undefined
@@ -324,7 +336,7 @@ const AppWrapper = ({
       }
     >
       <MediaQuery
-        smallerThan={500}
+        query="(max-width: 500px) and (min-width: 300px)"
         styles={{
           display: "none",
         }}
@@ -343,6 +355,7 @@ const AppWrapper = ({
               paddingLeft: "50px !important",
             },
           }}
+          size="sm"
         >
           <AppNavbar
             title={navbarProps.navbarTitle}
@@ -367,6 +380,9 @@ const AppWrapper = ({
           position="bottom"
           opened={opened}
           onClose={() => setOpened(false)}
+          // sx={{
+          //   border: "1px solid gray",
+          // }}
           styles={{
             drawer: {
               borderRadius: theme.radius.sm,
@@ -377,19 +393,13 @@ const AppWrapper = ({
           }}
           withCloseButton={false}
         >
-          <ScrollArea
-            sx={{
-              height: 340,
-            }}
-          >
-            <AppNavbar
-              title={navbarProps.navbarTitle}
-              links={navbarProps.navbarLinks}
-              path={path}
-              navbar={opened}
-              setNavbar={setOpened}
-            />
-          </ScrollArea>
+          <AppNavbar
+            title={navbarProps.navbarTitle}
+            links={navbarProps.navbarLinks}
+            path={path}
+            navbar={opened}
+            setNavbar={setOpened}
+          />
         </Drawer>
       </MediaQuery>
       {children}

@@ -79,6 +79,7 @@
     "react-awesome-reveal": "^4.1.0",
     "react-blurhash": "^0.3.0",
     "react-dom": "^18.2.0",
+    "react-easy-emoji": "^1.8.1",
     "react-lazy-load": "^4.0.1",
     "react-lowlight": "^3.0.0",
     "react-scrollspy-navigation": "^1.0.3",
