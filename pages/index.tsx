@@ -1,53 +1,8 @@
-import {
-  ActionIcon,
-  Anchor,
-  Avatar,
-  Box,
-  Button,
-  Card,
-  Center,
-  Divider,
-  Group,
-  Paper,
-  SimpleGrid,
-  Stack,
-  Text,
-  ThemeIcon,
-  Title,
-  Tooltip,
-  useMantineColorScheme,
-} from "@mantine/core";
-import {
-  Bell,
-  BellRinging,
-  BellSimple,
-  BellSimpleRinging,
-  BellSimpleSlash,
-  BellSlash,
-  Cloud,
-  HandPointing,
-  Heartbeat,
-  MaskHappy,
-  PersonSimpleRun,
-  Pill,
-  Plus,
-  Prohibit,
-  Rss,
-  StarHalf,
-  Terminal,
-} from "phosphor-react";
+import { useMantineColorScheme } from "@mantine/core";
 import AppWrapper from "../components/global/wrapper";
-import { generateGradient } from "../utils/basic";
-import { Carousel } from "@mantine/carousel";
-import EdtingImage from "../components/global/image";
-import { format } from "date-fns";
-import Link from "next/link";
-import ArticleCardWithBGSmall from "../components/articles/cards/with-bg-small";
-import ArticleCardWithBGMedium from "../components/articles/cards/with-bg-medium";
 import HomepageCategorySection from "../components/homepage/section";
 import { sampleArticles } from "../data/samples";
-import LazyLoad from "react-lazy-load";
-import { DEFAULT_NAV_DATA, HOME_NAV_DATA } from "../data/generics";
+import { HOME_NAV_DATA } from "../data/generics";
 
 const IndexPage = () => {
   const { colorScheme } = useMantineColorScheme();

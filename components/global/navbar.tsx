@@ -77,7 +77,7 @@ const AppNavbar = ({
           </ActionIcon>
         </Group>
       </MediaQuery>
-      <ScrollArea.Autosize maxHeight={520}>
+      <ScrollArea.Autosize mah={520}>
         <Stack
           h="100%"
           spacing={4}

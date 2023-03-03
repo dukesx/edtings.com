@@ -1,33 +1,20 @@
 import {
-  ActionIcon,
-  Avatar,
-  Box,
-  Button,
-  Center,
   Container,
-  Divider,
-  Group,
   Paper,
   SimpleGrid,
-  Stack,
   Text,
   Title,
-  Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import { Check, HandWaving, Newspaper } from "phosphor-react";
+import { HandWaving, Newspaper } from "phosphor-react";
 import ArticleCardWithBGSmall from "../../components/articles/cards/with-bg-small";
-import EdtingImage from "../../components/global/image";
 import AppWrapper from "../../components/global/wrapper";
 import { generateGradient } from "../../utils/basic";
-import MediumLogo from "../../public/medium.svg";
-import Medium2Logo from "../../public/medium-2.svg";
-import TwitterLogo from "../../public/twitter.svg";
-import YoutubeLogo from "../../public/youtube.svg";
-import Image from "next/image";
 import UserPageSection from "../../components/user/section";
+import { GetServerSidePropsContext } from "next";
+import { getPlaiceholder } from "plaiceholder";
 
-const ABC = () => {
+const ABC = ({ placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <AppWrapper
@@ -70,8 +57,10 @@ const ABC = () => {
         <UserPageSection
           followed={false}
           author={{
-            cover:
-              "https://unsplash-cache.edtings.com/photo-1596536220655-21429cf12ae0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            cover: {
+              src: "https://unsplash-cache.edtings.com/photo-1596536220655-21429cf12ae0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+              placeholder: placeholder,
+            },
             name: "Muhammad Afzaal Afridi",
             status: "administrator",
           }}
@@ -235,3 +224,15 @@ const ABC = () => {
 };
 
 export default ABC;
+
+export const getServerSideProps = async ({}: GetServerSidePropsContext) => {
+  const { base64 } = await getPlaiceholder(
+    "https://unsplash-cache.edtings.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&fit=faces&w=300&q=100&ar=1:1"
+  );
+
+  return {
+    props: {
+      placeholder: base64,
+    },
+  };
+};

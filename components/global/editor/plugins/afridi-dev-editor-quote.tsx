@@ -64,7 +64,7 @@ const MantineQuote = (props: any) => {
               marginLeft: "50px",
               paddingLeft: 0,
             },
-            withIcon: {
+            icon: {
               paddingLeft: 15,
             },
           }}

@@ -13,8 +13,8 @@ import {
   TypographyStylesProvider,
   useMantineColorScheme,
 } from "@mantine/core";
-import { NextLink } from "@mantine/next";
 import { nanoid } from "nanoid";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import EdtingImage from "../../../image";
@@ -49,7 +49,7 @@ const EditorRendererParagraph = ({ data }: any) => {
                       variant="link"
                       weight={600}
                       color={colorScheme == "dark" ? "gray.4" : "dark"}
-                      component={NextLink}
+                      component={Link}
                       href={`/author/${mapped.attrs.id}`}
                       key={nanoid()}
                     >

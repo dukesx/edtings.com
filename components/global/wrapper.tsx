@@ -124,7 +124,14 @@ const AppWrapper = ({
                 {logo ? (
                   logo
                 ) : (
-                  <Anchor href="/" variant="text" component={Link}>
+                  <Anchor
+                    href="/"
+                    variant="text"
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    component={Link}
+                  >
                     <Group spacing={3}>
                       <ThemeIcon
                         sx={(theme) => ({
@@ -173,6 +180,7 @@ const AppWrapper = ({
                       <MediaQuery smallerThan="md" styles={{ display: "none" }}>
                         <Stack ml={6} mt={-4} spacing={0}>
                           <Text
+                            color={colorScheme == "dark" ? "gray.4" : "dark"}
                             sx={{
                               fontFamily: serif.style.fontFamily,
                             }}
@@ -342,14 +350,16 @@ const AppWrapper = ({
         }}
       >
         <Modal
-          overlayBlur={modalProps.blurIntensity}
-          overlayOpacity={modalProps.opacity}
+          overlayProps={{
+            blur: modalProps.blurIntensity,
+            opacity: modalProps.opacity,
+          }}
           centered
           withCloseButton={false}
           opened={opened}
           onClose={() => setOpened(false)}
           styles={{
-            modal: {
+            content: {
               padding: "0 !important",
               paddingBottom: "50px !important",
               paddingLeft: "50px !important",
@@ -374,8 +384,10 @@ const AppWrapper = ({
         }}
       >
         <Drawer
-          overlayBlur={drawerProps.blurIntensity}
-          overlayOpacity={drawerProps.opacity}
+          overlayProps={{
+            blur: drawerProps.blurIntensity,
+            opacity: drawerProps.opacity,
+          }}
           padding={0}
           position="bottom"
           opened={opened}
@@ -384,7 +396,7 @@ const AppWrapper = ({
           //   border: "1px solid gray",
           // }}
           styles={{
-            drawer: {
+            content: {
               borderRadius: theme.radius.sm,
               paddingLeft: "30px !important",
               height: "unset",

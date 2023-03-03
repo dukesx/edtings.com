@@ -13,7 +13,6 @@ import {
 import Image from "next/image";
 import { Check, Rss } from "phosphor-react";
 import { Fragment } from "react";
-import { generateGradient } from "../../utils/basic";
 import EdtingImage from "../global/image";
 import YoutubeLogo from "../../public/youtube.svg";
 import TwitterLogo from "../../public/twitter.svg";
@@ -50,6 +49,7 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
               size={300}
             >
               <EdtingImage
+                placeholder={author.cover.placeholder}
                 avatar
                 height={300}
                 width={300}
@@ -177,6 +177,7 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
           px="xl"
           sx={(theme) => ({
             height: "100%",
+
             [theme.fn.smallerThan(400)]: {
               gap: 30,
             },
@@ -186,6 +187,7 @@ const UserPageSection = ({ stats, followed, author }: UserPageSectionProps) => {
             <Text transform="uppercase" size="md" weight={800}>
               Views
             </Text>
+
             <Text size="md">
               {Intl.NumberFormat("en-US", {
                 notation: "compact",

@@ -5,7 +5,10 @@ export interface UserPageSectionProps {
   author: {
     status: string;
     name: string;
-    cover: string;
+    cover: {
+      placeholder: string;
+      src: string;
+    };
   };
   stats: {
     articles: number;

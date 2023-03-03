@@ -159,7 +159,7 @@ const AdminWrapper = ({ children, path }: AdminWrapperProps) => {
             ],
           },
         ],
-        navbarTitle: "",
+        navbarTitle: "Navigation",
       }}
       path={path}
     >

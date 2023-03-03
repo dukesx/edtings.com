@@ -7,7 +7,7 @@ import {
   ColorScheme,
   ColorSchemeProvider,
 } from "@mantine/core";
-import { NotificationsProvider } from "@mantine/notifications";
+import { Notifications } from "@mantine/notifications";
 import {
   DM_Serif_Text,
   Inter,
@@ -15,7 +15,7 @@ import {
   Oswald,
   Playfair_Display,
   Source_Serif_Pro,
-} from "@next/font/google";
+} from "next/font/google";
 import "../styles/globals.css";
 import {
   createBrowserSupabaseClient,
@@ -93,16 +93,15 @@ export default function App(
           withGlobalStyles
           withNormalizeCSS
         >
-          <NotificationsProvider>
-            <SessionContextProvider
-              supabaseClient={supabaseClient}
-              initialSession={pageProps.initialSession}
-            >
-              <Provider>
-                <Component {...pageProps} />
-              </Provider>
-            </SessionContextProvider>
-          </NotificationsProvider>
+          <SessionContextProvider
+            supabaseClient={supabaseClient}
+            initialSession={pageProps.initialSession}
+          >
+            <Provider>
+              <Component {...pageProps} />
+              <Notifications />
+            </Provider>
+          </SessionContextProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>

@@ -168,7 +168,7 @@ const SingleArticle = ({ placeholder }: any) => {
 
           maxHeight: 1200,
           [`@media (min-width: 300px) and (max-width: 1430px)`]: {
-            paddingBottom: theme.spacing.xl * 2,
+            paddingBottom: `calc(${theme.spacing.xl} * 2)`,
           },
         })}
         mx="auto"
@@ -263,7 +263,7 @@ const SingleArticle = ({ placeholder }: any) => {
                 lineClamp={3}
                 sx={(theme) => ({
                   [theme.fn.smallerThan("xs")]: {
-                    fontSize: theme.fontSizes.xl * 1.1,
+                    fontSize: `calc(${theme.fontSizes.xl} * 1.1)`,
                   },
                 })}
               >

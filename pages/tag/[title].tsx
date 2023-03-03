@@ -1,52 +1,13 @@
 import {
-  ActionIcon,
-  Anchor,
-  Avatar,
-  Box,
-  Button,
-  Card,
-  Center,
-  Divider,
-  Group,
   Paper,
   SimpleGrid,
-  Stack,
   Text,
-  ThemeIcon,
   Title,
-  Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import {
-  Bell,
-  BellRinging,
-  BellSimple,
-  BellSimpleRinging,
-  BellSimpleSlash,
-  BellSlash,
-  Cloud,
-  GlobeSimple,
-  HandPointing,
-  Heartbeat,
-  MaskHappy,
-  PersonSimpleRun,
-  Pill,
-  Plus,
-  Prohibit,
-  Rss,
-  StarHalf,
-  Terminal,
-} from "phosphor-react";
-import { Carousel } from "@mantine/carousel";
-import { format } from "date-fns";
-import Link from "next/link";
 import AppWrapper from "../../components/global/wrapper";
-import { generateGradient } from "../../utils/basic";
-import EdtingImage from "../../components/global/image";
-import ArticleCardWithBGMedium from "../../components/articles/cards/with-bg-medium";
 import ArticleCardWithBGSmall from "../../components/articles/cards/with-bg-small";
 import { useRouter } from "next/router";
-import HomepageCategorySection from "../../components/homepage/section";
 import { sampleArticles } from "../../data/samples";
 import TagPageTrendingSection from "../../components/tag-page/section";
 import { DEFAULT_NAV_DATA } from "../../data/generics";

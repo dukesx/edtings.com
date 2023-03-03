@@ -14,8 +14,8 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
-import { NextLink } from "@mantine/next";
 import { nanoid } from "nanoid";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { At } from "phosphor-react";
 import slugify from "slugify";
@@ -53,7 +53,7 @@ const EditorRendererHeading = ({ data, level }: any) => {
                 variant="link"
                 weight={600}
                 color={colorScheme == "dark" ? "gray.4" : "dark"}
-                component={NextLink}
+                component={Link}
                 href={`/author/${mapped.attrs.id}`}
                 key={nanoid()}
               >
