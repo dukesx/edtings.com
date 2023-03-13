@@ -1,7 +1,9 @@
 import { Text } from "@mantine/core";
 import { useRouter } from "next/router";
 import {
+  ChartBar,
   ChatsCircle,
+  Eye,
   Gear,
   House,
   Newspaper,
@@ -13,6 +15,8 @@ import {
 } from "phosphor-react";
 import { AdminWrapperProps } from "../../types/generics";
 import AppWrapper from "./wrapper";
+import useSWR from "swr";
+import { fetcher } from "../../data/fetch/fetch";
 
 const AdminWrapper = ({ children, path }: AdminWrapperProps) => {
   const router = useRouter();
@@ -30,9 +34,9 @@ const AdminWrapper = ({ children, path }: AdminWrapperProps) => {
             href: "",
             subLinks: [
               {
-                title: "Home",
-                icon: Gear,
-                color: "gray",
+                title: "Overview",
+                icon: ChartBar,
+                color: "orange",
                 path: "admin",
                 href: "/",
               },

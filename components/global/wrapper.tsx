@@ -67,7 +67,6 @@ const AppWrapper = ({
   },
   admin,
 }: AppWrapperProps) => {
-  console.log(path);
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

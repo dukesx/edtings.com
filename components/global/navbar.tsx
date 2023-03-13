@@ -121,10 +121,10 @@ const AppNavbar = ({
                       component={Link}
                       href={mapped.href}
                       active={
-                        mapped.subLinks && mapped.subLinks.length <= 0
-                          ? path?.includes(mapped.path)
-                            ? true
-                            : false
+                        mapped.subLinks && mapped.subLinks.length > 0
+                          ? false
+                          : path?.includes(mapped.path)
+                          ? true
                           : false
                       }
                       label={mapped.title}
@@ -152,9 +152,6 @@ const AppNavbar = ({
                                   : mapped.color + ".7"
                               }
                               variant="light"
-                              sx={{
-                                backgroundColor: "transparent",
-                              }}
                             >
                               <mapped.icon size={25} />
                             </ThemeIcon>
@@ -173,7 +170,9 @@ const AppNavbar = ({
                                 key={nanoid(10)}
                                 active={path == mapped2.path ?? false}
                                 label={mapped2.title}
-                                color={mapped.color}
+                                color={
+                                  mapped2.color ? mapped2.color : mapped.color
+                                }
                                 styles={() => ({
                                   label: {
                                     // textTransform: "capitalize",
@@ -192,8 +191,12 @@ const AppNavbar = ({
                                     <ThemeIcon
                                       color={
                                         colorScheme == "dark"
-                                          ? mapped.color + ".4"
-                                          : mapped.color + ".7"
+                                          ? (mapped2.color
+                                              ? mapped2.color
+                                              : mapped.color) + ".4"
+                                          : (mapped2.color
+                                              ? mapped2.color
+                                              : mapped.color) + ".7"
                                       }
                                       variant="light"
                                       sx={{
