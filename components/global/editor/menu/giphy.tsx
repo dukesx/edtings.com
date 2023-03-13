@@ -11,7 +11,7 @@ import {
 } from "@giphy/react-components";
 import Giphy from "../../../../public/giphy.svg";
 import Image from "next/image";
-import { Gif } from "phosphor-react";
+import { Gif } from "@phosphor-icons/react";
 
 // the search experience consists of the manager and its child components that use SearchContext
 const SearchExperience = (props: any) => (

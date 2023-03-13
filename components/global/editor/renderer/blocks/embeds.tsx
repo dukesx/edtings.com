@@ -12,7 +12,7 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import Image from "next/image";
-import { Bug } from "phosphor-react";
+import { Bug } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 
 const EditorRendererEmbeds = ({ src }: any) => {

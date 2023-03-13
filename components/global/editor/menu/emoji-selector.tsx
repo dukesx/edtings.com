@@ -2,7 +2,7 @@ import { ActionIcon, Menu, Tooltip } from "@mantine/core";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import Picker from "@emoji-mart/react";
-import { Smiley } from "phosphor-react";
+import { Smiley } from "@phosphor-icons/react";
 
 const AfridiDevEditorEmojiSelector = ({
   editor,

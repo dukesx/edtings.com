@@ -7,7 +7,7 @@ import {
   TextHSix,
   TextHThree,
   TextHTwo,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHeadersSize = ({

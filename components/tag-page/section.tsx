@@ -19,7 +19,7 @@ import {
   BellSimpleRinging,
   HandPointing,
   Plus,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { HomepageCategorySectionProps } from "../../types/sections/homepage";
 import { generateGradient } from "../../utils/basic";
 import ArticleCardWithBGMedium from "../articles/cards/with-bg-medium";

@@ -12,7 +12,7 @@ import {
   UserGear,
   UserMinus,
   UserPlus,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { AdminWrapperProps } from "../../types/generics";
 import AppWrapper from "./wrapper";
 import useSWR from "swr";

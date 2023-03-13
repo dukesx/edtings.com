@@ -6,7 +6,7 @@ import {
   Title,
   useMantineColorScheme,
 } from "@mantine/core";
-import { HandWaving, Newspaper } from "phosphor-react";
+import { HandWaving, Newspaper } from "@phosphor-icons/react";
 import ArticleCardWithBGSmall from "../../components/articles/cards/with-bg-small";
 import AppWrapper from "../../components/global/wrapper";
 import { generateGradient } from "../../utils/basic";

@@ -12,7 +12,7 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 
-import { BracketsAngle, Code } from "phosphor-react";
+import { BracketsAngle, Code } from "@phosphor-icons/react";
 import { Fragment, useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 

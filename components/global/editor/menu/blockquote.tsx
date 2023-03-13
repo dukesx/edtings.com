@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { Quotes } from "phosphor-react";
+import { Quotes } from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorBlockquoteMenu = ({

@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { Code, CodeSimple } from "phosphor-react";
+import { Code, CodeSimple } from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorInsertCodeBlock = ({

@@ -34,7 +34,7 @@ import { Fragment, useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import AfridiEditorUnsplashSingleImage from "./unsplash-single-image";
 import AfridiDevEditorUnsplashGridImage from "./unsplash-grid-image";
-import { Placeholder, X } from "phosphor-react";
+import { Placeholder, X } from "@phosphor-icons/react";
 import { Unsplash as UnsplashLogo } from "@icons-pack/react-simple-icons";
 
 export default Node.create({

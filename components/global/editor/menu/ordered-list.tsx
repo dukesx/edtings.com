@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { ListNumbers } from "phosphor-react";
+import { ListNumbers } from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorOrderedList = ({

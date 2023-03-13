@@ -21,7 +21,7 @@ import {
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from "@tiptap/react";
-import { Rectangle, Square } from "phosphor-react";
+import { Rectangle, Square } from "@phosphor-icons/react";
 import { useState } from "react";
 
 export default Node.create({

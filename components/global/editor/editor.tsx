@@ -64,7 +64,7 @@ import {
   Plus,
   TextHOne,
   TextHThree,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { Markdown, Unsplash } from "@icons-pack/react-simple-icons";
 import UnsplashLogo from "../../../public/unsplash.svg";
 import Imager from "next/image";

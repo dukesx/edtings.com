@@ -27,7 +27,7 @@ import {
 } from "@mantine/core";
 import { nanoid } from "nanoid";
 import Link from "next/link";
-import { MoonStars, SignIn, Sun } from "phosphor-react";
+import { MoonStars, SignIn, Sun } from "@phosphor-icons/react";
 import { Fragment, useState } from "react";
 import { serif } from "../../pages/_app";
 import { AppWrapperProps } from "../../types/generics";

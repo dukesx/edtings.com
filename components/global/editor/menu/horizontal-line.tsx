@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { ArrowsOutLineVertical } from "phosphor-react";
+import { ArrowsOutLineVertical } from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
 const AfridiDevEditorHorizontalLine = ({

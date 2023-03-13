@@ -6,7 +6,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
-import { WifiNone } from "phosphor-react";
+import { WifiNone } from "@phosphor-icons/react";
 import EditorRendererParagraph from "./paragraph";
 
 const EditorRendererListItem = ({ data, order, type }: any) => {

@@ -11,7 +11,7 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import Image from "next/image";
-import { Check, Rss } from "phosphor-react";
+import { Check, Rss } from "@phosphor-icons/react";
 import { Fragment } from "react";
 import EdtingImage from "../global/image";
 import YoutubeLogo from "../../public/youtube.svg";

@@ -52,7 +52,7 @@ import graphql from "highlight.js/lib/languages/graphql";
 import kotlin from "highlight.js/lib/languages/kotlin";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, Clipboard } from "phosphor-react";
+import { Check, Clipboard } from "@phosphor-icons/react";
 
 // Then register them with lowlight
 Lowlight.registerLanguage("javascript", javascript);

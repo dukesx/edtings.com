@@ -7,7 +7,7 @@ import {
   TextInput,
   Tooltip,
 } from "@mantine/core";
-import { Link, LinkBreak } from "phosphor-react";
+import { Link, LinkBreak } from "@phosphor-icons/react";
 import { useState } from "react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 

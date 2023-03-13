@@ -13,7 +13,7 @@ import {
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from "@tiptap/react";
-import { Quotes } from "phosphor-react";
+import { Quotes } from "@phosphor-icons/react";
 
 export default Node.create({
   name: "afridi-dev-editor-blockquote",

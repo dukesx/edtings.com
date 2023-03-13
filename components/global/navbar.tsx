@@ -16,7 +16,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useRouter } from "next/router";
-import { ArrowRight, CaretRight, X } from "phosphor-react";
+import { ArrowRight, CaretRight, X } from "@phosphor-icons/react";
 import { createRef, Fragment } from "react";
 import { AppNavbarProps } from "../../types/generics";
 import { nanoid } from "nanoid";

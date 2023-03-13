@@ -20,6 +20,7 @@ specifiers:
   '@mantine/notifications': ^6.0.0
   '@mantine/nprogress': ^6.0.0
   '@mantine/prism': ^6.0.0
+  '@phosphor-icons/react': ^2.0.5
   '@plaiceholder/next': ^2.5.0
   '@supabase/auth-helpers-nextjs': ^0.5.4
   '@supabase/auth-helpers-react': ^0.3.1
@@ -57,7 +58,6 @@ specifiers:
   install: ^0.13.0
   nanoid: ^4.0.0
   next: 13.2.0
-  phosphor-react: ^1.4.1
   plaiceholder: ^2.5.0
   pnpm: ^7.25.1
   react: ^18.2.0
@@ -99,6 +99,7 @@ dependencies:
   '@mantine/notifications': 6.0.0_uziugpv5zwkk3pqsn64qbjkxrm
   '@mantine/nprogress': 6.0.0_uziugpv5zwkk3pqsn64qbjkxrm
   '@mantine/prism': 6.0.0_uziugpv5zwkk3pqsn64qbjkxrm
+  '@phosphor-icons/react': 2.0.5_biqbaboplfbrettd7655fr4n2y
   '@plaiceholder/next': 2.5.0_next@13.2.0+sharp@0.31.3
   '@supabase/auth-helpers-nextjs': 0.5.4_l3gewy5tlkgvrrn24rowenxrli
   '@supabase/auth-helpers-react': 0.3.1_l3gewy5tlkgvrrn24rowenxrli
@@ -134,7 +135,6 @@ dependencies:
   install: 0.13.0
   nanoid: 4.0.0
   next: 13.2.0_pjwopsidmaokadturxaafygjp4
-  phosphor-react: 1.4.1_react@18.2.0
   plaiceholder: 2.5.0_sharp@0.31.3
   pnpm: 7.25.1
   react: 18.2.0
@@ -1149,6 +1149,17 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: false
+
+  /@phosphor-icons/react/2.0.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Ghohi+Dk+Y0RoI1vra3jH2QC3sO6C16a/Km0gfy05ONIsC62Vwn1SK2Qaim77VPyn1FS7qjMxocdi9kx6btvXg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@pkgr/utils/2.3.1:
@@ -5110,15 +5121,6 @@ packages:
 
   /pend/1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
-    dev: false
-
-  /phosphor-react/1.4.1_react@18.2.0:
-    resolution: {integrity: sha512-gO5j7U0xZrdglTAYDYPACU4xDOFBTJmptrrB/GeR+tHhCZF3nUMyGmV/0hnloKjuTrOmpSFlbfOY78H39rgjUQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /picocolors/1.0.0:

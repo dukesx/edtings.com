@@ -1,5 +1,5 @@
 import { ActionIcon, Group, Menu, Stack, Text } from "@mantine/core";
-import { ListBullets } from "phosphor-react";
+import { ListBullets } from "@phosphor-icons/react";
 import AfridiDevEditorBulletList from "./bullet-list";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import AfridiDevEditorOrderedList from "./ordered-list";

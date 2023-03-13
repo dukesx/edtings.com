@@ -29,7 +29,7 @@ import {
   TextH,
   WifiNone,
   X,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { getPlaiceholder } from "plaiceholder";
 import EdtingImage from "../../components/global/image";
 import AppWrapper from "../../components/global/wrapper";

@@ -36,7 +36,7 @@ import {
   SmileySad,
   SmileyWink,
   SmileyXEyes,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { Suspense, useEffect, useState } from "react";
 import { Bounce, Fade } from "react-awesome-reveal";
 import TextEditor from "../../components/global/editor/editor";

@@ -25,7 +25,7 @@ import { useContext, useState } from "react";
 import { IGif } from "@giphy/js-types";
 import GiphyLogo from "../../../../public/giphy.png";
 import Image from "next/image";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight } from "@phosphor-icons/react";
 import emoji from "react-easy-emoji";
 
 export default Node.create({

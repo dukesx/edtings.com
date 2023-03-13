@@ -20,7 +20,7 @@ import {
 } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 import { Editor } from "@tiptap/react";
-import { CloudArrowUp, Image, Upload, X } from "phosphor-react";
+import { CloudArrowUp, Image, Upload, X } from "@phosphor-icons/react";
 import { useState } from "react";
 
 export interface AfridiDevEditorMenuProps {

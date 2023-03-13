@@ -1,5 +1,5 @@
 import { MantineColor } from "@mantine/core";
-import { IconProps } from "phosphor-react";
+import { IconProps } from "@phosphor-icons/react";
 import React, { CSSProperties, ReactNode } from "react";
 
 export interface GradientGeneratorArgs {

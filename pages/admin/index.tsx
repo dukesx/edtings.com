@@ -11,7 +11,7 @@ import {
   UserMinus,
   UserPlus,
   Users,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import AdminWrapper from "../../components/global/admin-wrapper";
 import AppWrapper from "../../components/global/wrapper";
 

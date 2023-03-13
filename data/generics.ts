@@ -7,7 +7,7 @@ import {
   Pill,
   StarHalf,
   Terminal,
-} from "phosphor-react";
+} from "@phosphor-icons/react";
 import { AppNavbarLinks } from "../types/generics";
 
 export const HOME_NAV_DATA = [

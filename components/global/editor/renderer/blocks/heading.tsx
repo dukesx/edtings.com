@@ -17,7 +17,7 @@ import {
 import { nanoid } from "nanoid";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { At } from "phosphor-react";
+import { At } from "@phosphor-icons/react";
 import slugify from "slugify";
 import EdtingImage from "../../../image";
 
