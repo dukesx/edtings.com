@@ -15,8 +15,8 @@ const AfridiDevEditorUnsplashGridImage = ({
   const theme = useMantineTheme();
   const [blurDataUrl] = useNextBlurhash(
     placeholder ? placeholder : "12345678",
-    15,
-    15
+    10,
+    10
   );
 
   return (

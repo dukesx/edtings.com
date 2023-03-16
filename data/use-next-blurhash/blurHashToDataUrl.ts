@@ -1,4 +1,3 @@
-import { decode } from "blurhash";
 import { decodeBlurHash } from "fast-blurhash";
 
 export default function blurHashToDataURL(
