@@ -44,7 +44,6 @@ specifiers:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
-  blurhash: ^2.0.4
   cookies-next: ^2.1.1
   date-fns: ^2.29.3
   dayjs: ^1.11.7
@@ -77,7 +76,6 @@ specifiers:
   tippy.js: ^6.3.7
   typescript: 4.9.4
   url-slug: ^3.0.4
-  use-next-blurhash: ^1.0.5
   y-prosemirror: ^1.2.0
   y-webrtc: ^10.2.4
   yjs: ^13.5.44
@@ -122,7 +120,6 @@ dependencies:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
-  blurhash: 2.0.4
   cookies-next: 2.1.1
   date-fns: 2.29.3
   dayjs: 1.11.7
@@ -155,7 +152,6 @@ dependencies:
   tippy.js: 6.3.7
   typescript: 4.9.4
   url-slug: 3.0.4
-  use-next-blurhash: 1.0.5_react@18.2.0
   y-prosemirror: 1.2.0_m4xiqt5tbitix4giycfv7gkd44
   y-webrtc: 10.2.4
   yjs: 13.5.44
@@ -6655,16 +6651,6 @@ packages:
       '@types/react': 18.0.26
       react: 18.2.0
       use-isomorphic-layout-effect: 1.1.2_kzbn2opkn2327fwg5yzwzya5o4
-    dev: false
-
-  /use-next-blurhash/1.0.5_react@18.2.0:
-    resolution: {integrity: sha512-PMu7054Ic6zDKjjKT2PCsfJrMYmdcrfj6miUZzkfes+fxQ9YlwM44qmtbedQpRAncuzQJEW3fVK9jeNqUFgzvg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      blurhash: 1.1.5
-      react: 18.2.0
     dev: false
 
   /use-sidecar/1.1.2_kzbn2opkn2327fwg5yzwzya5o4:
