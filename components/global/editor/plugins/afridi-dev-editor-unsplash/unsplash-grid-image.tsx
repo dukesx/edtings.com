@@ -13,7 +13,11 @@ const AfridiDevEditorUnsplashGridImage = ({
   placeholder,
 }: AfridiDevEditorUnsplashGridImageProps) => {
   const theme = useMantineTheme();
-  const [blurDataUrl] = useNextBlurhash(placeholder ? placeholder : "12345678");
+  const [blurDataUrl] = useNextBlurhash(
+    placeholder ? placeholder : "12345678",
+    15,
+    15
+  );
 
   return (
     <Image

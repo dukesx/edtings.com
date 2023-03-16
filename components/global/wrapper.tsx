@@ -198,15 +198,17 @@ const AppWrapper = ({
                 )}
 
                 <Group noWrap>
-                  <Group position="right" maw={300}>
-                    {headerProps &&
-                      headerProps.headerLinks &&
-                      headerProps.headerLinks.map((mapped) => {
-                        return (
-                          <Fragment key={nanoid()}>{mapped.render}</Fragment>
-                        );
-                      })}
-                  </Group>
+                  {headerProps && headerProps.headerLinks && (
+                    <Group position="right" maw={300}>
+                      {headerProps &&
+                        headerProps.headerLinks &&
+                        headerProps.headerLinks.map((mapped) => {
+                          return (
+                            <Fragment key={nanoid()}>{mapped.render}</Fragment>
+                          );
+                        })}
+                    </Group>
+                  )}
 
                   <ActionIcon
                     radius="xl"

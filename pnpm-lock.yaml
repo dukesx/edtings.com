@@ -52,6 +52,7 @@ specifiers:
   emoji-mart: ^5.5.1
   eslint: 8.31.0
   eslint-config-next: 13.1.1
+  fast-blurhash: ^1.1.2
   highlight.js: ^11.7.0
   imagemin: ^8.0.1
   imagemin-jpegtran: ^7.0.0
@@ -129,6 +130,7 @@ dependencies:
   emoji-mart: 5.5.1
   eslint: 8.31.0
   eslint-config-next: 13.1.1_iukboom6ndih5an6iafl45j2fe
+  fast-blurhash: 1.1.2
   highlight.js: 11.7.0
   imagemin: 8.0.1
   imagemin-jpegtran: 7.0.0
@@ -3416,6 +3418,10 @@ packages:
 
   /extend/3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
+    dev: false
+
+  /fast-blurhash/1.1.2:
+    resolution: {integrity: sha512-lJVOgYSlahqkRhrKumNx/SGB2F/qS0D1z7xjGYjb5EZJRtlzySGMniZjkQ9h9Rv8sPmM/V9orEgRiMwazDNH6A==}
     dev: false
 
   /fast-deep-equal/3.1.3:

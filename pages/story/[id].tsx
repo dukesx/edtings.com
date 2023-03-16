@@ -95,6 +95,11 @@ const SingleArticle = ({ placeholder }: any) => {
 
           <Divider h={40} mt={10} orientation="vertical" />
           <Anchor
+            maw={{
+              xs: 250,
+              sm: 300,
+              base: 200,
+            }}
             lineClamp={1}
             mt={5}
             py={6}
@@ -121,7 +126,7 @@ const SingleArticle = ({ placeholder }: any) => {
                   size="sm"
                   sx={(theme) => ({
                     // fontFamily: serif.style.fontFamily,
-                    [theme.fn.smallerThan(650)]: {
+                    [theme.fn.smallerThan(800)]: {
                       fontSize: 11,
                     },
 
@@ -139,10 +144,16 @@ const SingleArticle = ({ placeholder }: any) => {
                       ml={6}
                       size="sm"
                       pos="relative"
-                      sx={{
+                      sx={(theme) => ({
                         border: 0,
                         padding: 0,
-                      }}
+                        [theme.fn.smallerThan(800)]: {
+                          height: 16,
+                          width: 16,
+                          minHeight: 16,
+                          minWidth: 16,
+                        },
+                      })}
                       color="blue"
                       variant="outline"
                     >
@@ -150,11 +161,17 @@ const SingleArticle = ({ placeholder }: any) => {
                       <ThemeIcon
                         size="sm"
                         pos="absolute"
-                        sx={{
+                        sx={(theme) => ({
                           border: 0,
                           padding: 0,
                           background: "transparent",
-                        }}
+                          [theme.fn.smallerThan(800)]: {
+                            height: 8,
+                            width: 8,
+                            minHeight: 8,
+                            minWidth: 8,
+                          },
+                        })}
                         variant="filled"
                       >
                         <Check weight="bold" size={10} />
@@ -167,10 +184,10 @@ const SingleArticle = ({ placeholder }: any) => {
                         ml={3}
                         size="lg"
                         pos="relative"
-                        sx={{
+                        sx={(theme) => ({
                           border: 0,
                           padding: 0,
-                        }}
+                        })}
                         color="blue"
                         variant="outline"
                         mb={5}

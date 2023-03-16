@@ -121,6 +121,7 @@ const Unsplash = (props: any) => {
       setImages([]);
     }
   }, [debounced]);
+
   return (
     <NodeViewWrapper>
       <Stack mih={400} mx="auto" my="xl">
@@ -154,7 +155,7 @@ const Unsplash = (props: any) => {
           {loading ? (
             <Card w="100%">
               <Center w="100%" h="100%">
-                <Stack align="center">
+                <Stack align="center" spacing={0}>
                   <Group position="center">
                     <ThemeIcon
                       size={70}
@@ -170,16 +171,6 @@ const Unsplash = (props: any) => {
                         className="animate"
                         color="black"
                       />
-
-                      {/* <Image
-                        className="animate"
-                        src={UnsplashLogo}
-                        style={{}}
-                        alt=""
-                        width={50}
-                        priority
-                        height={50}
-                      /> */}
                     </ThemeIcon>
                   </Group>
                   <Title mt="xs" order={5} align="center">

@@ -1,4 +1,5 @@
 import { decode } from "blurhash";
+import { decodeBlurHash } from "fast-blurhash";
 
 export default function blurHashToDataURL(
   hash: string,
@@ -6,7 +7,7 @@ export default function blurHashToDataURL(
   height: number,
   punch?: number
 ): string {
-  const pixels = decode(hash, width, height, punch);
+  const pixels = decodeBlurHash(hash, width, height, punch);
   const dataURL = parsePixels(pixels, width, height);
   return dataURL;
 }
