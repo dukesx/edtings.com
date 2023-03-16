@@ -17,8 +17,8 @@ const AfridiEditorUnsplashSingleImage = ({
   const theme = useMantineTheme();
   const [blurDataUrl] = useNextBlurhash(
     placeholder ? placeholder : "12345678",
-    20,
-    20
+    15,
+    15
   );
   return (
     <Image
