@@ -23,9 +23,11 @@ import Image from "next/image";
 import FacebookLogo from "../../public/facebook.svg";
 import NotionLogo from "../../public/notion.svg";
 import AppleLogo from "../../public/apple-logo.svg";
+import { useSessionContext } from "@supabase/auth-helpers-react";
 
 const SignInComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
+  const { session, supabaseClient } = useSessionContext();
   return (
     <Fade
       duration={2500}

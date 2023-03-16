@@ -76,7 +76,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                 <EdtingImage
                   placeholder={placeholder}
                   fill
-                  src="https://unsplash-cache.edtings.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80"
+                  src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                 />
                 <Paper
                   radius="xs"
@@ -98,9 +98,9 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                         size="xs"
                         ml={1}
                         mr={4}
-                        href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        href="https://unsplash.com/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                       >
-                        Martin Adams
+                        Austin Distel
                       </Anchor>
                       on
                       <Anchor
@@ -109,7 +109,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                         size="xs"
                         mr={4}
                         ml={4}
-                        href="https://unsplash.com/photos/n0kwms_G_cw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        href="https://unsplash.com/photos/VwsuhJ9uee4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                       >
                         Unsplash
                       </Anchor>

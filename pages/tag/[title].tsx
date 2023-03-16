@@ -17,8 +17,6 @@ const IndexPage = () => {
   const router = useRouter();
   const { title }: any = router.query;
 
-  console.log(title);
-
   return (
     <AppWrapper
       path={title}

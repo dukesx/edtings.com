@@ -4,7 +4,9 @@ import {
   Badge,
   Box,
   Center,
+  Divider,
   Group,
+  HoverCard,
   List,
   Paper,
   Rating,
@@ -20,11 +22,13 @@ import { GetStaticPathsContext } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  At,
   BookOpen,
   Check,
   Hash,
   Hexagon,
   Image,
+  Seal,
   StarHalf,
   TextH,
   WifiNone,
@@ -58,7 +62,7 @@ const landscapeImage =
 //
 //
 
-const SingleReview = ({ placeholder }: any) => {
+const SingleArticle = ({ placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <AppWrapper
@@ -66,61 +70,152 @@ const SingleReview = ({ placeholder }: any) => {
         headerPosition: "sticky",
       }}
       logo={
-        <Anchor
-          component={Link}
-          style={{
-            textDecoration: "unset",
-          }}
-          href="/"
-        >
-          <Group noWrap spacing={8}>
+        <Group noWrap spacing={4}>
+          <Anchor
+            pr={4}
+            style={{
+              textDecoration: "none",
+            }}
+            href="/"
+          >
             <Text
-              color={colorScheme == "dark" ? "gray" : "dark"}
+              color={colorScheme == "dark" ? "gray.5" : "dark"}
               size="xl"
               sx={(theme) => ({
                 fontFamily: serif.style.fontFamily,
                 fontSize: 23,
-                [theme.fn.smallerThan(650)]: {
-                  fontSize: 22,
+                [theme.fn.smallerThan(620)]: {
+                  fontSize: 18,
                 },
               })}
             >
               Edtings
             </Text>
+          </Anchor>
 
-            <ThemeIcon
-              mt={4}
-              radius="xl"
-              color={colorScheme == "dark" ? "dark.3" : "dark"}
-              variant="gradient"
-              gradient={{
-                from: "red.5",
-                to: "pink.5",
-              }}
-              sx={{
-                border: 0,
-              }}
-            >
-              <X size={18} />
-            </ThemeIcon>
+          <Divider h={40} mt={10} orientation="vertical" />
+          <Anchor
+            lineClamp={1}
+            mt={5}
+            py={6}
+            px={6}
+            sx={(theme) => ({
+              [":hover"]: {
+                backgroundColor:
+                  colorScheme == "dark"
+                    ? theme.colors.dark[6]
+                    : theme.colors.gray[0],
+              },
+            })}
+            style={{
+              textDecoration: "none",
+            }}
+            href="/ambrose"
+          >
+            <Stack spacing={0}>
+              <Group noWrap spacing={0}>
+                <Text
+                  color={colorScheme == "dark" ? "gray.5" : "dark"}
+                  transform="uppercase"
+                  weight={800}
+                  size="sm"
+                  sx={(theme) => ({
+                    // fontFamily: serif.style.fontFamily,
+                    [theme.fn.smallerThan(650)]: {
+                      fontSize: 11,
+                    },
 
-            <Text
-              color={colorScheme == "dark" ? "gray" : "dark"}
-              transform="uppercase"
-              mt={4}
-              weight={700}
-              size="lg"
-              sx={(theme) => ({
-                fontFamily: serif.style.fontFamily,
-                [theme.fn.smallerThan(650)]: {
-                  fontSize: 18,
-                },
-              })}
-            >
-              Reviews
-            </Text>
-          </Group>
-        </Anchor>
+                    [theme.fn.smallerThan(400)]: {
+                      fontSize: 10,
+                    },
+                  })}
+                  lineClamp={1}
+                >
+                  Muhammad Afzaal Afridi
+                </Text>
+                <HoverCard>
+                  <HoverCard.Target>
+                    <ThemeIcon
+                      ml={6}
+                      size="sm"
+                      pos="relative"
+                      sx={{
+                        border: 0,
+                        padding: 0,
+                      }}
+                      color="blue"
+                      variant="outline"
+                    >
+                      <Seal weight="fill" size={27} />
+                      <ThemeIcon
+                        size="sm"
+                        pos="absolute"
+                        sx={{
+                          border: 0,
+                          padding: 0,
+                          background: "transparent",
+                        }}
+                        variant="filled"
+                      >
+                        <Check weight="bold" size={10} />
+                      </ThemeIcon>
+                    </ThemeIcon>
+                  </HoverCard.Target>
+                  <HoverCard.Dropdown>
+                    <Stack spacing={0} align="center">
+                      <ThemeIcon
+                        ml={3}
+                        size="lg"
+                        pos="relative"
+                        sx={{
+                          border: 0,
+                          padding: 0,
+                        }}
+                        color="blue"
+                        variant="outline"
+                        mb={5}
+                      >
+                        <Seal weight="fill" size={60} />
+                        <ThemeIcon
+                          size="sm"
+                          pos="absolute"
+                          sx={{
+                            border: 0,
+                            padding: 0,
+                            background: "transparent",
+                          }}
+                          variant="filled"
+                        >
+                          <Check weight="bold" size={14} />
+                        </ThemeIcon>
+                      </ThemeIcon>
+                      <Text
+                        color={colorScheme == "dark" ? "gray.2" : "dark"}
+                        mt={2}
+                        mb={5}
+                        weight={600}
+                        size="xs"
+                      >
+                        Verified Creator
+                      </Text>
+                      <Anchor color="gray" size={10}>
+                        Click to Learn more
+                      </Anchor>
+                    </Stack>
+                  </HoverCard.Dropdown>
+                </HoverCard>
+              </Group>
+              <Text
+                lineClamp={1}
+                mt={-3}
+                color={colorScheme == "dark" ? "gray.5" : "dark"}
+                size={11}
+              >
+                @sean-ambrose-sweet
+              </Text>
+            </Stack>
+          </Anchor>
+        </Group>
       }
       padding={false}
       navbarProps={{
@@ -237,24 +332,6 @@ const SingleReview = ({ placeholder }: any) => {
               })}
               maw={440}
             >
-              <Group mt="xs" position="center">
-                <Stack spacing={4} align="center">
-                  <Text weight={500}> Final Verdict</Text>
-                  <Badge
-                    sx={(theme) => ({
-                      backgroundColor:
-                        colorScheme == "dark"
-                          ? theme.colors.dark[7]
-                          : theme.colors.gray[1],
-                    })}
-                    size="lg"
-                    color="gray.0"
-                  >
-                    <Rating value={4} count={5} sx={{}} readOnly />
-                  </Badge>
-                  <Text weight={800}>GREAT</Text>
-                </Stack>
-              </Group>
               <Text
                 transform="capitalize"
                 align="center"
@@ -369,13 +446,7 @@ const SingleReview = ({ placeholder }: any) => {
                     >
                       Muhammad Afzaal Afridi
                     </Anchor>
-                    <Badge
-                      variant="gradient"
-                      gradient={{
-                        from: colorScheme == "dark" ? "red.6" : "red.3",
-                        to: colorScheme == "dark" ? "pink.6" : "pink.3",
-                      }}
-                    >
+                    <Badge variant="filled" color="blue">
                       +2 more
                     </Badge>
                   </Group>
@@ -444,146 +515,6 @@ const SingleReview = ({ placeholder }: any) => {
           mx="auto"
           maw={700}
         >
-          <Stack
-            p={30}
-            sx={(theme) => ({
-              boxShadow:
-                colorScheme == "dark"
-                  ? `0 1px 3px ${theme.fn.rgba(
-                      theme.colors.dark[4],
-                      1
-                    )}, 0 1px 2px ${theme.fn.rgba(theme.colors.gray[8], 1)}`
-                  : theme.shadows.xs,
-              borderRadius: theme.radius.lg,
-              [theme.fn.smallerThan("xs")]: {
-                boxShadow: "none",
-              },
-            })}
-            id="score"
-          >
-            <Group px={0} position="apart">
-              <Text size="xl" weight={800}>
-                GREAT
-              </Text>
-
-              <Group pos="relative">
-                <ThemeIcon
-                  radius="xl"
-                  sx={{
-                    borderRadius: "100%",
-                  }}
-                  variant="gradient"
-                  gradient={{ from: "red.4", to: "pink.4", deg: 35 }}
-                  size={80}
-                >
-                  <Hexagon weight="thin" size={70} />
-                </ThemeIcon>
-                <Text
-                  mx="xl"
-                  align="center"
-                  weight={800}
-                  color="white"
-                  sx={{
-                    position: "absolute",
-                    transform: "translate(30%)",
-                  }}
-                >
-                  80
-                </Text>
-              </Group>
-            </Group>
-            <Text mx="auto" align="justify" maw={500} size="sm">
-              Nice device in terms of design (especially the screen to body
-              ratio). An eye catcher that can also offer quality. I doubted
-              whether the switch of an s9 is really an upgrade and it turned out
-              to be.
-            </Text>
-            <Group
-              sx={(theme) => ({
-                alignItems: "center",
-                alignContent: "center",
-              })}
-              spacing="xl"
-              my="xl"
-              mt="xl"
-              position="apart"
-            >
-              <Stack mb="auto" maw={"50%"}>
-                <Text weight={800}>FOR</Text>
-                <List
-                  size="sm"
-                  icon={
-                    <ThemeIcon
-                      sx={{
-                        border: 0,
-                      }}
-                      color="teal"
-                      variant="outline"
-                      bg="transparent"
-                    >
-                      <Check size={17} />
-                    </ThemeIcon>
-                  }
-                >
-                  <List.Item>
-                    <Text component="span" weight={700}>
-                      AMOLED
-                    </Text>{" "}
-                    Screen
-                  </List.Item>
-                  <List.Item>Gorilla Glass Victus</List.Item>
-                </List>
-              </Stack>
-              <Stack mb="auto">
-                <Text weight={800}>AGAINST</Text>
-                <List
-                  size="sm"
-                  icon={
-                    <ThemeIcon
-                      sx={{
-                        border: 0,
-                      }}
-                      color="red"
-                      variant="outline"
-                      bg="transparent"
-                    >
-                      <X size={17} />
-                    </ThemeIcon>
-                  }
-                >
-                  <List.Item
-                    sx={{
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    Battery life
-                  </List.Item>
-                  <List.Item
-                    sx={{
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    Price tag
-                  </List.Item>
-                  <List.Item
-                    sx={{
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    One UI is bad
-                  </List.Item>
-                  <List.Item
-                    sx={{
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    Ships with Android 10 instead of 11
-                  </List.Item>
-                </List>
-              </Stack>
-            </Group>
-          </Stack>
-
           <Stack
             sx={(theme) => ({
               [theme.fn.smallerThan("xs")]: {
@@ -672,11 +603,12 @@ const SingleReview = ({ placeholder }: any) => {
   );
 };
 
-export default SingleReview;
+export default SingleArticle;
 
 export const getStaticProps = async ({}: GetStaticPathsContext) => {
-  // const placeholder = await getBase64ImageUrl(squareImagePath);
-  const { css, blurhash, base64, img } = await getPlaiceholder(squareImagePath);
+  const { base64 } = await getPlaiceholder(
+    "https://unsplash-cache.edtings.com/photo-1587749091230-fb8a034d695c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+  );
 
   return {
     props: {
@@ -687,7 +619,7 @@ export const getStaticProps = async ({}: GetStaticPathsContext) => {
 
 export const getStaticPaths = () => {
   return {
-    paths: ["/review/123"],
+    paths: ["/story/123"],
     fallback: false,
   };
 };

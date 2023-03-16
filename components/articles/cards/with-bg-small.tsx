@@ -44,7 +44,7 @@ const ArticleCardWithBGSmall = ({
       >
         <Stack align="center">
           <Text size="md" weight={600} color="white">
-            {format(date, "Do MMMM yyyy")}
+            {format(date, "do MMMM yyyy")}
           </Text>
           <Box
             w="100%"

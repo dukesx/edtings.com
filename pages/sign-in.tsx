@@ -45,8 +45,8 @@ const Signin = ({ first, second, third }: any) => {
                 }
               : tab == "register"
               ? {
-                  color1: "grape",
-                  color2: "pink",
+                  color1: "red",
+                  color2: "cyan",
                   opacity: 0.4,
                 }
               : {
@@ -85,7 +85,7 @@ export const getStaticProps = async () => {
   );
 
   const { base64: third } = await getPlaiceholder(
-    "https://unsplash-cache.edtings.com/photo-1529412828225-7f808a92c04a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=75&max-w=600&max-h=600"
+    "https://unsplash-cache.edtings.com/photo-1554774853-aae0a22c8aa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=6000&q=80"
   );
 
   return {

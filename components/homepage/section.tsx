@@ -87,7 +87,7 @@ const HomepageCategorySection = ({
                         size="lg"
                         radius="xl"
                       >
-                        <Plus size={18} weight="duotone" />
+                        <Plus size={18} weight="regular" />
                       </ThemeIcon>
                       <Stack spacing={0}>
                         <Text weight={600} size={13}>

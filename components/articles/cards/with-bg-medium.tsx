@@ -49,8 +49,8 @@ const ArticleCardWithBGMedium = ({
         }}
       >
         <Stack align="center">
-          <Text size="md" weight={600} color="white">
-            {format(date, "Do MMMM yyyy")}
+          <Text size="md" mt="xl" weight={600} color="white">
+            {format(date, "do MMMM yyyy")}
           </Text>
           <Box
             h={250}
