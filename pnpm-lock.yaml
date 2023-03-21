@@ -48,6 +48,7 @@ specifiers:
   date-fns: ^2.29.3
   dayjs: ^1.11.7
   embla-carousel-react: ^7.0.5
+  embla-carousel-wheel-gestures: ^3.0.0
   emoji-mart: ^5.5.1
   eslint: 8.31.0
   eslint-config-next: 13.1.1
@@ -124,6 +125,7 @@ dependencies:
   date-fns: 2.29.3
   dayjs: 1.11.7
   embla-carousel-react: 7.0.5_react@18.2.0
+  embla-carousel-wheel-gestures: 3.0.0_embla-carousel@7.0.5
   emoji-mart: 5.5.1
   eslint: 8.31.0
   eslint-config-next: 13.1.1_iukboom6ndih5an6iafl45j2fe
@@ -2898,6 +2900,16 @@ packages:
     dependencies:
       embla-carousel: 7.0.5
       react: 18.2.0
+    dev: false
+
+  /embla-carousel-wheel-gestures/3.0.0_embla-carousel@7.0.5:
+    resolution: {integrity: sha512-OxMyRkDxiSHJy1DCInYjpq93q8Xz311ajCEUp/pvWH/odDc+KODLAtVI06U5NiPNIUJWj+IlZvLSVZUtpdTBEQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      embla-carousel: ^7.0.0
+    dependencies:
+      embla-carousel: 7.0.5
+      wheel-gestures: 2.2.5
     dev: false
 
   /embla-carousel/7.0.5:
@@ -6733,6 +6745,11 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+    dev: false
+
+  /wheel-gestures/2.2.5:
+    resolution: {integrity: sha512-01BlXRjBVt5Gy0VH2rRqMeccHruTGq2Gd1fx0UqCPN8KDeDCmlTXsRGc/hXJk6W+wnO9CNJp2xfntMNRArBxKQ==}
+    engines: {node: '>=10'}
     dev: false
 
   /which-boxed-primitive/1.0.2:

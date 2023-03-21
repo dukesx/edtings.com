@@ -24,6 +24,8 @@ import { HomepageCategorySectionProps } from "../../types/sections/homepage";
 import { generateGradient } from "../../utils/basic";
 import ArticleCardWithBGMedium from "../articles/cards/with-bg-medium";
 import urlSlug from "url-slug";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
+import { useRef } from "react";
 
 const TagPageTrendingSection = ({
   title,
@@ -33,6 +35,7 @@ const TagPageTrendingSection = ({
   lazyLoadImages = false,
 }: HomepageCategorySectionProps) => {
   const { colorScheme } = useMantineColorScheme();
+  const wheelGestures = useRef(WheelGesturesPlugin());
   return (
     <Box
       id={urlSlug(title).toLowerCase()}
@@ -125,7 +128,9 @@ const TagPageTrendingSection = ({
           </Group>
 
           <Carousel
+            plugins={[wheelGestures.current]}
             mt="md"
+            containScroll="trimSnaps"
             w="100%"
             height={460}
             withControls={false}

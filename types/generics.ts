@@ -87,3 +87,7 @@ export interface EditingImageProps {
   priority?: boolean;
   placeholder?: string;
 }
+
+export interface EdtingsTagPickerProps {
+  table: string;
+}

@@ -3,13 +3,16 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   Center,
   Divider,
   Group,
   HoverCard,
   List,
+  Modal,
   Paper,
   Rating,
+  ScrollArea,
   Stack,
   Text,
   ThemeIcon,
@@ -39,6 +42,8 @@ import EdtingImage from "../../components/global/image";
 import AppWrapper from "../../components/global/wrapper";
 import { getBase64ImageUrl } from "../../data/blur";
 import { serif, condensed } from "../_app";
+import { useState } from "react";
+import Balancer from "react-wrap-balancer";
 
 const verticalImagePath =
   "https://unsplash-cache.edtings.com/photo-1587749090881-1ea18126ab3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80";
@@ -64,6 +69,7 @@ const landscapeImage =
 
 const SingleArticle = ({ placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
+  const [modal, setModal] = useState(false);
   return (
     <AppWrapper
       headerProps={{
@@ -244,25 +250,18 @@ const SingleArticle = ({ placeholder }: any) => {
             path: "cover",
             color: "gray",
           },
-          {
-            title: "Score",
-            href: "#score",
-            path: "score",
-            color: "gray",
-          },
+
           {
             title: "Intro",
             href: "#intro",
             path: "intro",
             color: "gray",
-            // icon: ArrowRight,
           },
           {
             title: "To do",
             href: "#khan",
             path: "khan",
             color: "gray",
-            // icon: ArrowRight,
           },
         ],
         navbarTitle: "",
@@ -463,9 +462,93 @@ const SingleArticle = ({ placeholder }: any) => {
                     >
                       Muhammad Afzaal Afridi
                     </Anchor>
-                    <Badge variant="filled" color="blue">
-                      +2 more
-                    </Badge>
+                    <HoverCard position="top-end">
+                      <HoverCard.Target>
+                        <Badge
+                          sx={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => setModal(true)}
+                          variant="filled"
+                          color="blue"
+                        >
+                          +2 more
+                        </Badge>
+                      </HoverCard.Target>
+                      <HoverCard.Dropdown
+                        sx={(theme) => ({
+                          boxShadow: theme.shadows.xl,
+                        })}
+                        pt={"md"}
+                        pb="lg"
+                        px="md"
+                      >
+                        <Text mb="md" size="xs" weight={700}>
+                          In Collaboration With
+                        </Text>
+                        <Stack spacing="xs">
+                          <Group spacing="xs">
+                            <Avatar radius="xl" size="md">
+                              <EdtingImage
+                                style={{
+                                  borderRadius: "100%",
+                                }}
+                                avatar
+                                height={100}
+                                width={100}
+                                src="https://images.unsplash.com/photo-1611199340099-91a595a86812?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                              />
+                            </Avatar>
+                            <Stack spacing={1}>
+                              <Anchor
+                                color={colorScheme == "dark" ? "gray" : "dark"}
+                                size="sm"
+                              >
+                                Mason Moore
+                              </Anchor>
+                              <Text
+                                maw={240}
+                                lineClamp={1}
+                                size="xs"
+                                color="dimmed"
+                              >
+                                Author of 5 Successful books
+                              </Text>
+                            </Stack>
+                          </Group>
+
+                          <Group spacing="xs">
+                            <Avatar radius="xl" size="md">
+                              <EdtingImage
+                                style={{
+                                  borderRadius: "100%",
+                                }}
+                                avatar
+                                height={100}
+                                width={100}
+                                src="https://images.unsplash.com/photo-1522648485144-849409408aee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                              />
+                            </Avatar>
+                            <Stack spacing={1}>
+                              <Anchor
+                                color={colorScheme == "dark" ? "gray" : "dark"}
+                                size="sm"
+                              >
+                                Edwards Schwaretzmuller
+                              </Anchor>
+                              <Text
+                                maw={240}
+                                lineClamp={1}
+                                size="xs"
+                                color="dimmed"
+                              >
+                                Founder & CEO Howards Tech Pvt Ltd.
+                              </Text>
+                            </Stack>
+                          </Group>
+                        </Stack>
+                      </HoverCard.Dropdown>
+                    </HoverCard>
                   </Group>
                 </Group>
               </Group>
@@ -512,109 +595,148 @@ const SingleArticle = ({ placeholder }: any) => {
         </Group>
       </Box>
       <Paper
+        pb="xl"
         sx={(theme) => ({
           [theme.fn.smallerThan("xs")]: {
             paddingLeft: 0,
             paddingRight: 0,
           },
         })}
-        p="xl"
-        pt={50}
       >
-        <Stack
-          px="xl"
-          sx={(theme) => ({
-            [theme.fn.smallerThan("xs")]: {
-              paddingLeft: 0,
-              paddingRight: 0,
-            },
-          })}
-          mx="auto"
-          maw={700}
-        >
+        <Group align="initial" position="center" noWrap>
           <Stack
+            px="xl"
             sx={(theme) => ({
               [theme.fn.smallerThan("xs")]: {
-                padding: theme.spacing.sm,
+                paddingLeft: 0,
+                paddingRight: 0,
               },
             })}
-            mt="xl"
-            id="intro"
+            maw={600}
           >
-            <Title>Introduction</Title>
+            <Stack
+              pt={30}
+              sx={(theme) => ({
+                [theme.fn.smallerThan("xs")]: {
+                  padding: theme.spacing.sm,
+                },
+              })}
+              mt="xl"
+              id="intro"
+            >
+              <Title>Introduction</Title>
 
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
+              <Text>
+                Are you a front-end developer looking to take your skills to the
+                next level? One of the best ways to do so is by working on
+                real-world projects that push you out of your comfort zone and
+                force you to learn new techniques and technologies.
+              </Text>
 
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
+              <Text>
+                In this blog, I've compiled a list of front-end projects from
+                FrontendPro.dev that can help you improve your proficiency in
+                HTML, CSS, JavaScript, ReactJs, and other front-end
+                technologies.
+              </Text>
 
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
+              <Text>
+                These frontend projects are designed for developers of all skill
+                levels and each one is unique, varying from developing a
+                responsive website to building real-world UI components. So,
+                whether you're a beginner, intermediate, or advanced front-end
+                developer, there's a front-end project for you.
+              </Text>
+
+              <Text>
+                FrontendPro is an open-source platform that offers a diverse
+                range of real-world frontend projects designed to help
+                developers hone their frontend skills. Moreover, FrontendPro
+                provides you with Figma files for each project for Free to make
+                it even easier for you to get started. With these Figma files,
+                you can visualize what you're building and create polished,
+                professional-looking projects that you can add to your portfolio
+                to showcase your skills and impress potential employers.
+              </Text>
+            </Stack>
+            <Stack
+              sx={(theme) => ({
+                [theme.fn.smallerThan("xs")]: {
+                  padding: theme.spacing.sm,
+                },
+              })}
+              mt="xl"
+              id="khan"
+            >
+              <Title>To Do</Title>
+
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                lobortis velit vel nibh lobortis, sit amet finibus ex tempor.
+                Sed lorem massa, rutrum a venenatis in, venenatis vel erat.
+                Mauris sollicitudin neque augue, nec pharetra ipsum tincidunt
+                ac. Quisque eget ultrices purus. Nam vel euismod erat. Vivamus
+                id porttitor leo. Phasellus lobortis malesuada purus ac
+                ultricies.
+              </Text>
+
+              <Text>
+                Quisque nunc sapien, varius mattis aliquam sed, tristique et
+                enim. Sed tempus ut lacus at sollicitudin. Quisque fringilla
+                volutpat turpis. Vivamus est tellus, blandit at sapien nec,
+                vestibulum lobortis sem. Nunc eu quam vel lacus consectetur
+                consequat. Aliquam erat volutpat. Suspendisse potenti. Curabitur
+                lobortis sed sem sit amet lobortis. Vivamus sit amet magna non
+                orci viverra ornare id id elit. Etiam lobortis egestas orci vel
+                auctor. Proin tincidunt quis quam quis tincidunt. Sed elementum
+                sem nunc, non bibendum ante accumsan quis.
+              </Text>
+
+              <Text>
+                Praesent mattis dui justo. Donec gravida malesuada tortor quis
+                suscipit. Suspendisse vehicula varius quam, in viverra tellus
+                commodo congue. Donec elementum nibh ut hendrerit laoreet. Cras
+                purus urna, laoreet sit amet magna eu, molestie faucibus risus.
+                Nullam finibus nisl rutrum gravida aliquam. Proin a eros
+                feugiat, venenatis elit eu, varius diam. Sed at ullamcorper
+                turpis. Sed rhoncus, magna non fringilla interdum, diam elit
+                ultricies velit, quis euismod augue augue a urna. Vestibulum sit
+                amet malesuada augue.
+              </Text>
+            </Stack>
           </Stack>
-          <Stack
+          <Paper
+            radius="xs"
+            mx="auto"
             sx={(theme) => ({
-              [theme.fn.smallerThan("xs")]: {
-                padding: theme.spacing.sm,
+              [theme.fn.smallerThan(1400)]: {
+                display: "none",
               },
+              borderLeft: `1px solid ${
+                colorScheme == "dark"
+                  ? theme.colors.dark[5]
+                  : theme.colors.gray[1]
+              }`,
             })}
-            mt="xl"
-            id="khan"
+            p="xl"
+            w="100%"
+            maw={400}
           >
-            <Title>To Do</Title>
-
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
-
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
-
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              non tincidunt lorem, in rutrum nisl. In pharetra velit eu lacus
-              aliquet imperdiet. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Nam non rutrum tortor, et porta diam. Quisque
-              dignissim magna sed justo molestie egestas at eu risus.
-              Pellentesque luctus rhoncus tristique. Donec pellentesque eros at
-              fermentum mollis.
-            </Text>
-          </Stack>
-        </Stack>
+            <Stack h="100%">
+              <Paper p="xl" w={300} h={300}>
+                Hello
+              </Paper>
+              <Stack w={300} pos="sticky" top={65}>
+                <Paper p="xl" w={300} h={300}>
+                  Hello
+                </Paper>
+                <Paper p="xl" w={300} h={300}>
+                  Hello
+                </Paper>
+              </Stack>
+            </Stack>
+          </Paper>
+        </Group>
       </Paper>
     </AppWrapper>
   );
