@@ -31,7 +31,14 @@ export interface AppWrapperProps {
   };
   headerProps?: {
     headerLinks?: Array<AppNavbarLinks>;
-    headerPosition?: "fixed" | "static" | "sticky" | "unset" | "relative";
+    headerPosition?:
+      | "fixed"
+      | "static"
+      | "sticky"
+      | "unset"
+      | "relative"
+      | "absolute";
+    headerColor?: MantineColor;
   };
   modalProps?: {
     opacity: number;
@@ -57,7 +64,7 @@ export interface AppNavbarProps {
 }
 
 export interface EditorOutput {
-  data?: { type: "doc"; content: [] };
+  data: { type: "doc"; content: [] };
   words: number;
 }
 
@@ -86,6 +93,7 @@ export interface EditingImageProps {
   avatar?: boolean;
   priority?: boolean;
   placeholder?: string;
+  widthWise?: boolean;
 }
 
 export interface EdtingsTagPickerProps {

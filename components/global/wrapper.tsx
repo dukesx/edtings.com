@@ -8,6 +8,7 @@ import {
   Burger,
   Button,
   Card,
+  Container,
   Drawer,
   Footer,
   Group,
@@ -27,11 +28,19 @@ import {
 } from "@mantine/core";
 import { nanoid } from "nanoid";
 import Link from "next/link";
-import { MoonStars, SignIn, Sun } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  MoonStars,
+  SignIn,
+  Sun,
+  UserPlus,
+} from "@phosphor-icons/react";
 import { Fragment, useState } from "react";
 import { serif } from "../../pages/_app";
 import { AppWrapperProps } from "../../types/generics";
 import AppNavbar from "./navbar";
+import { generateGradient, generateGradient2 } from "../../utils/basic";
+import lightOrDarkColor from "@check-light-or-dark/color";
 
 const AppWrapper = ({
   logo,
@@ -76,110 +85,97 @@ const AppWrapper = ({
       padding={padding == true ? "md" : 0}
       styles={{
         main: {
+          width: "100%",
           background:
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[8]
-              : theme.colors.gray[0],
+            theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
         },
         body: {
           height: "100%",
+        },
+        root: {
+          background: headerProps.headerColor
+            ? headerProps.headerColor
+            : colorScheme == "dark"
+            ? theme.colors.dark[8]
+            : theme.white,
         },
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       header={
         header == true ? (
-          <>
-            <Header
-              zIndex={2000}
-              fixed={false}
-              withBorder
-              height={{ base: 60, md: 70 }}
-              p="md"
+          <Container px="0px" size="100vw">
+            {/* <Box
               sx={{
-                position: headerProps.headerPosition,
+                height: 15,
+                borderRadius: "0%",
+                ...generateGradient2({
+                  color1: colorScheme == "dark" ? "pink" : "blue",
+                  color2: colorScheme == "dark" ? "grape" : "indigo",
+                  opacity: 1,
+                }),
               }}
-            >
-              <Group
-                noWrap
-                h="100%"
-                sx={(theme) => ({
-                  alignItems: "center",
-                  alignContent: "center",
-                  [theme.fn.largerThan(500)]: {},
-                })}
-                position="apart"
+            ></Box> */}
+            <Container px={0} size="md">
+              <Header
+                maw={780}
+                mx="auto"
+                zIndex={2000}
+                fixed={false}
+                withBorder={false}
+                height={{ base: 60, md: 50 }}
+                p="md"
+                bg="transparent"
+                sx={{
+                  position: headerProps.headerPosition,
+                  backgroundColor: "transparent",
+                }}
               >
-                <MediaQuery largerThan="md" styles={{ display: "none" }}>
-                  <ThemeIcon size="lg" radius="xl" variant="filled">
-                    <Burger
-                      opened={opened}
-                      onClick={() => setOpened((o) => !o)}
-                      size={12}
-                      color={theme.white}
-                    />
-                  </ThemeIcon>
-                </MediaQuery>
-                {logo ? (
-                  logo
-                ) : (
-                  <Anchor
-                    href="/"
-                    variant="text"
-                    style={{
-                      textDecoration: "none",
-                    }}
-                    component={Link}
-                  >
-                    <Group spacing={3}>
-                      <ThemeIcon
-                        sx={(theme) => ({
-                          [theme.fn.smallerThan("sm")]: {
-                            minWidth: 32,
-                            minHeight: 32,
-                            width: 32,
-                            height: 32,
-                          },
-                        })}
-                        size={"xl"}
-                        radius="sm"
-                      >
-                        <Text
-                          size={"xl"}
-                          sx={(theme) => ({
-                            fontFamily: serif.style.fontFamily,
-                            textDecorationColor: theme.colors.blue[6],
-                            [theme.fn.smallerThan("sm")]: {
-                              fontSize: theme.fontSizes.xl,
-                              fontWeight: 400,
-                            },
-                          })}
-                          weight={400}
-                        >
-                          E
-                        </Text>
-                        <Box component="span" mt={-10} ml={3}>
-                          <ThemeIcon
-                            sx={(theme) => ({
-                              [theme.fn.smallerThan("sm")]: {
-                                width: 5,
-                                height: 5,
-                                minWidth: 5,
-                                minHeight: 5,
-                              },
-                            })}
-                            size={7}
-                            color="blue"
-                            variant="filled"
-                          >
-                            <div />
-                          </ThemeIcon>
-                        </Box>
-                      </ThemeIcon>
-                      <MediaQuery smallerThan="md" styles={{ display: "none" }}>
-                        <Stack ml={6} mt={-4} spacing={0}>
+                <Group
+                  noWrap
+                  h="100%"
+                  sx={(theme) => ({
+                    alignItems: "center",
+                    alignContent: "center",
+                  })}
+                  position="apart"
+                >
+                  <MediaQuery largerThan="md" styles={{ display: "none" }}>
+                    <ThemeIcon size="lg" radius="xl" variant="filled">
+                      <Burger
+                        opened={opened}
+                        onClick={() => setOpened((o) => !o)}
+                        size={12}
+                        color={theme.white}
+                      />
+                    </ThemeIcon>
+                  </MediaQuery>
+                  {logo ? (
+                    logo
+                  ) : (
+                    <Anchor
+                      href="/"
+                      variant="text"
+                      style={{
+                        textDecoration: "none",
+                      }}
+                      component={Link}
+                    >
+                      <Group noWrap spacing={3}>
+                        <Group noWrap ml={6} mt={0} spacing={8}>
                           <Text
-                            color={colorScheme == "dark" ? "gray.4" : "dark"}
+                            color={
+                              headerProps.headerColor
+                                ? lightOrDarkColor(headerProps.headerColor) ==
+                                  "light"
+                                  ? colorScheme == "dark"
+                                    ? "gray.4"
+                                    : "dark"
+                                  : "gray.1"
+                                : colorScheme == "dark"
+                                ? "gray.4"
+                                : "dark"
+                            }
                             sx={{
                               fontFamily: serif.style.fontFamily,
                             }}
@@ -188,62 +184,130 @@ const AppWrapper = ({
                           >
                             Edtings
                           </Text>
-                          <Text mt={-3} size={11} color="dimmed">
-                            The Editor&apos;s Platform
-                          </Text>
-                        </Stack>
-                      </MediaQuery>
-                    </Group>
-                  </Anchor>
-                )}
+                          <MediaQuery
+                            smallerThan={400}
+                            styles={{ display: "none" }}
+                          >
+                            <Group spacing={7} noWrap>
+                              <Text
+                                color={
+                                  headerProps.headerColor
+                                    ? lightOrDarkColor(
+                                        headerProps.headerColor
+                                      ) == "light"
+                                      ? colorScheme == "dark"
+                                        ? "gray.4"
+                                        : "dark"
+                                      : "gray.1"
+                                    : colorScheme == "dark"
+                                    ? "gray.4"
+                                    : "dark"
+                                }
+                                mt={2}
+                              >
+                                /
+                              </Text>
 
-                <Group noWrap>
-                  {headerProps && headerProps.headerLinks && (
-                    <Group position="right" maw={300}>
-                      {headerProps &&
-                        headerProps.headerLinks &&
-                        headerProps.headerLinks.map((mapped) => {
-                          return (
-                            <Fragment key={nanoid()}>{mapped.render}</Fragment>
-                          );
-                        })}
-                    </Group>
+                              <Text
+                                color={
+                                  headerProps.headerColor
+                                    ? lightOrDarkColor(
+                                        headerProps.headerColor
+                                      ) == "light"
+                                      ? colorScheme == "dark"
+                                        ? "gray.4"
+                                        : "dark"
+                                      : "gray.1"
+                                    : colorScheme == "dark"
+                                    ? "gray.4"
+                                    : "dark"
+                                }
+                                mt={2}
+                                size={11}
+                              >
+                                The Editor&apos;s Platform
+                              </Text>
+                            </Group>
+                          </MediaQuery>
+                        </Group>
+                      </Group>
+                    </Anchor>
                   )}
 
-                  <ActionIcon
-                    radius="xl"
-                    size="lg"
-                    color="gray"
-                    onClick={() => toggleColorScheme()}
-                  >
-                    {colorScheme == "dark" ? <Sun /> : <MoonStars />}
-                  </ActionIcon>
-                  <MediaQuery smallerThan="xs" styles={{ display: "none" }}>
-                    <Button
-                      color={colorScheme == "dark" ? "dark.4" : "dark"}
-                      component={Link}
-                      href="/sign-in"
-                    >
-                      Sign in
-                    </Button>
-                  </MediaQuery>
+                  <Group noWrap>
+                    {headerProps && headerProps.headerLinks && (
+                      <Group position="right" maw={300}>
+                        {headerProps &&
+                          headerProps.headerLinks &&
+                          headerProps.headerLinks.map((mapped) => {
+                            return (
+                              <Fragment key={nanoid()}>
+                                {mapped.render}
+                              </Fragment>
+                            );
+                          })}
+                      </Group>
+                    )}
 
-                  <MediaQuery largerThan="xs" styles={{ display: "none" }}>
                     <ActionIcon
-                      size="lg"
-                      color="blue"
-                      variant="filled"
                       radius="xl"
-                      component={Link}
-                      href="/sign-in"
+                      variant="filled"
+                      size="md"
+                      color={colorScheme == "light" ? "dark" : "dark"}
+                      onClick={() => toggleColorScheme()}
+                      // sx={{
+                      //   ":hover": {
+                      //     backgroundColor:
+                      //       colorScheme == "dark"
+                      //         ? theme.colors.gray[0]
+                      //         : theme.colors.dark[5] + " !important",
+                      //     color:
+                      //       colorScheme == "dark"
+                      //         ? theme.colors.dark[6]
+                      //         : theme.colors.gray[1],
+                      //   },
+                      // }}
                     >
-                      <SignIn size={16} />
+                      {colorScheme == "dark" ? (
+                        <Sun size={15} weight="duotone" />
+                      ) : (
+                        <MoonStars weight="duotone" />
+                      )}
                     </ActionIcon>
-                  </MediaQuery>
+                    <MediaQuery smallerThan="xs" styles={{ display: "none" }}>
+                      <Button
+                        color={colorScheme == "dark" ? "blue" : "dark"}
+                        component={Link}
+                        href="/sign-in"
+                        px="md"
+                        h={30}
+                        styles={{
+                          label: {
+                            fontSize: 12,
+                          },
+                        }}
+                      >
+                        Sign in
+                      </Button>
+                    </MediaQuery>
+
+                    <MediaQuery largerThan="xs" styles={{ display: "none" }}>
+                      <ActionIcon
+                        size="lg"
+                        color={colorScheme == "dark" ? "pink" : "dark"}
+                        variant="filled"
+                        radius="xl"
+                        component={Link}
+                        href="/sign-in"
+                      >
+                        <SignIn size={16} />
+                      </ActionIcon>
+                    </MediaQuery>
+                  </Group>
                 </Group>
-              </Group>
-            </Header>
-          </>
+              </Header>
+            </Container>
+          </Container>
         ) : undefined
       }
       navbar={
@@ -393,9 +457,6 @@ const AppWrapper = ({
           position="bottom"
           opened={opened}
           onClose={() => setOpened(false)}
-          // sx={{
-          //   border: "1px solid gray",
-          // }}
           styles={{
             content: {
               borderRadius: theme.radius.sm,

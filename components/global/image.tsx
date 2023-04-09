@@ -12,6 +12,7 @@ const EdtingImage = ({
   avatar,
   placeholder,
   priority,
+  widthWise,
 }: EditingImageProps) => {
   const theme = useMantineTheme();
   return (
@@ -30,13 +31,11 @@ const EdtingImage = ({
         if (src.includes("unsplash")) {
           return (
             src.split("&")[0] +
-            `&fit=${avatar ? `faces` : `crop`}${
-              height ? (avatar ? `` : `&h=${height}`) : ``
-            }${width ? (avatar ? `&w=${width}` : ``) : ``}&q=${
-              avatar ? 100 : quality
-            }${fill == true ? "&max-w=1024&max-h=1024" : ""}${
-              avatar == true ? "&ar=1:1" : ""
-            }`
+            `&fit=${`crop`}${height ? (widthWise ? `` : `&h=${height}`) : ``}${
+              width ? (widthWise ? `&w=${width}` : ``) : ``
+            }&q=${avatar ? 100 : quality}${
+              fill == true ? "&max-w=1024&max-h=1024" : ""
+            }${avatar == true ? "&ar=1:1" : ""}`
           );
         }
 

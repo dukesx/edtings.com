@@ -64,11 +64,11 @@ import {
   Plus,
   TextHOne,
   TextHThree,
+  UploadSimple,
 } from "@phosphor-icons/react";
 import { Markdown, Unsplash } from "@icons-pack/react-simple-icons";
-import UnsplashLogo from "../../../public/unsplash.svg";
-import Imager from "next/image";
 import AfridiDevEditorGiphySelector from "./menu/giphy";
+import AfridiDevEditorImageUpload from "./plugins/afridi-dev-editor-image-upload";
 
 /**
  *  @property {String}   value
@@ -197,6 +197,7 @@ export const TextEditor = ({
       Underline,
       FontFamily,
       TextStyle,
+      AfridiDevEditorImageUpload,
       Image.configure({
         inline: true,
         HTMLAttributes: {
@@ -689,6 +690,46 @@ export const TextEditor = ({
                             : theme.colors.gray[3]
                         }
                         size={colorScheme == "dark" ? 14 : 12}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+
+                  <Tooltip label="Upload Image">
+                    <ActionIcon
+                      onClick={() => {
+                        editor.commands.insertContent({
+                          type: "afridi-dev-editor-image-upload",
+                        });
+                        editor.commands.enter();
+                      }}
+                      size={"lg"}
+                      variant="filled"
+                      color={"dark"}
+                      sx={(theme) => ({
+                        backgroundColor:
+                          colorScheme == "dark"
+                            ? theme.white
+                            : theme.colors.dark[8],
+                        color:
+                          colorScheme == "dark"
+                            ? theme.colors.dark[8]
+                            : theme.white,
+                        [":hover"]: {
+                          backgroundColor:
+                            colorScheme == "dark"
+                              ? theme.white
+                              : theme.colors.dark[8],
+                        },
+                      })}
+                      radius="xl"
+                    >
+                      <UploadSimple
+                        color={
+                          colorScheme == "dark"
+                            ? theme.colors.dark[8]
+                            : theme.colors.gray[3]
+                        }
+                        size={16}
                       />
                     </ActionIcon>
                   </Tooltip>

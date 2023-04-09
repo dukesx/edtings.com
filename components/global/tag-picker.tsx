@@ -26,7 +26,6 @@ const EdtingsTagPicker: React.FC<EdtingsTagPickerProps> = ({ table }) => {
   ];
 
   const getData = async () => {
-    setLoading(true);
     const { data, count, error } = await supabaseClient
       .from(table)
       .select("title", {
@@ -52,6 +51,19 @@ const EdtingsTagPicker: React.FC<EdtingsTagPickerProps> = ({ table }) => {
 
   return (
     <MultiSelect
+      clearSearchOnChange={true}
+      shouldCreate={(query, data) => {
+        if (loading == false) {
+          if (searchValue.length > 0) {
+            if (data.length <= 0) {
+              return true;
+            }
+            return false;
+          }
+          return false;
+        }
+        return false;
+      }}
       dropdownPosition="bottom"
       rightSection={loading ? <Loader color="blue" size="xs" /> : <div />}
       placeholder="automobilies, lamborghini"
@@ -67,6 +79,16 @@ const EdtingsTagPicker: React.FC<EdtingsTagPickerProps> = ({ table }) => {
       onSearchChange={(query) => {
         if (query !== debounced && query.length > 0) {
           setSearchValue(query);
+          setLoading(true);
+        } else {
+          setSearchValue("");
+          setLoading(false);
+        }
+      }}
+      onKeyDown={(e) => {
+        if (e.key == "Enter") {
+          var datao = [...data, searchValue];
+          setData(datao);
         }
       }}
       data={data}

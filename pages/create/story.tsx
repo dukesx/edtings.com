@@ -1,9 +1,11 @@
 import {
   Anchor,
   Avatar,
+  Box,
   Button,
   Card,
   Center,
+  Col,
   Container,
   Divider,
   Group,
@@ -12,7 +14,9 @@ import {
   Modal,
   MultiSelect,
   Paper,
+  ScrollArea,
   Select,
+  SimpleGrid,
   Stack,
   Text,
   Textarea,
@@ -28,7 +32,7 @@ import {
   ArrowRight,
   MagnifyingGlass,
 } from "@phosphor-icons/react";
-import { Suspense, useEffect, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import TextEditor from "../../components/global/editor/editor";
 import EdtingImage from "../../components/global/image";
 import EdtingsTagPicker from "../../components/global/tag-picker";
@@ -53,6 +57,8 @@ const CreateStory = () => {
   const [title, setTitle] = useDebouncedState("", 200);
   const { colorScheme } = useMantineColorScheme();
   const [saveModal, setSaveModal] = useState(false);
+  const [choosingPreview, setChoosingPreview] = useState(false);
+  const [previewImage, setPreviewImage] = useState(null);
 
   var arr = DEFAULT_NAV_DATA;
 
@@ -68,6 +74,8 @@ const CreateStory = () => {
       setProgress("");
     }
   }, [value, title]);
+
+  console.log(value);
 
   return (
     <AppWrapper
@@ -180,7 +188,7 @@ const CreateStory = () => {
             },
 
             body: {
-              minHeight: 1000,
+              minHeight: 500,
             },
 
             content: {
@@ -242,36 +250,125 @@ const CreateStory = () => {
                 },
               }}
             >
-              <Paper h="100%" withBorder={false} w="100%">
-                <Avatar
-                  radius="md"
-                  styles={{
-                    root: {
-                      height: 200,
-                      maxWidth: 400,
-                      [theme.fn.smallerThan(1000)]: {
-                        maxWidth: "350px",
-                      },
-                      width: "100%",
-                    },
-                    placeholder: {
-                      border: "none",
-                    },
+              <Paper pos="relative" h="100%" withBorder={false} w="100%">
+                <Box
+                  maw={{
+                    [theme.fn.smallerThan(1000)]: 350,
+                    xs: 400,
                   }}
                 >
-                  <EdtingImage
-                    loading="eager"
-                    src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80"
-                    width={550}
-                    height={200}
-                  />
-                </Avatar>
+                  <Avatar
+                    //@ts-ignore
+                    component={choosingPreview ? ScrollArea : undefined}
+                    radius="md"
+                    styles={{
+                      root: {
+                        height: choosingPreview ? 300 : 200,
+                        overflowX: "hidden",
+                        width: "100%",
+                      },
+                      placeholder: {
+                        border: "none",
+                        justifyContent: choosingPreview ? "start" : "center",
+                        alignItems: choosingPreview ? "start" : "center",
+                        justifyItems: choosingPreview ? "start" : "center",
+                      },
+                    }}
+                  >
+                    {choosingPreview ? (
+                      <SimpleGrid mih={400} pb="xl" spacing={5} cols={2}>
+                        {value.data?.content
+                          .filter(
+                            (mapped: any) =>
+                              mapped.type == "afridi-dev-editor-unsplash"
+                          )
+                          .map((mapped) => (
+                            <Box
+                              onClick={() => {
+                                setPreviewImage(mapped["attrs"]["src"]);
+                                setChoosingPreview(false);
+                              }}
+                            >
+                              <EdtingImage
+                                loading="eager"
+                                src={mapped["attrs"]["src"]}
+                                width={189}
+                                widthWise
+                                height={190}
+                                style={{
+                                  maxHeight: 200,
+                                  objectPosition: "top",
+                                  marginLeft: "auto",
+                                  marginRight: "auto",
+                                }}
+                              />
+                            </Box>
+                          ))}
+                      </SimpleGrid>
+                    ) : value.data?.content.filter(
+                        (mapped: any) =>
+                          mapped.type == "afridi-dev-editor-unsplash"
+                      ).length &&
+                      value.data?.content.filter(
+                        (mapped: any) =>
+                          mapped.type == "afridi-dev-editor-unsplash"
+                      ).length >= 0 ? (
+                      <Fragment>
+                        <EdtingImage
+                          loading="eager"
+                          src={
+                            previewImage ??
+                            value.data?.content.filter(
+                              (mapped: any) =>
+                                mapped.type == "afridi-dev-editor-unsplash"
+                            )[0]["attrs"]["src"]
+                          }
+                          width={500}
+                          height={300}
+                          style={{
+                            objectPosition: "top",
+                            objectFit: "contain",
+                          }}
+                        />
+                        <Box pos="absolute">
+                          <Button
+                            onClick={() => setChoosingPreview(true)}
+                            radius="lg"
+                            size="sm"
+                            color="dark"
+                            variant="gradient"
+                            gradient={{
+                              from: "dark",
+                              to: "gray",
+                            }}
+                          >
+                            Change Preview Image
+                          </Button>
+                        </Box>
+                      </Fragment>
+                    ) : (
+                      <Paper bg="transparent" px="xl">
+                        <Text align="center" weight={600}>
+                          Insert a High Quality image in the article to display
+                          here
+                        </Text>
+                      </Paper>
+                    )}
+                  </Avatar>
+                </Box>
 
-                <Stack maw={380} mt="xl" pl={0} pr="xl" spacing="xs">
+                <Stack maw={400} mt="xl" pl={0} pr="xl" spacing="xs">
                   <Title order={6}>Description</Title>
                   <Text transform="lowercase" lineClamp={2} size="sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla neque nunc, bibendum ut tristique at.
+                    {value.data?.content.filter(
+                      (mapped: any) =>
+                        mapped.type == "paragraph" && mapped.content
+                    ).length > 0
+                      ? value.data?.content.filter(
+                          (mapped: any) =>
+                            mapped.type == "paragraph" && mapped.content
+                        )[0]["content"][0]["text"]
+                      : null}
                   </Text>
                   <Divider />
                 </Stack>
@@ -316,7 +413,7 @@ const CreateStory = () => {
                         <Text component="span" weight={600} underline>
                           categorize
                         </Text>{" "}
-                        story
+                        story accordingly
                       </List.Item>
                     </List>
                   </Stack>

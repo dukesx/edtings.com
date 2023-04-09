@@ -23,6 +23,7 @@ import {
 } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { Provider } from "react-wrap-balancer";
+import { ModalsProvider } from "@mantine/modals";
 
 export const sans = Inter({
   subsets: ["latin"],
@@ -88,20 +89,22 @@ export default function App(
             primaryColor: "dark",
             primaryShade: 6,
             fontFamily: sans.style.fontFamily,
-            defaultRadius: "sm",
+            defaultRadius: "xl",
           }}
           withGlobalStyles
           withNormalizeCSS
         >
-          <SessionContextProvider
-            supabaseClient={supabaseClient}
-            initialSession={pageProps.initialSession}
-          >
-            <Provider>
-              <Component {...pageProps} />
-              <Notifications />
-            </Provider>
-          </SessionContextProvider>
+          <ModalsProvider>
+            <SessionContextProvider
+              supabaseClient={supabaseClient}
+              initialSession={pageProps.initialSession}
+            >
+              <Provider>
+                <Component {...pageProps} />
+                <Notifications />
+              </Provider>
+            </SessionContextProvider>
+          </ModalsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>

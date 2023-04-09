@@ -17,10 +17,12 @@ import Link from "next/link";
 import {
   BellSimple,
   BellSimpleRinging,
+  CaretLeft,
+  CaretRight,
   HandPointing,
   Plus,
 } from "@phosphor-icons/react";
-import { HomepageCategorySectionProps } from "../../types/sections/homepage";
+import { HomepageFeaturedSectionProps } from "../../types/sections/homepage";
 import { generateGradient } from "../../utils/basic";
 import ArticleCardWithBGMedium from "../articles/cards/with-bg-medium";
 import urlSlug from "url-slug";
@@ -133,8 +135,10 @@ const TagPageTrendingSection = ({
             containScroll="trimSnaps"
             w="100%"
             height={460}
-            withControls={false}
-            loop
+            controlSize={32}
+            nextControlIcon={<CaretRight size={18} />}
+            previousControlIcon={<CaretLeft size={18} />}
+            loop={false}
             align="start"
             withIndicators
             slideSize="33.3333%"
