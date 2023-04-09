@@ -35,7 +35,7 @@ const TagPageTrendingSection = ({
   articles,
   subscribers,
   lazyLoadImages = false,
-}: HomepageCategorySectionProps) => {
+}: HomepageFeaturedSectionProps) => {
   const { colorScheme } = useMantineColorScheme();
   const wheelGestures = useRef(WheelGesturesPlugin());
   return (
@@ -130,6 +130,7 @@ const TagPageTrendingSection = ({
           </Group>
 
           <Carousel
+            //@ts-ignore
             plugins={[wheelGestures.current]}
             mt="md"
             containScroll="trimSnaps"

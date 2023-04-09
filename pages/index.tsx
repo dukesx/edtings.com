@@ -30,7 +30,7 @@ import {
 import { Carousel, Embla } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { CaretLeft, CaretRight, Dot } from "@phosphor-icons/react";
 import { flushSync } from "react-dom";
 
@@ -178,149 +178,158 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
       <Container size="100%" px={0}>
         <Box h={814}>
           <Group spacing={0} noWrap mt={-25} h="100%" w="100%">
-            <Carousel
-              // withIndicators={true}
-              getEmblaApi={setEmbla2}
-              withControls={false}
-              //@ts-ignore
-              plugins={[autoplay.current, wheel.current]}
-              onMouseEnter={autoplay.current.stop}
-              onMouseLeave={autoplay.current.reset}
-              mt="xl"
-              w="100%"
-              height={790}
-              slideSize="100%"
-              align="center"
-              slideGap={0}
-              loop={true}
-              breakpoints={[
-                {
-                  slideSize: "20%",
-                  maxWidth: 400,
-                  slideGap: "md",
-                },
+            <Suspense>
+              <Carousel
+                // withIndicators={true}
+                getEmblaApi={setEmbla2}
+                withControls={false}
+                //@ts-ignore
+                onMouseEnter={autoplay.current.stop}
+                onMouseLeave={autoplay.current.reset}
+                mt="xl"
+                w="100%"
+                height={790}
+                slideSize="100%"
+                align="center"
+                slideGap={0}
+                loop={true}
+                breakpoints={[
+                  {
+                    slideSize: "20%",
+                    maxWidth: 400,
+                    slideGap: "md",
+                  },
 
-                {
-                  slideSize: "100%",
-                  maxWidth: "md",
-                  slideGap: "md",
-                },
-                {
-                  slideSize: "100%",
-                  maxWidth: "xl",
-                  slideGap: "xs",
-                },
-              ]}
-            >
-              {sampleArticles.map((mapped) => (
-                <Carousel.Slide>
-                  <Card
-                    pos="relative"
-                    radius={0}
-                    p={0}
-                    sx={(theme) => ({
-                      [theme.fn.smallerThan("xl")]: {
-                        maxWidth: 800,
-                      },
-                      [theme.fn.smallerThan(2000)]: {
-                        maxWidth: 1800,
-                      },
-                    })}
-                    w="100%"
-                    maw={768}
-                    h="100%"
-                  >
-                    <EdtingImage src={mapped.cover} fill />
-                    <Box
-                      h="100%"
+                  {
+                    slideSize: "100%",
+                    maxWidth: "md",
+                    slideGap: "md",
+                  },
+                  {
+                    slideSize: "100%",
+                    maxWidth: "xl",
+                    slideGap: "xs",
+                  },
+                ]}
+              >
+                {sampleArticles.map((mapped) => (
+                  <Carousel.Slide key={nanoid()}>
+                    <Card
+                      pos="relative"
+                      radius={0}
+                      p={0}
+                      sx={(theme) => ({
+                        [theme.fn.smallerThan("xl")]: {
+                          maxWidth: 800,
+                        },
+                        [theme.fn.smallerThan(2000)]: {
+                          maxWidth: 1800,
+                        },
+                      })}
                       w="100%"
-                      pos="absolute"
-                      bg={theme.fn.rgba("gray", 0.6)}
-                      sx={{
-                        zIndex: 1000,
-                      }}
+                      maw={768}
+                      h="100%"
                     >
-                      <Group
-                        position="apart"
-                        pos="absolute"
+                      <EdtingImage
+                        sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      (max-width: 2000px) 25vw,
+                      33vw"
+                        src={mapped.cover}
+                        fill
+                      />
+                      <Box
+                        h="100%"
                         w="100%"
-                        px="xl"
-                        bottom={30}
-                        noWrap
+                        pos="absolute"
+                        bg={theme.fn.rgba("gray", 0.6)}
+                        sx={{
+                          zIndex: 1000,
+                        }}
                       >
-                        <Stack maw={550} p="xl">
-                          <Group>
-                            <Badge
-                              w="fit-content"
-                              p="sm"
-                              sx={{
-                                fontWeight: 600,
-                                fontSize: 10,
-                              }}
-                              color={"gray.4"}
-                              variant="outline"
-                            >
-                              {mapped.category}
-                            </Badge>
-
-                            <Text size="xs" color="gray.1">
-                              {mapped.readTime}
-                            </Text>
-                          </Group>
-
-                          <Title
-                            transform="capitalize"
-                            order={2}
-                            color="gray.3"
-                          >
-                            {mapped.title}
-                          </Title>
-                          <Text color="gray.3" lineClamp={2}>
-                            {mapped.description}
-                          </Text>
-                        </Stack>
-                        <MediaQuery
-                          smallerThan={600}
-                          styles={{
-                            display: "none",
-                          }}
+                        <Group
+                          position="apart"
+                          pos="absolute"
+                          w="100%"
+                          px="xl"
+                          bottom={30}
+                          noWrap
                         >
-                          <Group right={30} pos="static" spacing="xl" noWrap>
-                            <ActionIcon
-                              sx={{
-                                color: "white",
-                                "&:hover": {
-                                  color: "white",
-                                },
-                              }}
-                              size="xl"
-                              variant="outline"
-                              color="gray"
-                            >
-                              <CaretLeft weight="bold" />
-                            </ActionIcon>
+                          <Stack maw={550} p="xl">
+                            <Group>
+                              <Badge
+                                w="fit-content"
+                                p="sm"
+                                sx={{
+                                  fontWeight: 600,
+                                  fontSize: 10,
+                                }}
+                                color={"gray.4"}
+                                variant="outline"
+                              >
+                                {mapped.category}
+                              </Badge>
 
-                            <ActionIcon
-                              sx={{
-                                color: "white",
-                                "&:hover": {
-                                  color: "white",
-                                },
-                              }}
-                              size="xl"
-                              variant="outline"
-                              color="gray"
+                              <Text size="xs" color="gray.1">
+                                {mapped.readTime}
+                              </Text>
+                            </Group>
+
+                            <Title
+                              transform="capitalize"
+                              order={2}
+                              color="gray.3"
                             >
-                              <CaretRight weight="bold" />
-                            </ActionIcon>
-                          </Group>
-                        </MediaQuery>
-                      </Group>
-                    </Box>
-                  </Card>
-                </Carousel.Slide>
-              ))}
-            </Carousel>
+                              {mapped.title}
+                            </Title>
+                            <Text color="gray.3" lineClamp={2}>
+                              {mapped.description}
+                            </Text>
+                          </Stack>
+                          <MediaQuery
+                            smallerThan={600}
+                            styles={{
+                              display: "none",
+                            }}
+                          >
+                            <Group right={30} pos="static" spacing="xl" noWrap>
+                              <ActionIcon
+                                sx={{
+                                  color: "white",
+                                  "&:hover": {
+                                    color: "white",
+                                  },
+                                }}
+                                size="xl"
+                                variant="outline"
+                                color="gray"
+                              >
+                                <CaretLeft weight="bold" />
+                              </ActionIcon>
+
+                              <ActionIcon
+                                sx={{
+                                  color: "white",
+                                  "&:hover": {
+                                    color: "white",
+                                  },
+                                }}
+                                size="xl"
+                                variant="outline"
+                                color="gray"
+                              >
+                                <CaretRight weight="bold" />
+                              </ActionIcon>
+                            </Group>
+                          </MediaQuery>
+                        </Group>
+                      </Box>
+                    </Card>
+                  </Carousel.Slide>
+                ))}
+              </Carousel>
+            </Suspense>
+
             <MediaQuery
               smallerThan={1300}
               styles={{
@@ -417,102 +426,106 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
               <CaretRight />
             </ActionIcon>
           </Group>
-          <Carousel
-            withIndicators={true}
-            getEmblaApi={setEmbla2}
-            withControls={false}
-            //@ts-ignore
-            plugins={[autoplay.current, wheel.current]}
-            onMouseEnter={autoplay.current.stop}
-            onMouseLeave={autoplay.current.reset}
-            mt="xl"
-            height={760}
-            slideSize="27%"
-            align="center"
-            slideGap="xs"
-            loop={true}
-            breakpoints={[
-              {
-                slideSize: "20%",
-                maxWidth: 400,
-                slideGap: "md",
-              },
-              {
-                slideSize: "20%",
-                maxWidth: "xl",
-                slideGap: "xl",
-              },
-            ]}
-            styles={{
-              indicator: {
-                backgroundColor: theme.colors.dark[1],
-                width: 10,
-                height: 10,
-                zIndex: 2,
-                ["&[data-active]"]: {
-                  backgroundColor: theme.colors.indigo[6],
+          <Suspense>
+            <Carousel
+              withIndicators={true}
+              getEmblaApi={setEmbla2}
+              withControls={false}
+              //@ts-ignore
+              // plugins={[autoplay.current, wheel.current]}
+              onMouseEnter={autoplay.current.stop}
+              onMouseLeave={autoplay.current.reset}
+              mt="xl"
+              height={760}
+              slideSize="27%"
+              align="center"
+              slideGap="xs"
+              loop={true}
+              breakpoints={[
+                {
+                  slideSize: "20%",
+                  maxWidth: 400,
+                  slideGap: "md",
                 },
-              },
-            }}
-          >
-            {sampleArticles.map((mapped, index) => (
-              <Carousel.Slide>
-                <Card
-                  bg="transparent"
-                  w={450}
-                  radius="xs"
-                  withBorder
-                  // maw={350}
-                  style={{
-                    ...(tweenValues.length && { opacity: tweenValues[index] }),
-                    borderTop: 0,
-                    borderBottom: 0,
-                    borderRight: 0,
-                  }}
-                  sx={(theme) => ({
-                    [theme.fn.smallerThan(400)]: {
-                      maxWidth: 330,
-                    },
-                  })}
-                >
-                  <Stack align="center">
-                    <EdtingImage
-                      widthWise
-                      src={mapped.cover}
-                      width={400}
-                      height={400}
-                      style={{
-                        borderRadius: "20px 20px 20px 20px",
-                      }}
-                    />
-                    <Stack w="100%" align="start" p="xl">
-                      <Group>
-                        <Badge
-                          p="sm"
-                          sx={{
-                            fontWeight: 600,
-                            fontSize: 10,
-                          }}
-                          color={colorScheme == "dark" ? "gray" : "dark"}
-                          variant="outline"
-                        >
-                          {mapped.category}
-                        </Badge>
+                {
+                  slideSize: "20%",
+                  maxWidth: "xl",
+                  slideGap: "xl",
+                },
+              ]}
+              styles={{
+                indicator: {
+                  backgroundColor: theme.colors.dark[1],
+                  width: 10,
+                  height: 10,
+                  zIndex: 2,
+                  ["&[data-active]"]: {
+                    backgroundColor: theme.colors.indigo[6],
+                  },
+                },
+              }}
+            >
+              {sampleArticles.map((mapped, index) => (
+                <Carousel.Slide>
+                  <Card
+                    bg="transparent"
+                    w={450}
+                    radius="xs"
+                    withBorder
+                    // maw={350}
+                    style={{
+                      ...(tweenValues.length && {
+                        opacity: tweenValues[index],
+                      }),
+                      borderTop: 0,
+                      borderBottom: 0,
+                      borderRight: 0,
+                    }}
+                    sx={(theme) => ({
+                      [theme.fn.smallerThan(400)]: {
+                        maxWidth: 330,
+                      },
+                    })}
+                  >
+                    <Stack align="center">
+                      <EdtingImage
+                        widthWise
+                        src={mapped.cover}
+                        width={400}
+                        height={400}
+                        style={{
+                          borderRadius: "20px 20px 20px 20px",
+                        }}
+                      />
+                      <Stack w="100%" align="start" p="xl">
+                        <Group>
+                          <Badge
+                            p="sm"
+                            sx={{
+                              fontWeight: 600,
+                              fontSize: 10,
+                            }}
+                            color={colorScheme == "dark" ? "gray" : "dark"}
+                            variant="outline"
+                          >
+                            {mapped.category}
+                          </Badge>
 
-                        <Text size="xs" color="dimmed">
-                          {mapped.readTime}
-                        </Text>
-                      </Group>
-                      <Title order={3} lineClamp={3}>
-                        {mapped.title}
-                      </Title>
-                      <Text lineClamp={3}>{mapped.description}</Text>
+                          <Text size="xs" color="dimmed">
+                            {mapped.readTime}
+                          </Text>
+                        </Group>
+                        <Title order={3} lineClamp={3}>
+                          {mapped.title}
+                        </Title>
+                        <Text lineClamp={3}>{mapped.description}</Text>
+                      </Stack>
                     </Stack>
-                  </Stack>
-                </Card>
-              </Carousel.Slide>
-            ))}
-          </Carousel>
+                  </Card>
+                </Carousel.Slide>
+              ))}
+            </Carousel>
+          </Suspense>
         </Box>
       </Container>
       <Container px={0} py="xl" size="100%">
@@ -701,6 +714,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
               </Box>
 
               <EdtingImage
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 fill
                 src="https://images.unsplash.com/photo-1510932742089-bef92acabb5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
               />
@@ -768,6 +784,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
               </Box>
 
               <EdtingImage
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 fill
                 src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
               />
@@ -835,6 +854,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
 
               <EdtingImage
                 fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 src="https://plus.unsplash.com/premium_photo-1677094310919-d0361465d3be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80"
               />
             </Card>
@@ -901,6 +923,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
 
               <EdtingImage
                 fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 src="https://images.unsplash.com/photo-1597075095400-fb3f0de70140?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=778&q=80"
               />
             </Card>
@@ -967,6 +992,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
 
               <EdtingImage
                 fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80"
               />
             </Card>
@@ -1034,6 +1062,9 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
 
               <EdtingImage
                 fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
               />
             </Card>

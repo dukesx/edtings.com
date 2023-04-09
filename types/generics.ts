@@ -94,6 +94,7 @@ export interface EditingImageProps {
   priority?: boolean;
   placeholder?: string;
   widthWise?: boolean;
+  sizes?: string;
 }
 
 export interface EdtingsTagPickerProps {

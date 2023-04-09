@@ -13,10 +13,12 @@ const EdtingImage = ({
   placeholder,
   priority,
   widthWise,
+  sizes
 }: EditingImageProps) => {
   const theme = useMantineTheme();
   return (
     <Image
+      sizes={sizes ?? undefined}
       loading={priority == true ? "eager" : "lazy"}
       width={fill ? undefined : width}
       height={fill ? undefined : height}
