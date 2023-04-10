@@ -290,8 +290,11 @@ const AppWrapper = ({
                     <MediaQuery largerThan="xs" styles={{ display: "none" }}>
                       <ActionIcon
                         size="lg"
-                        color={colorScheme == "dark" ? "pink" : "indigo"}
-                        variant="filled"
+                        variant="gradient"
+                        gradient={{
+                          from: colorScheme == "dark" ? "pink.5" : "indigo.4",
+                          to: colorScheme == "dark" ? "grape" : "blue",
+                        }}
                         radius="xl"
                         component={Link}
                         href="/sign-in"
