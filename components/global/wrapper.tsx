@@ -258,18 +258,6 @@ const AppWrapper = ({
                       size="md"
                       color={colorScheme == "light" ? "dark" : "dark"}
                       onClick={() => toggleColorScheme()}
-                      // sx={{
-                      //   ":hover": {
-                      //     backgroundColor:
-                      //       colorScheme == "dark"
-                      //         ? theme.colors.gray[0]
-                      //         : theme.colors.dark[5] + " !important",
-                      //     color:
-                      //       colorScheme == "dark"
-                      //         ? theme.colors.dark[6]
-                      //         : theme.colors.gray[1],
-                      //   },
-                      // }}
                     >
                       {colorScheme == "dark" ? (
                         <Sun size={15} weight="duotone" />
@@ -297,7 +285,7 @@ const AppWrapper = ({
                     <MediaQuery largerThan="xs" styles={{ display: "none" }}>
                       <ActionIcon
                         size="lg"
-                        color={colorScheme == "dark" ? "pink" : "dark"}
+                        color={colorScheme == "dark" ? "pink" : "indigo"}
                         variant="filled"
                         radius="xl"
                         component={Link}
