@@ -1,76 +1,68 @@
 export const sampleArticles = [
   {
-    title: "#DevDiscuss: Passwordless Authentication",
+    title: "The 10 Best Places to Visit in Pakistan",
+    category: "World",
+    readTime: "5 min read",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat iaculis mauris, et pretium metus sagittis sed. Aliquam a aliquet justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget diam ut erat iaculis blandit. In eleifend sem quis ultricies vulputate. Integer iaculis mollis pellentesque. Vestibulum ac justo dui.`,
     cover:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--B9HFRWcZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kaz1i54fkin5jrzis532.png",
-    authors: [
-      {
-        name: "Erin Bensinger",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--Gjc1XuR4--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/494502/2d4eb07b-a07a-46f9-91cd-1b98d862a13c.png",
-      },
-    ],
-    date: Date.now(),
-  },
-
-  {
-    title: "Mastering the Art of Writing Effective GitHub Commit Messages",
-    cover:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--wxNz8NpK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fbhva0e296su2banxuuo.jpeg",
-    authors: [
-      {
-        name: "Ashish Patel",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--W476HXqR--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/264358/49ed96fb-215e-45f0-bce9-de831458665c.jpeg",
-      },
-      {
-        name: "Erin Bensinger",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--Gjc1XuR4--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/494502/2d4eb07b-a07a-46f9-91cd-1b98d862a13c.png",
-      },
-    ],
-    date: Date.now(),
+      "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
   },
   {
-    title: "Want to Get Better at Java? Go Old School.",
+    title: "What it takes to make 165 years of journalism available online",
+    category: "World",
+    readTime: "2 min read",
+    description: `Nulla gravida lacus orci, ut gravida tellus lacinia ut. Morbi egestas sem velit, quis aliquam est imperdiet nec. Pellentesque eget ante velit. Pellentesque dictum nulla velit, sit amet consequat eros aliquet a. Donec finibus non ante ut tincidunt. Aliquam dui sem, ultricies quis congue vitae, ultricies et eros. In nisl nisi, feugiat eget velit ac, hendrerit semper est. Phasellus ultrices vitae sapien et sodales. Curabitur quis sapien fringilla, fermentum purus at, vulputate tortor. Donec eget lacinia erat. Quisque eu est laoreet, accumsan mauris a, aliquet ipsum. Fusce ac suscipit metus.`,
     cover:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--bSRTlViW--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l4ngteg1h5wgj3z6d9gu.png",
-    authors: [
-      {
-        name: "Keyhole Software",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--vwk91Q0W--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/4408/9feca361-1fd4-45ee-a0f9-200f9d26e379.jpg",
-      },
-      {
-        name: "Ashish Patel",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--W476HXqR--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/264358/49ed96fb-215e-45f0-bce9-de831458665c.jpeg",
-      },
-      {
-        name: "Erin Bensinger",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--Gjc1XuR4--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/494502/2d4eb07b-a07a-46f9-91cd-1b98d862a13c.png",
-      },
-    ],
-    date: Date.now(),
+      "https://images.unsplash.com/photo-1498644035638-2c3357894b10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
   },
-
   {
-    title: "Deep Cloning Objects in JavaScript, the Modern Way",
+    title: "Report from a Relationship",
+    category: "Relationships",
+    readTime: "4 min read",
+    description: `Quisque non leo odio. Nulla euismod, ligula nec vulputate laoreet, magna nisi efficitur tortor, a tincidunt dui lacus ut nulla. Suspendisse eget molestie ex. Nulla consectetur tempor placerat. Etiam convallis ligula quis rhoncus sagittis. Donec malesuada felis mi, ut accumsan ipsum laoreet ut. Pellentesque non nunc sit amet purus feugiat sagittis sed non nibh.
+`,
     cover:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--Iqvui92m--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9r2cqh638tpzx5hi0hp4.png",
-    authors: [
-      {
-        name: "Steve Sewell",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--4aGWmndK--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/523496/8dd7a765-04cd-4a91-bb6b-c93c2dc37f63.jpg",
-      },
-      {
-        name: "Keyhole Software",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--vwk91Q0W--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/4408/9feca361-1fd4-45ee-a0f9-200f9d26e379.jpg",
-      },
-      {
-        name: "Ashish Patel",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--W476HXqR--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/264358/49ed96fb-215e-45f0-bce9-de831458665c.jpeg",
-      },
-      {
-        name: "Erin Bensinger",
-        dp: "https://res.cloudinary.com/practicaldev/image/fetch/s--Gjc1XuR4--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/494502/2d4eb07b-a07a-46f9-91cd-1b98d862a13c.png",
-      },
-    ],
-    date: Date.now(),
+      "https://images.unsplash.com/photo-1591711696773-c4b7fe4d3d74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80",
+  },
+  {
+    title: "The Ugly American Passport Fiasco",
+    category: "Law",
+    readTime: "7 min read",
+    description: `Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean in fringilla neque. Morbi quis felis sed elit iaculis efficitur. Quisque lectus tortor, semper vel blandit eu, tempor in nulla. Praesent mattis et nulla at semper. Suspendisse ut faucibus dui. Curabitur ac vestibulum tortor. Nunc id nunc pharetra, interdum urna non, imperdiet felis. Pellentesque ullamcorper, lorem vel efficitur sagittis, nibh arcu mollis ante, vitae lacinia mauris sapien a tellus. Pellentesque posuere accumsan ante non vulputate. Integer non dolor egestas, gravida nunc vel, pellentesque erat. Proin euismod est vitae augue pulvinar, id pellentesque magna ultricies.`,
+    cover:
+      "https://images.unsplash.com/photo-1561121864-3e4031788fdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+  },
+  {
+    title: "David Attenborough Narrates the Great Twitter Migration",
+    category: "Tech Companies",
+    readTime: "3 min read",
+    description: `Nulla gravida arcu ac nibh vehicula, at suscipit sem volutpat. Praesent eros turpis, gravida non justo id, egestas feugiat ante. Nunc vestibulum euismod convallis. Nam blandit a mi ut sodales. Mauris bibendum eros vel condimentum posuere. Aenean vitae lobortis nisi, sit amet dignissim erat. Sed eu gravida lacus.`,
+    cover:
+      "https://images.unsplash.com/photo-1525770041010-2a1233dd8152?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+  },
+  {
+    title: "The Real Problem with TikTok’s ‘Glamour’ Filter",
+    category: "Artificial Intelligence",
+    readTime: "5 min read",
+    description: `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a cursus orci. Integer ultrices quam sem, vel viverra purus scelerisque ac. Proin id nulla pellentesque mauris semper porta vel sit amet nunc. Maecenas vel viverra libero, in porttitor arcu. Etiam vulputate massa ac varius maximus. Vestibulum et tempor nunc. Aenean fringilla volutpat erat, ac placerat mauris porttitor auctor. Suspendisse pretium auctor justo ut feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut felis metus, dapibus sed nibh sit amet, placerat pretium turpis. Donec ut arcu eu erat cursus molestie ut nec turpis. Curabitur finibus vulputate lacus. Mauris venenatis est ac rhoncus faucibus. Praesent est neque, volutpat non arcu at, aliquet pharetra felis.`,
+    cover:
+      "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+  },
+  {
+    title: "Design notes on the 2023 Wikipedia redesign",
+    category: "Design",
+    readTime: "2 min read",
+    description: `Curabitur fermentum ultricies turpis. Mauris nec ullamcorper felis. Maecenas consectetur nisi ac ultricies aliquam. Pellentesque vel ligula egestas, porttitor ex ut, auctor ex. Etiam id lectus eu massa laoreet tempus vitae et ex. Pellentesque a ex id dolor efficitur faucibus eu id orci. Sed maximus, purus nec tempor pellentesque, nulla risus viverra mauris, eget eleifend sem tortor a lacus. Quisque eleifend magna et risus pulvinar vestibulum. Suspendisse malesuada turpis tristique nunc dapibus aliquet. Morbi pulvinar dolor ipsum, id hendrerit ex elementum id. Pellentesque vitae diam ligula. Curabitur at lacinia turpis. Vivamus quis felis nisl. Etiam suscipit risus ac dui consequat commodo.`,
+    cover:
+      "https://images.unsplash.com/photo-1657256031790-e898b7b3f3eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
+  },
+  {
+    title: "The 13 Rules of Good Luck",
+    category: "Spirtuality",
+    readTime: "4 min read",
+    description: `Integer metus mi, aliquet eu consectetur et, sodales malesuada leo. Pellentesque augue lectus, facilisis at dui accumsan, vehicula rutrum dolor. Quisque ullamcorper odio et risus elementum, sit amet sollicitudin arcu feugiat. Nullam nec justo congue, venenatis lectus a, dictum arcu. Nam sit amet luctus dolor. Quisque ac molestie nulla. Nam viverra orci at felis aliquet, nec porttitor sapien egestas.`,
+    cover:
+      "https://images.unsplash.com/photo-1550534790-5724c29d08f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
   },
 ];

@@ -118,18 +118,21 @@ const AppWrapper = ({
             ></Box> */}
             <Container px={0} size="md">
               <Header
-                maw={780}
                 mx="auto"
+                maw={"80%"}
                 zIndex={2000}
                 fixed={false}
                 withBorder={false}
                 height={{ base: 60, md: 50 }}
                 p="md"
                 bg="transparent"
-                sx={{
+                sx={(theme) => ({
                   position: headerProps.headerPosition,
                   backgroundColor: "transparent",
-                }}
+                  [theme.fn.smallerThan("lg")]: {
+                    maxWidth: "100%",
+                  },
+                })}
               >
                 <Group
                   noWrap
