@@ -42,7 +42,7 @@ const LastHomepageSection = () => {
     >
       <Slide cascade duration={1000} direction="up">
         <Center mt={0} py="xl" w="100%">
-          <Stack pt={40} px="xl" spacing={8}>
+          <Stack pt={20} px="xl" spacing={8}>
             <Title
               order={1}
               sx={(theme) => ({

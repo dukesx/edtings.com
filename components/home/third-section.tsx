@@ -40,7 +40,7 @@ const ThirdHomepageSection = () => {
             justifyContent: "center",
           },
         })}
-        mt={40}
+        mt={20}
         pr="xl"
         position="center"
         spacing={40}
@@ -173,9 +173,9 @@ const ThirdHomepageSection = () => {
             slideGap: "xs",
           },
           {
-            slideSize: "22%",
+            slideSize: "20.5%",
             maxWidth: 2000,
-            slideGap: 40,
+            slideGap: 0,
           },
           {
             slideSize: "30%",
