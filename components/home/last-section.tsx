@@ -63,7 +63,7 @@ const LastHomepageSection = () => {
           sx={
             colorScheme == "dark"
               ? {
-                  ...fadeToDark("110%"),
+                  ...fadeToDark("100%"),
                 }
               : {
                   ...fadeToWhite(),
