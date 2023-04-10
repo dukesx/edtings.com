@@ -288,7 +288,7 @@ const FirstHomepageSection = () => {
                   <Title
                     transform="capitalize"
                     ml="xs"
-                    mb="md"
+                    mb="sm"
                     mt="sm"
                     lineClamp={2}
                     order={4}
@@ -318,7 +318,7 @@ const FirstHomepageSection = () => {
                     component={Link}
                     size="xs"
                   >
-                    See all latest &gt;
+                    See all latest -&gt;
                   </Anchor>
                 </Stack>
               </Card>
