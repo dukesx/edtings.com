@@ -11,6 +11,7 @@ import {
   MediaQuery,
   Stack,
   Text,
+  ThemeIcon,
   Title,
   useMantineColorScheme,
   useMantineTheme,
@@ -25,6 +26,7 @@ import EdtingImage from "../global/image";
 import { fadeToDark, fadeToWhite } from "../../utils/basic";
 import { serif } from "../../pages/_app";
 import { Slide } from "react-awesome-reveal";
+import { ArrowBendRightDown, ArrowElbowRightDown } from "@phosphor-icons/react";
 
 const LastHomepageSection = () => {
   const autoplay = useRef(Autoplay({ delay: 2000 }));
@@ -38,7 +40,7 @@ const LastHomepageSection = () => {
       size="100%"
       px={0}
     >
-      <Slide duration={1000} direction="up">
+      <Slide cascade duration={1000} direction="up">
         <Center mt={0} py="xl" w="100%">
           <Stack pt={40} px="xl" spacing={8}>
             <Title
@@ -51,8 +53,27 @@ const LastHomepageSection = () => {
               })}
               weight={400}
               transform="uppercase"
+              pos="relative"
             >
               And So Much More
+              <Divider
+                size="lg"
+                color={colorScheme == "dark" ? "pink" : "indigo"}
+              />
+              <ThemeIcon
+                top={10}
+                right={-90}
+                pos="absolute"
+                color={colorScheme == "dark" ? "pink" : "indigo"}
+                variant="outline"
+                sx={{
+                  border: 0,
+                  transform: "rotate(25deg)",
+                }}
+                size={120}
+              >
+                <ArrowBendRightDown size={100} />
+              </ThemeIcon>
             </Title>
           </Stack>
         </Center>
