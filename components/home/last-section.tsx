@@ -38,26 +38,26 @@ const LastHomepageSection = () => {
       size="100%"
       px={0}
     >
-      <Center mt={0} py="xl" w="100%">
-        <Stack pt={40} px="xl" spacing={8}>
-          <Title
-            order={1}
-            sx={(theme) => ({
-              fontFamily: serif.style.fontFamily,
-              [theme.fn.smallerThan(400)]: {
-                fontSize: `calc(${theme.fontSizes.xl} * 1.5)`,
-              },
-            })}
-            weight={400}
-            transform="uppercase"
-          >
-            And So Much More
-          </Title>
-        </Stack>
-      </Center>
-      <Slide duration={1300} direction="up">
+      <Slide duration={1000} direction="up">
+        <Center mt={0} py="xl" w="100%">
+          <Stack pt={40} px="xl" spacing={8}>
+            <Title
+              order={1}
+              sx={(theme) => ({
+                fontFamily: serif.style.fontFamily,
+                [theme.fn.smallerThan(400)]: {
+                  fontSize: `calc(${theme.fontSizes.xl} * 1.5)`,
+                },
+              })}
+              weight={400}
+              transform="uppercase"
+            >
+              And So Much More
+            </Title>
+          </Stack>
+        </Center>
         <Box
-          h={590}
+          h={540}
           py={"xl"}
           //@ts-ignore
           sx={
@@ -91,6 +91,11 @@ const LastHomepageSection = () => {
                 slideSize: "20%",
                 maxWidth: "xl",
                 slideGap: "xl",
+              },
+              {
+                slideSize: "25%",
+                maxWidth: 1800,
+                slideGap: 20,
               },
               {
                 slideSize: "30%",
