@@ -59,6 +59,9 @@ const ThirdHomepageSection = () => {
   return (
     <Container pt={40} pb={20} size="xl" px="xs">
       <Carousel
+        plugins={[autoplay.current, wheel.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
         nextControlIcon={<CaretRight weight="bold" size={20} />}
         previousControlIcon={<CaretLeft weight="bold" size={20} />}
         controlsOffset={50}
@@ -188,11 +191,9 @@ const ThirdHomepageSection = () => {
                     <ActionIcon
                       radius="xl"
                       opacity={0.55}
-                      //   color={  colorScheme == "dark" ? "pink" : "indigo"}
-
                       gradient={{
-                        from: colorScheme == "dark" ? "pink" : "indigo",
-                        to: colorScheme == "dark" ? "grape" : "blue.4",
+                        from: colorScheme == "dark" ? "pink.6" : "indigo",
+                        to: colorScheme == "dark" ? "grape.5" : "blue.4",
                       }}
                       variant="gradient"
                       size={50}
@@ -295,6 +296,7 @@ const ThirdHomepageSection = () => {
                     <Badge
                       sx={{
                         fontSize: 9,
+                        fontWeight: 600,
                       }}
                       color={colorScheme == "dark" ? "gray" : "dark"}
                       variant="outline"
