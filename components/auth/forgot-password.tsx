@@ -187,7 +187,7 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
                         })}
                         placeholder="Recovery Email"
                       />
-                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                      <Button mt={20} color="dark.7" variant="filled" fullWidth>
                         {" "}
                         Send Recovery Link
                       </Button>

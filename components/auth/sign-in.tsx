@@ -284,7 +284,7 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
                       })}
                       placeholder="Password"
                     />
-                    <Button mt={15} color="dark" variant="filled" fullWidth>
+                    <Button mt={15} color="dark.7" variant="filled" fullWidth>
                       {" "}
                       Sign in
                     </Button>

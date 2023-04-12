@@ -214,7 +214,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                         })}
                         placeholder="Repeat Password"
                       />
-                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                      <Button mt={20} color="dark.7" variant="filled" fullWidth>
                         {" "}
                         Register
                       </Button>
