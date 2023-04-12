@@ -60,20 +60,27 @@ const LastHomepageSection = () => {
                 size="lg"
                 color={colorScheme == "dark" ? "pink" : "indigo"}
               />
-              <ThemeIcon
-                top={10}
-                right={-90}
-                pos="absolute"
-                color={colorScheme == "dark" ? "pink" : "indigo"}
-                variant="outline"
-                sx={{
-                  border: 0,
-                  transform: "rotate(25deg)",
+              <MediaQuery
+                smallerThan={500}
+                styles={{
+                  display: "none",
                 }}
-                size={120}
               >
-                <ArrowBendRightDown size={100} />
-              </ThemeIcon>
+                <ThemeIcon
+                  top={10}
+                  right={-80}
+                  pos="absolute"
+                  color={colorScheme == "dark" ? "pink" : "indigo"}
+                  variant="outline"
+                  sx={{
+                    border: 0,
+                    transform: "rotate(25deg)",
+                  }}
+                  size={120}
+                >
+                  <ArrowBendRightDown size={100} />
+                </ThemeIcon>
+              </MediaQuery>
             </Title>
           </Stack>
         </Center>
