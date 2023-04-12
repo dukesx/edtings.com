@@ -18,7 +18,7 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
-import { CaretLeft, CaretRight, Play } from "@phosphor-icons/react";
+import { ArrowRight, CaretLeft, CaretRight, Play } from "@phosphor-icons/react";
 import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { nanoid } from "nanoid";
@@ -241,7 +241,7 @@ const CategoriesHomepageSection = () => {
               </Card>
               <Center>
                 <Button
-                  mb={2}
+                  mb={4}
                   color={colorScheme == "dark" ? "dark" : "gray.0"}
                   variant={colorScheme == "dark" ? "filled" : "filled"}
                   sx={{

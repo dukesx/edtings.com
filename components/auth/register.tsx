@@ -38,19 +38,19 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
           })}
           p={0}
           w="100%"
-          maw={900}
-          h="100vh"
-          mah={500}
+          h="100%"
         >
           <Grid
+            h="100%"
+            w="100%"
             sx={(theme) => ({
               ["@media (min-width: 300px) and (max-width: 1200px)"]: {
                 margin: 0,
               },
             })}
-            w="100%"
           >
             <Grid.Col
+              w="100%"
               span={12}
               xs={12}
               sm={12}
@@ -63,15 +63,13 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
               })}
             >
               <Box
-                h={500}
-                w={"100%"}
+                pos="relative"
+                w="100%"
+                h={"100%"}
                 sx={(theme) => ({
                   position: "relative",
-                  ["@media (min-width: 300px) and (max-width: 600px)"]: {
-                    height: 300,
-                  },
-                  ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 400,
+                  ["@media (min-width: 300px) and (max-width: 1200px)"]: {
+                    minHeight: 400,
                   },
                 })}
               >
@@ -86,7 +84,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                   w={"100%"}
                   sx={{
                     position: "absolute",
-                    bottom: 0,
+                    bottom: -20,
                     left: 0,
                     right: 0,
                   }}
@@ -121,64 +119,74 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Stack
-                mt={50}
-                align="center"
-                sx={(theme) => ({
-                  ["@media (min-width: 300px) and (max-width: 1000px)"]: {
-                    marginTop: 0,
-                  },
-                })}
+              <Center
                 w="100%"
                 h="100%"
+                sx={(theme) => ({
+                  ["@media (min-width: 300px) and (max-width: 1200px)"]: {
+                    maxHeight: 400,
+                  },
+                })}
               >
-                <Box maw={400} w="100%">
-                  <Title
-                    transform="capitalize"
-                    align="center"
-                    mt={"xl"}
-                    order={4}
-                  >
-                    Register
-                  </Title>
-                  <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Already have an account?{" "}
-                    <Anchor
-                      onClick={() => {
-                        setTab("sign-in");
-                      }}
-                      weight={700}
-                      href="#"
-                      color="dimmed"
-                    >
-                      {" "}
-                      Sign in
-                    </Anchor>
-                  </Text>
-                  <Stack mt="xl" p={"xl"}>
-                    <TextInput placeholder="Email" />
-                    <TextInput placeholder="Password" />
-                    <TextInput placeholder="Repeat Password" />
-                    <Button mt={20} color="dark" variant="filled" fullWidth>
-                      {" "}
-                      Register
-                    </Button>
-
-                    <Anchor
-                      onClick={() => {
-                        setTab("forgot-password");
-                      }}
-                      color="dimmed"
-                      href="#"
-                      mt={10}
-                      size="xs"
+                <Stack
+                  mt={50}
+                  align="center"
+                  w="100%"
+                  sx={(theme) => ({
+                    ["@media (min-width: 300px) and (max-width: 1000px)"]: {
+                      marginTop: 0,
+                      height: "100%",
+                    },
+                  })}
+                >
+                  <Box maw={400} w="100%">
+                    <Title
+                      transform="capitalize"
                       align="center"
+                      mt={"xl"}
+                      order={4}
                     >
-                      Forgot your password?
-                    </Anchor>
-                  </Stack>
-                </Box>
-              </Stack>
+                      Register
+                    </Title>
+                    <Text align="center" mt="xs" size="xs" color="dimmed">
+                      Already have an account?{" "}
+                      <Anchor
+                        onClick={() => {
+                          setTab("sign-in");
+                        }}
+                        weight={700}
+                        href="#"
+                        color="dimmed"
+                      >
+                        {" "}
+                        Sign in
+                      </Anchor>
+                    </Text>
+                    <Stack mt="xl" p={"xl"}>
+                      <TextInput placeholder="Email" />
+                      <TextInput placeholder="Password" />
+                      <TextInput placeholder="Repeat Password" />
+                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                        {" "}
+                        Register
+                      </Button>
+
+                      <Anchor
+                        onClick={() => {
+                          setTab("forgot-password");
+                        }}
+                        color="dimmed"
+                        href="#"
+                        mt={10}
+                        size="xs"
+                        align="center"
+                      >
+                        Forgot your password?
+                      </Anchor>
+                    </Stack>
+                  </Box>
+                </Stack>
+              </Center>
             </Grid.Col>
           </Grid>
         </Paper>

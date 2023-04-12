@@ -38,19 +38,19 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
           })}
           p={0}
           w="100%"
-          maw={900}
           h="100%"
-          mah={500}
         >
           <Grid
+            h="100%"
+            w="100%"
             sx={(theme) => ({
               ["@media (min-width: 300px) and (max-width: 1200px)"]: {
                 margin: 0,
               },
             })}
-            w="100%"
           >
             <Grid.Col
+              w="100%"
               span={12}
               xs={12}
               sm={12}
@@ -63,14 +63,13 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
               })}
             >
               <Box
-                h={500}
+                pos="relative"
+                w="100%"
+                h={"100%"}
                 sx={(theme) => ({
                   position: "relative",
                   ["@media (min-width: 300px) and (max-width: 1200px)"]: {
-                    height: 300,
-                  },
-                  ["@media (min-width: 600px) and (max-width: 1200px)"]: {
-                    height: 500,
+                    minHeight: 400,
                   },
                 })}
               >
@@ -85,7 +84,7 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
                   w={"100%"}
                   sx={{
                     position: "absolute",
-                    bottom: 0,
+                    bottom: -20,
                     left: 0,
                     right: 0,
                   }}
@@ -120,63 +119,73 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
               </Box>
             </Grid.Col>
             <Grid.Col span={12} xs={12} sm={12} md={12} lg={6}>
-              <Stack
-                mt={50}
-                align="center"
+              <Center
+                w="100%"
+                h="100%"
                 sx={(theme) => ({
-                  ["@media (min-width: 300px) and (max-width: 1000px)"]: {
-                    marginTop: 0,
+                  ["@media (min-width: 300px) and (max-width: 1200px)"]: {
+                    maxHeight: 400,
                   },
                 })}
-                id="forgot-password"
               >
-                <Box maw={400} w="100%" mt={0}>
-                  <Title
-                    transform="capitalize"
-                    align="center"
-                    mt="xl"
-                    order={4}
-                  >
-                    Forgot Password
-                  </Title>
-                  <Text align="center" mt="xs" size="xs" color="dimmed">
-                    Recalled the password ?{" "}
-                    <Anchor
-                      onClick={() => {
-                        setTab("sign-in");
-                      }}
-                      weight={700}
-                      href="#"
-                      color="dimmed"
+                <Stack
+                  mt={50}
+                  align="center"
+                  sx={(theme) => ({
+                    ["@media (min-width: 300px) and (max-width: 1000px)"]: {
+                      marginTop: 0,
+                    },
+                  })}
+                  w="100%"
+                >
+                  <Box maw={400} w="100%" mt={0}>
+                    <Title
+                      transform="capitalize"
+                      align="center"
+                      mt="xl"
+                      order={4}
                     >
-                      {" "}
-                      Sign in
-                    </Anchor>
-                  </Text>
-                  <Stack mt="sm" p={"xl"}>
-                    <TextInput placeholder="Recovery Email" />
-                    <Button mt={20} color="dark" variant="filled" fullWidth>
-                      {" "}
-                      Send Recovery Link
-                    </Button>
-
+                      Forgot Password
+                    </Title>
                     <Text align="center" mt="xs" size="xs" color="dimmed">
-                      Don&apos;t have an account ?{" "}
+                      Recalled the password ?{" "}
                       <Anchor
+                        onClick={() => {
+                          setTab("sign-in");
+                        }}
                         weight={700}
                         href="#"
                         color="dimmed"
-                        onClick={() => {
-                          setTab("register");
-                        }}
                       >
                         {" "}
-                        Register
+                        Sign in
                       </Anchor>
                     </Text>
-                  </Stack>
-                </Box>
-              </Stack>
+                    <Stack mt="sm" p={"xl"}>
+                      <TextInput placeholder="Recovery Email" />
+                      <Button mt={20} color="dark" variant="filled" fullWidth>
+                        {" "}
+                        Send Recovery Link
+                      </Button>
+
+                      <Text align="center" mt="xs" size="xs" color="dimmed">
+                        Don&apos;t have an account ?{" "}
+                        <Anchor
+                          weight={700}
+                          href="#"
+                          color="dimmed"
+                          onClick={() => {
+                            setTab("register");
+                          }}
+                        >
+                          {" "}
+                          Register
+                        </Anchor>
+                      </Text>
+                    </Stack>
+                  </Box>
+                </Stack>
+              </Center>
             </Grid.Col>
           </Grid>
         </Paper>

@@ -23,31 +23,31 @@ const Signin = ({ first, second, third }: any) => {
           ["@media (min-width: 300px) and (max-width: 1200px)"]: {
             paddingTop: 0,
           },
-          ...generateGradient(
-            tab == "sign-in"
-              ? {
-                  color1: "blue",
-                  color2: "cyan",
-                  opacity: 0.4,
-                }
-              : tab == "forgot-password"
-              ? {
-                  color1: "cyan",
-                  color2: "teal",
-                  opacity: 0.4,
-                }
-              : tab == "register"
-              ? {
-                  color1: "red",
-                  color2: "cyan",
-                  opacity: 0.4,
-                }
-              : {
-                  color1: "blue",
-                  color2: "indigo",
-                  opacity: 0.4,
-                }
-          ),
+          // ...generateGradient(
+          //   tab == "sign-in"
+          //     ? {
+          //         color1: "blue",
+          //         color2: "cyan",
+          //         opacity: 0.4,
+          //       }
+          //     : tab == "forgot-password"
+          //     ? {
+          //         color1: "cyan",
+          //         color2: "teal",
+          //         opacity: 0.4,
+          //       }
+          //     : tab == "register"
+          //     ? {
+          //         color1: "red",
+          //         color2: "cyan",
+          //         opacity: 0.4,
+          //       }
+          //     : {
+          //         color1: "blue",
+          //         color2: "indigo",
+          //         opacity: 0.4,
+          //       }
+          // ),
         })}
       >
         {tab == "sign-in" ? (
