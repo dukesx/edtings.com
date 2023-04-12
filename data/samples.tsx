@@ -5,7 +5,7 @@ export const sampleArticles = [
     readTime: "5 min read",
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat iaculis mauris, et pretium metus sagittis sed. Aliquam a aliquet justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget diam ut erat iaculis blandit. In eleifend sem quis ultricies vulputate. Integer iaculis mollis pellentesque. Vestibulum ac justo dui.`,
     cover:
-      "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
   },
   {
     title: "What it takes to make 165 years of journalism available online",
@@ -50,12 +50,12 @@ export const sampleArticles = [
       "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
   },
   {
-    title: "Design notes on the 2023 Wikipedia redesign",
-    category: "Design",
+    title: "Mailchimp Debuts Generative AI Tools for Email Content",
+    category: "Technology",
     readTime: "2 min read",
     description: `Curabitur fermentum ultricies turpis. Mauris nec ullamcorper felis. Maecenas consectetur nisi ac ultricies aliquam. Pellentesque vel ligula egestas, porttitor ex ut, auctor ex. Etiam id lectus eu massa laoreet tempus vitae et ex. Pellentesque a ex id dolor efficitur faucibus eu id orci. Sed maximus, purus nec tempor pellentesque, nulla risus viverra mauris, eget eleifend sem tortor a lacus. Quisque eleifend magna et risus pulvinar vestibulum. Suspendisse malesuada turpis tristique nunc dapibus aliquet. Morbi pulvinar dolor ipsum, id hendrerit ex elementum id. Pellentesque vitae diam ligula. Curabitur at lacinia turpis. Vivamus quis felis nisl. Etiam suscipit risus ac dui consequat commodo.`,
     cover:
-      "https://images.unsplash.com/photo-1657256031790-e898b7b3f3eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
+      "https://images.unsplash.com/photo-1661956601349-f61c959a8fd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
   },
   {
     title: "The 13 Rules of Good Luck",

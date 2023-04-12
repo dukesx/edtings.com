@@ -135,10 +135,13 @@ const ThirdHomepageSection = () => {
                   <Group noWrap>
                     <Badge
                       color="gray.0"
-                      sx={{
+                      sx={(theme) => ({
                         fontSize: 10,
                         fontWeight: 500,
-                      }}
+                        [theme.fn.smallerThan(400)]: {
+                          fontSize: 9,
+                        },
+                      })}
                       variant="outline"
                       px="xs"
                       py={5}

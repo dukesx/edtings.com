@@ -41,6 +41,7 @@ import { AppWrapperProps } from "../../types/generics";
 import AppNavbar from "./navbar";
 import { generateGradient, generateGradient2 } from "../../utils/basic";
 import lightOrDarkColor from "@check-light-or-dark/color";
+import { Carousel } from "@mantine/carousel";
 
 const AppWrapper = ({
   logo,
@@ -105,17 +106,6 @@ const AppWrapper = ({
       header={
         header == true ? (
           <Container px="0px" size="100vw">
-            {/* <Box
-              sx={{
-                height: 15,
-                borderRadius: "0%",
-                ...generateGradient2({
-                  color1: colorScheme == "dark" ? "pink" : "blue",
-                  color2: colorScheme == "dark" ? "grape" : "indigo",
-                  opacity: 1,
-                }),
-              }}
-            ></Box> */}
             <Container px={0} size="md">
               <Header
                 mx="auto"

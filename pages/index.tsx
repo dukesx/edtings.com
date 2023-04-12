@@ -40,6 +40,30 @@ import FourthHomepageSection from "../components/home/fourth-section";
 
 const IndexPage = ({ blurhash }: { blurhash?: string }) => {
   const theme = useMantineTheme();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [emblaMainApi, setEmblaMainApi] = useState<Embla | null>(null);
+  const [emblaThumbsApi, setEmblaThumbsApi] = useState<Embla | null>(null);
+  const { colorScheme } = useMantineColorScheme();
+  const onThumbClick = useCallback(
+    (index: number) => {
+      if (!emblaMainApi || !emblaThumbsApi) return;
+      if (emblaThumbsApi.clickAllowed()) emblaMainApi.scrollTo(index);
+    },
+    [emblaMainApi, emblaThumbsApi]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!emblaMainApi || !emblaThumbsApi) return;
+    setSelectedIndex(emblaMainApi.selectedScrollSnap());
+    emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap());
+  }, [emblaMainApi, emblaThumbsApi, setSelectedIndex]);
+
+  useEffect(() => {
+    if (!emblaMainApi) return;
+    onSelect();
+    emblaMainApi.on("select", onSelect);
+    emblaMainApi.on("reInit", onSelect);
+  }, [emblaMainApi, onSelect]);
 
   return (
     <AppWrapper
@@ -52,9 +76,22 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
       padding={false}
     >
       <FirstHomepageSection />
-
       <SecondHomepageSection />
-
+      <Container py={60}>
+        <Stack>
+          <Title>Browse Our Categories</Title>
+          <Carousel getEmblaApi={setEmblaMainApi} p="xl">
+            <Carousel.Slide>
+              <Button>Technology</Button>
+            </Carousel.Slide>
+          </Carousel>
+          <Carousel getEmblaApi={setEmblaThumbsApi} p="xl">
+            <Carousel.Slide>
+              <Button>Technology</Button>
+            </Carousel.Slide>
+          </Carousel>
+        </Stack>
+      </Container>
       <ThirdHomepageSection />
       <FourthHomepageSection />
       <LastHomepageSection />
