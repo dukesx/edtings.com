@@ -197,7 +197,7 @@ const CategoriesHomepageSection = () => {
                 style={{
                   borderColor:
                     colorScheme == "dark"
-                      ? theme.colors.dark[6]
+                      ? theme.colors.dark[4]
                       : theme.colors.dark[8],
                 }}
                 onClick={() => onThumbClick(index)}
