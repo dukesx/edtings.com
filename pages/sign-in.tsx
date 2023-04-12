@@ -14,19 +14,12 @@ const Signin = ({ first, second, third }: any) => {
   const { colorScheme } = useMantineColorScheme();
   const [tab, setTab] = useState("sign-in");
   return (
-    <AppWrapper
-      path="sign"
-      padding={false}
-      navbarProps={{
-        navbarTitle: "Navigation",
-        navbarPosition: "sticky",
-        navbarLinks: [...DEFAULT_NAV_DATA],
-      }}
-    >
+    <AppWrapper path="sign" padding={false} navbar={false}>
       <Paper
-        pt={10}
+        radius={0}
+        pt={0}
         sx={() => ({
-          height: "100%",
+          height: `100%`,
           ["@media (min-width: 300px) and (max-width: 1200px)"]: {
             paddingTop: 0,
           },
@@ -34,13 +27,13 @@ const Signin = ({ first, second, third }: any) => {
             tab == "sign-in"
               ? {
                   color1: "blue",
-                  color2: "indigo",
+                  color2: "cyan",
                   opacity: 0.4,
                 }
               : tab == "forgot-password"
               ? {
                   color1: "cyan",
-                  color2: "blue",
+                  color2: "teal",
                   opacity: 0.4,
                 }
               : tab == "register"

@@ -200,7 +200,6 @@ const CategoriesHomepageSection = () => {
                       ? theme.colors.dark[6]
                       : theme.colors.dark[8],
                 }}
-                // bg="transparent"
                 onClick={() => onThumbClick(index)}
                 bg={
                   selectedIndex == index
@@ -216,17 +215,7 @@ const CategoriesHomepageSection = () => {
                 <Stack align="center">
                   {mapped.subCategories.map((sub: any) => (
                     <Stack>
-                      <Text
-                        weight={700}
-                        size="lg"
-                        // color={
-                        //   selectedIndex == index
-                        //     ? "gray.0"
-                        //     : colorScheme == "dark"
-                        //     ? "gray.4"
-                        //     : "dark"
-                        // }
-                      >
+                      <Text weight={700} size="lg">
                         {sub.title}
                       </Text>
                       {sub.subCategories && sub.subCategories.length > 0 ? (
@@ -239,16 +228,7 @@ const CategoriesHomepageSection = () => {
                         >
                           {sub.subCategories.map((mapped2: any) => (
                             <List.Item>
-                              <Text
-                                transform="capitalize"
-                                // color={
-                                //   selectedIndex == index
-                                //     ? "gray.0"
-                                //     : colorScheme == "dark"
-                                //     ? "gray.4"
-                                //     : "dark"
-                                // }
-                              >
+                              <Text transform="capitalize">
                                 {mapped2.title}
                               </Text>
                             </List.Item>
@@ -270,10 +250,6 @@ const CategoriesHomepageSection = () => {
                       colorScheme == "dark"
                         ? theme.colors.gray[2]
                         : theme.colors.dark[8],
-                    // background:
-                    //   colorScheme == "dark"
-                    //     ? theme.colors.dark[6]
-                    //     : theme.white,
                   }}
                 >
                   Read more from{" "}

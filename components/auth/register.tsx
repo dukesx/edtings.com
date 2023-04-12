@@ -14,21 +14,23 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
-import { Fade } from "react-awesome-reveal";
+import Slide from "react-reveal/Slide";
 import EdtingImage from "../global/image";
 
 const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   return (
-    <Fade
-      duration={2500}
+    <Slide
+      left
+      duration={1000}
       style={{
         height: "100%",
         width: "100%",
       }}
     >
-      <Center key={nanoid()} id="register" h="100%">
+      <Center key={nanoid()} id="register" h="calc(100vh - 50px)">
         <Paper
+          radius="xs"
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
               maxHeight: "100%",
@@ -37,7 +39,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
           p={0}
           w="100%"
           maw={900}
-          h="100%"
+          h="100vh"
           mah={500}
         >
           <Grid
@@ -181,7 +183,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
           </Grid>
         </Paper>
       </Center>
-    </Fade>
+    </Slide>
   );
 };
 

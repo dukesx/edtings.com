@@ -16,7 +16,9 @@ import {
   Tooltip,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
-import { Fade } from "react-awesome-reveal";
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+
 import EdtingImage from "../global/image";
 import GoogleLogo from "../../public/google.svg";
 import Image from "next/image";
@@ -29,15 +31,17 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   const { session, supabaseClient } = useSessionContext();
   return (
-    <Fade
-      duration={2500}
+    <Slide
+      up
+      duration={1000}
       style={{
         height: "100%",
         width: "100%",
       }}
     >
-      <Center h="100%" key={nanoid()} id="sign-in">
+      <Center h="calc(100vh - 50px)" key={nanoid()} id="sign-in">
         <Paper
+          radius="xs"
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
               maxHeight: "100%",
@@ -251,7 +255,7 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
           </Grid>
         </Paper>
       </Center>
-    </Fade>
+    </Slide>
   );
 };
 
