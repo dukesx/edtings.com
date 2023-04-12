@@ -30,7 +30,7 @@ const TWEEN_FACTOR = 4.2;
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
-const SecondHomepageSection = () => {
+const TrendingStoriesHomepageSection = () => {
   const [tweenValues, setTweenValues] = useState<number[]>([]);
   const [embla, setEmbla] = useState<Embla | null>(null);
   const autoplay = useRef(Autoplay({ delay: 2000 }));
@@ -268,4 +268,4 @@ const SecondHomepageSection = () => {
   );
 };
 
-export default SecondHomepageSection;
+export default TrendingStoriesHomepageSection;

@@ -27,7 +27,7 @@ import { serif } from "../../pages/_app";
 import { fadeToDark, generateBottomFade } from "../../utils/basic";
 import EdtingImage from "../global/image";
 
-const ThirdHomepageSection = () => {
+const VideosHomepageSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaMainApi, setEmblaMainApi] = useState<Embla | null>(null);
   const [emblaThumbsApi, setEmblaThumbsApi] = useState<Embla | null>(null);
@@ -379,4 +379,4 @@ const ThirdHomepageSection = () => {
   );
 };
 
-export default ThirdHomepageSection;
+export default VideosHomepageSection;

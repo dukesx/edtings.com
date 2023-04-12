@@ -25,7 +25,7 @@ import { serif } from "../../pages/_app";
 import { generateBottomFade } from "../../utils/basic";
 import EdtingImage from "../global/image";
 
-const FourthHomepageSection = () => {
+const FeaturedHighlightsHomepageSection = () => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const autoplay = useRef(Autoplay({ delay: 2000 }));
   const wheel = useRef(WheelGesturesPlugin());
@@ -163,7 +163,7 @@ const FourthHomepageSection = () => {
             slideGap: "xs",
           },
           {
-            slideSize: "25%",
+            slideSize: "35%",
             maxWidth: "lg",
             slideGap: "xs",
           },
@@ -259,4 +259,4 @@ const FourthHomepageSection = () => {
   );
 };
 
-export default FourthHomepageSection;
+export default FeaturedHighlightsHomepageSection;

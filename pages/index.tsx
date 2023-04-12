@@ -10,6 +10,7 @@ import {
   Divider,
   Group,
   Indicator,
+  List,
   MediaQuery,
   Paper,
   SimpleGrid,
@@ -22,9 +23,6 @@ import {
 } from "@mantine/core";
 import EdtingImage from "../components/global/image";
 import AppWrapper from "../components/global/wrapper";
-import FirstHomepageSection from "../components/home/first-section";
-import SecondHomepageSection from "../components/home/second-section";
-import ThirdHomepageSection from "../components/home/third-section";
 import LastHomepageSection from "../components/home/last-section";
 import { serif } from "./_app";
 import { sampleArticles } from "../data/samples";
@@ -33,8 +31,12 @@ import { CaretLeft, CaretRight, Play, PlayCircle } from "@phosphor-icons/react";
 import Balancer from "react-wrap-balancer";
 import { nanoid } from "nanoid";
 import { useCallback, useEffect, useState } from "react";
-import { fadeToDark } from "../utils/basic";
-import FourthHomepageSection from "../components/home/fourth-section";
+import { fadeToDark, fadeToWhite } from "../utils/basic";
+import CategoriesHomepageSection from "../components/home/categories-section";
+import TopHomepageSection from "../components/home/top-section";
+import TrendingStoriesHomepageSection from "../components/home/trending-stories";
+import VideosHomepageSection from "../components/home/video-section";
+import FeaturedHighlightsHomepageSection from "../components/home/featured-highlights";
 
 // import { HOME_NAV_DATA } from "../data/generics";
 
@@ -75,25 +77,11 @@ const IndexPage = ({ blurhash }: { blurhash?: string }) => {
       }}
       padding={false}
     >
-      <FirstHomepageSection />
-      <SecondHomepageSection />
-      <Container py={60}>
-        <Stack>
-          <Title>Browse Our Categories</Title>
-          <Carousel getEmblaApi={setEmblaMainApi} p="xl">
-            <Carousel.Slide>
-              <Button>Technology</Button>
-            </Carousel.Slide>
-          </Carousel>
-          <Carousel getEmblaApi={setEmblaThumbsApi} p="xl">
-            <Carousel.Slide>
-              <Button>Technology</Button>
-            </Carousel.Slide>
-          </Carousel>
-        </Stack>
-      </Container>
-      <ThirdHomepageSection />
-      <FourthHomepageSection />
+      <TopHomepageSection />
+      <TrendingStoriesHomepageSection />
+      <CategoriesHomepageSection />
+      <VideosHomepageSection />
+      <FeaturedHighlightsHomepageSection />
       <LastHomepageSection />
     </AppWrapper>
   );

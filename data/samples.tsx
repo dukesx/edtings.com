@@ -66,3 +66,117 @@ export const sampleArticles = [
       "https://images.unsplash.com/photo-1550534790-5724c29d08f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
   },
 ];
+
+export const sampleCategories = [
+  {
+    title: "Life",
+    subCategories: [
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Family",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+    ],
+  },
+  {
+    title: "Self Improvement",
+    subCategories: [
+      {
+        title: "Mental health",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Productivity",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+    ],
+  },
+  {
+    title: "Work",
+    subCategories: [
+      {
+        title: "Business",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Marketing",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+    ],
+  },
+  {
+    title: "Technology",
+    subCategories: [
+      {
+        title: "Artificial Intelligence",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+      {
+        title: "Block chain",
+        subCategories: [{ title: "adoption" }, { title: "Children" }],
+      },
+    ],
+  },
+  {
+    title: "Software Development",
+    subCategories: [
+      { title: "Programming" },
+      { title: "Programming Languages" },
+    ],
+  },
+  {
+    title: "Media",
+    subCategories: [{ title: "Writing" }, { title: "Art" }],
+  },
+  {
+    title: "Society",
+    subCategories: [{ title: "Economics" }, { title: "Education" }],
+  },
+  {
+    title: "Culture",
+    subCategories: [{ title: "Philosphy" }, { title: "Religion" }],
+  },
+];

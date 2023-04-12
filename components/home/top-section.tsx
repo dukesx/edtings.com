@@ -28,7 +28,7 @@ import { sampleArticles } from "../../data/samples";
 import { serif } from "../../pages/_app";
 import EdtingImage from "../global/image";
 
-const FirstHomepageSection = () => {
+const TopHomepageSection = () => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const autoplay = useRef(Autoplay({ delay: 2000 }));
   const wheel = useRef(WheelGesturesPlugin());
@@ -330,4 +330,4 @@ const FirstHomepageSection = () => {
   );
 };
 
-export default FirstHomepageSection;
+export default TopHomepageSection;
