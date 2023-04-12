@@ -247,10 +247,14 @@ const CategoriesHomepageSection = () => {
               <Center>
                 <Button
                   mb={2}
-                  color={colorScheme == "dark" ? "dark" : "white"}
-                  variant={colorScheme == "dark" ? "filled" : "white"}
+                  color={colorScheme == "dark" ? "dark" : "gray.0"}
+                  variant={colorScheme == "dark" ? "filled" : "filled"}
                   sx={{
                     boxShadow: theme.shadows.xl,
+                    color:
+                      colorScheme == "dark"
+                        ? theme.colors.gray[2]
+                        : theme.colors.dark[8],
                   }}
                 >
                   Read more from{" "}
@@ -261,7 +265,7 @@ const CategoriesHomepageSection = () => {
                     weight={700}
                     variant="gradient"
                     gradient={{
-                      from: colorScheme == "dark" ? "pink" : "blue.4",
+                      from: colorScheme == "dark" ? "pink.5" : "blue.4",
                       to: colorScheme == "dark" ? "grape" : "indigo",
                     }}
                   >
