@@ -47,6 +47,7 @@ const FeaturedHighlightsHomepageSection = () => {
       >
         <Stack ml="xl" mb={-30} spacing={0}>
           <Title
+            align="center"
             sx={(theme) => ({
               fontFamily: serif.style.fontFamily,
               [theme.fn.smallerThan(400)]: {
@@ -148,7 +149,7 @@ const FeaturedHighlightsHomepageSection = () => {
         loop={true}
         breakpoints={[
           {
-            slideSize: "80%",
+            slideSize: "70%",
             maxWidth: 400,
             slideGap: "md",
           },

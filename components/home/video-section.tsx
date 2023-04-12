@@ -68,8 +68,8 @@ const VideosHomepageSection = () => {
         styles={{
           controls: {
             [theme.fn.smallerThan(600)]: {
-              paddingLeft: 20,
-              paddingRight: 20,
+              paddingLeft: 5,
+              paddingRight: 5,
             },
           },
           control: {
@@ -89,8 +89,8 @@ const VideosHomepageSection = () => {
             border: 0,
             color: theme.white,
             [theme.fn.smallerThan(600)]: {
-              height: 20,
-              width: 20,
+              height: 36,
+              width: 36,
               svg: {
                 height: 15,
                 width: 15,

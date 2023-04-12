@@ -90,8 +90,8 @@ const CategoriesHomepageSection = () => {
           styles={{
             controls: {
               [theme.fn.smallerThan(600)]: {
-                paddingLeft: 20,
-                paddingRight: 20,
+                paddingLeft: 5,
+                paddingRight: 5,
               },
             },
             control: {
@@ -109,11 +109,11 @@ const CategoriesHomepageSection = () => {
               border: 0,
               color: theme.white,
               [theme.fn.smallerThan(600)]: {
-                height: 20,
-                width: 20,
+                height: 45,
+                width: 45,
                 svg: {
-                  height: 15,
-                  width: 15,
+                  height: 20,
+                  width: 20,
                 },
               },
             },
@@ -148,7 +148,7 @@ const CategoriesHomepageSection = () => {
                 </Title>
                 {selectedIndex == index ? (
                   <Divider
-                    color={colorScheme == "dark" ? "pink" : "dark"}
+                    color={colorScheme == "dark" ? "dark.2" : "dark"}
                     size="xl"
                     w="100%"
                   />
@@ -158,6 +158,7 @@ const CategoriesHomepageSection = () => {
           ))}
         </Carousel>
         <Carousel
+          draggable={false}
           mt={-80}
           withControls={false}
           slideGap="xl"
@@ -193,9 +194,23 @@ const CategoriesHomepageSection = () => {
                   cursor: "pointer",
                   ...fadeToWhite(),
                 }}
+                style={{
+                  borderColor:
+                    colorScheme == "dark"
+                      ? theme.colors.dark[6]
+                      : theme.colors.dark[8],
+                }}
+                // bg="transparent"
                 onClick={() => onThumbClick(index)}
-                bg={selectedIndex == index ? "dark" : "transparent"}
+                bg={
+                  selectedIndex == index
+                    ? colorScheme == "dark"
+                      ? "dark.7"
+                      : "gray.0"
+                    : "transparent"
+                }
                 radius="lg"
+                withBorder={selectedIndex == index}
                 py="xl"
               >
                 <Stack align="center">
@@ -204,13 +219,13 @@ const CategoriesHomepageSection = () => {
                       <Text
                         weight={700}
                         size="lg"
-                        color={
-                          selectedIndex == index
-                            ? "gray.0"
-                            : colorScheme == "dark"
-                            ? "gray.4"
-                            : "dark"
-                        }
+                        // color={
+                        //   selectedIndex == index
+                        //     ? "gray.0"
+                        //     : colorScheme == "dark"
+                        //     ? "gray.4"
+                        //     : "dark"
+                        // }
                       >
                         {sub.title}
                       </Text>
@@ -219,20 +234,20 @@ const CategoriesHomepageSection = () => {
                           size="sm"
                           spacing="sm"
                           listStyleType="none"
-                          color="gray"
+                          // color="gray"
                           ml="xl"
                         >
                           {sub.subCategories.map((mapped2: any) => (
-                            <List.Item color="gray">
+                            <List.Item>
                               <Text
                                 transform="capitalize"
-                                color={
-                                  selectedIndex == index
-                                    ? "gray.0"
-                                    : colorScheme == "dark"
-                                    ? "gray.4"
-                                    : "dark"
-                                }
+                                // color={
+                                //   selectedIndex == index
+                                //     ? "gray.0"
+                                //     : colorScheme == "dark"
+                                //     ? "gray.4"
+                                //     : "dark"
+                                // }
                               >
                                 {mapped2.title}
                               </Text>
@@ -255,6 +270,10 @@ const CategoriesHomepageSection = () => {
                       colorScheme == "dark"
                         ? theme.colors.gray[2]
                         : theme.colors.dark[8],
+                    // background:
+                    //   colorScheme == "dark"
+                    //     ? theme.colors.dark[6]
+                    //     : theme.white,
                   }}
                 >
                   Read more from{" "}
