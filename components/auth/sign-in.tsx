@@ -14,9 +14,10 @@ import {
   useMantineColorScheme,
   ActionIcon,
   Tooltip,
+  useMantineTheme,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 import EdtingImage from "../global/image";
 import GoogleLogo from "../../public/google.svg";
 import Image from "next/image";
@@ -28,9 +29,11 @@ import { useSessionContext } from "@supabase/auth-helpers-react";
 const SignInComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
   const { session, supabaseClient } = useSessionContext();
+  const theme = useMantineTheme();
   return (
-    <Fade
-      duration={2500}
+    <Slide
+      direction="up"
+      duration={1000}
       style={{
         height: "100%",
         width: "100%",
@@ -38,6 +41,7 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
     >
       <Center h="calc(100vh - 50px)" key={nanoid()} id="sign-in">
         <Paper
+          bg="transparent"
           radius="xs"
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
@@ -161,7 +165,16 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
                   >
                     Sign in
                   </Title>
-                  <Text align="center" mt="xs" size="xs" color="dimmed">
+                  <Text
+                    align="center"
+                    mt="xs"
+                    size="xs"
+                    color={
+                      colorScheme == "dark"
+                        ? theme.colors.gray[4]
+                        : theme.colors.gray[6]
+                    }
+                  >
                     Don&apos;t have an account?{" "}
                     <Anchor
                       onClick={(e) => {
@@ -245,8 +258,32 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
                   </Group>
 
                   <Stack mt={0} p={"xl"}>
-                    <TextInput placeholder="Email" />
-                    <TextInput placeholder="Password" />
+                    <TextInput
+                      sx={(theme) => ({
+                        input: {
+                          "&::placeholder": {
+                            color:
+                              colorScheme == "dark"
+                                ? theme.colors.gray[4]
+                                : theme.colors.gray[5],
+                          },
+                        },
+                      })}
+                      placeholder="Email"
+                    />
+                    <TextInput
+                      sx={(theme) => ({
+                        input: {
+                          "&::placeholder": {
+                            color:
+                              colorScheme == "dark"
+                                ? theme.colors.gray[4]
+                                : theme.colors.gray[5],
+                          },
+                        },
+                      })}
+                      placeholder="Password"
+                    />
                     <Button mt={15} color="dark" variant="filled" fullWidth>
                       {" "}
                       Sign in
@@ -271,7 +308,7 @@ const SignInComponent = ({ tab, setTab, placeholder }: any) => {
           </Grid>
         </Paper>
       </Center>
-    </Fade>
+    </Slide>
   );
 };
 

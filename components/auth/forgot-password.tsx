@@ -12,6 +12,7 @@ import {
   TextInput,
   Button,
   useMantineColorScheme,
+  useMantineTheme,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
 import Slide from "react-reveal/Slide";
@@ -19,6 +20,7 @@ import EdtingImage from "../global/image";
 
 const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
   return (
     <Slide
       right
@@ -30,6 +32,7 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
     >
       <Center key={nanoid()} id="forgot-password" h="calc(100vh - 50px)">
         <Paper
+          bg="transparent"
           radius="xs"
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
@@ -147,7 +150,16 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
                     >
                       Forgot Password
                     </Title>
-                    <Text align="center" mt="xs" size="xs" color="dimmed">
+                    <Text
+                      align="center"
+                      mt="xs"
+                      size="xs"
+                      color={
+                        colorScheme == "dark"
+                          ? theme.colors.gray[4]
+                          : theme.colors.gray[6]
+                      }
+                    >
                       Recalled the password ?{" "}
                       <Anchor
                         onClick={() => {
@@ -162,7 +174,19 @@ const ForgotPasswordComponent = ({ tab, setTab, placeholder }: any) => {
                       </Anchor>
                     </Text>
                     <Stack mt="sm" p={"xl"}>
-                      <TextInput placeholder="Recovery Email" />
+                      <TextInput
+                        sx={(theme) => ({
+                          input: {
+                            "&::placeholder": {
+                              color:
+                                colorScheme == "dark"
+                                  ? theme.colors.gray[4]
+                                  : theme.colors.gray[5],
+                            },
+                          },
+                        })}
+                        placeholder="Recovery Email"
+                      />
                       <Button mt={20} color="dark" variant="filled" fullWidth>
                         {" "}
                         Send Recovery Link

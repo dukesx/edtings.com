@@ -12,6 +12,7 @@ import {
   TextInput,
   Button,
   useMantineColorScheme,
+  useMantineTheme,
 } from "@mantine/core";
 import { nanoid } from "nanoid";
 import Slide from "react-reveal/Slide";
@@ -19,6 +20,7 @@ import EdtingImage from "../global/image";
 
 const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
   const { colorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
   return (
     <Slide
       left
@@ -30,6 +32,7 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
     >
       <Center key={nanoid()} id="register" h="calc(100vh - 50px)">
         <Paper
+          bg="transparent"
           radius="xs"
           sx={(theme) => ({
             ["@media (min-width: 300px) and (max-width: 1200px)"]: {
@@ -148,7 +151,16 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                     >
                       Register
                     </Title>
-                    <Text align="center" mt="xs" size="xs" color="dimmed">
+                    <Text
+                      align="center"
+                      mt="xs"
+                      size="xs"
+                      color={
+                        colorScheme == "dark"
+                          ? theme.colors.gray[4]
+                          : theme.colors.gray[6]
+                      }
+                    >
                       Already have an account?{" "}
                       <Anchor
                         onClick={() => {
@@ -163,9 +175,45 @@ const RegisterComponent = ({ tab, setTab, placeholder }: any) => {
                       </Anchor>
                     </Text>
                     <Stack mt="xl" p={"xl"}>
-                      <TextInput placeholder="Email" />
-                      <TextInput placeholder="Password" />
-                      <TextInput placeholder="Repeat Password" />
+                      <TextInput
+                        sx={(theme) => ({
+                          input: {
+                            "&::placeholder": {
+                              color:
+                                colorScheme == "dark"
+                                  ? theme.colors.gray[4]
+                                  : theme.colors.gray[5],
+                            },
+                          },
+                        })}
+                        placeholder="Email"
+                      />
+                      <TextInput
+                        sx={(theme) => ({
+                          input: {
+                            "&::placeholder": {
+                              color:
+                                colorScheme == "dark"
+                                  ? theme.colors.gray[4]
+                                  : theme.colors.gray[5],
+                            },
+                          },
+                        })}
+                        placeholder="Password"
+                      />
+                      <TextInput
+                        sx={(theme) => ({
+                          input: {
+                            "&::placeholder": {
+                              color:
+                                colorScheme == "dark"
+                                  ? theme.colors.gray[4]
+                                  : theme.colors.gray[5],
+                            },
+                          },
+                        })}
+                        placeholder="Repeat Password"
+                      />
                       <Button mt={20} color="dark" variant="filled" fullWidth>
                         {" "}
                         Register
