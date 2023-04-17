@@ -169,6 +169,7 @@ const TopHomepageSection = () => {
                               size="xl"
                               variant="outline"
                               color="gray"
+                              radius="xl"
                             >
                               <CaretLeft weight="bold" />
                             </ActionIcon>
@@ -182,6 +183,7 @@ const TopHomepageSection = () => {
                                 },
                               }}
                               size="xl"
+                              radius="xl"
                               variant="outline"
                               color="gray"
                             >

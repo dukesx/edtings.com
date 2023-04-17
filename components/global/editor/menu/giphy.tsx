@@ -1,6 +1,13 @@
 import { AfridiDevEditorMenuProps } from "./image-upload";
 import { useContext, useState } from "react";
-import { ActionIcon, Menu, ScrollArea, Tooltip } from "@mantine/core";
+import {
+  ActionIcon,
+  Menu,
+  ScrollArea,
+  Text,
+  ThemeIcon,
+  Tooltip,
+} from "@mantine/core";
 import { IGif } from "@giphy/js-types";
 import {
   Grid, // our UI Component to display the results
@@ -64,36 +71,35 @@ const AfridiDevEditorGiphySelector = ({
 }: AfridiDevEditorMenuProps) => {
   const [giphyOpened, setGiphyOpened] = useState(false);
   return (
-    <Tooltip label="Insert a GIF">
-      <ActionIcon
-        onClick={() => {
-          editor.commands.insertContent({
-            type: "afridi-dev-editor-gif",
-          });
-          editor.commands.enter();
-        }}
-        size={"lg"}
-        variant="filled"
-        color={"dark"}
-        sx={(theme) => ({
-          backgroundColor:
-            colorScheme == "dark" ? theme.white : theme.colors.dark[8],
-          color: colorScheme == "dark" ? theme.colors.dark[8] : theme.white,
-          [":hover"]: {
-            backgroundColor:
-              colorScheme == "dark" ? theme.white : theme.colors.dark[8],
-          },
-        })}
-        radius="xl"
+    <Menu.Item
+      onClick={() => {
+        editor.commands.insertContent({
+          type: "afridi-dev-editor-gif",
+        });
+        editor.commands.enter();
+      }}
+      icon={
+        <ThemeIcon
+          size={"lg"}
+          variant="outline"
+          sx={{
+            border: 0,
+          }}
+          color={colorScheme == "dark" ? "gray.1" : "dark"}
+          radius="xl"
+        >
+          <Gif size={colorScheme == "dark" ? 20 : 20} />
+        </ThemeIcon>
+      }
+    >
+      <Text
+        color={colorScheme == "dark" ? "gray.1" : "dark"}
+        size="xs"
+        weight={600}
       >
-        <Gif
-          color={
-            colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.gray[3]
-          }
-          size={colorScheme == "dark" ? 20 : 20}
-        />
-      </ActionIcon>
-    </Tooltip>
+        Add a GIF
+      </Text>
+    </Menu.Item>
   );
 };
 

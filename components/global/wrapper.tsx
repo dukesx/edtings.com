@@ -267,6 +267,7 @@ const AppWrapper = ({
                         href="/sign-in"
                         px="md"
                         h={30}
+                        radius="xl"
                         styles={{
                           label: {
                             fontSize: 12,

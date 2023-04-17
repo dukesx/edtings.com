@@ -25,6 +25,7 @@ import {
   Stack,
   Text,
   TextInput,
+  ThemeIcon,
   Tooltip,
   useMantineColorScheme,
   useMantineTheme,
@@ -65,6 +66,7 @@ import {
   TextHOne,
   TextHThree,
   UploadSimple,
+  Upload,
 } from "@phosphor-icons/react";
 import { Markdown, Unsplash } from "@icons-pack/react-simple-icons";
 import AfridiDevEditorGiphySelector from "./menu/giphy";
@@ -89,7 +91,7 @@ export interface AfridiDevEditorProps {
   noToolbar?: boolean | false;
 }
 
-export const TextEditor = ({
+export const EdtingsEditor = ({
   setValue,
   value,
   basic,
@@ -629,17 +631,28 @@ export const TextEditor = ({
             })}
           >
             <Menu
+              radius="xs"
               opened={floating}
               onClose={() => setFloating(false)}
-              position="right"
+              position="right-start"
               zIndex={4000}
             >
               <Menu.Target>
                 <ActionIcon
                   radius="xl"
                   size={42}
-                  color={colorScheme == "dark" ? "blue" : "dark"}
-                  variant="filled"
+                  gradient={
+                    colorScheme == "dark"
+                      ? {
+                          from: "pink",
+                          to: "grape",
+                        }
+                      : {
+                          from: "blue",
+                          to: "indigo",
+                        }
+                  }
+                  variant="gradient"
                   onClick={() => {
                     setFloating(true);
                   }}
@@ -648,91 +661,80 @@ export const TextEditor = ({
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown
+                px="sm"
                 bg="transparent"
                 sx={{
                   border: "none",
                 }}
               >
-                <Group spacing="xs">
-                  <Tooltip label="Add Image from Unsplash">
-                    <ActionIcon
-                      onClick={() => {
-                        editor.commands.insertContent({
-                          type: "afridi-dev-editor-unsplash",
-                        });
-                        editor.commands.enter();
-                      }}
-                      size={"lg"}
-                      variant="filled"
-                      color={"dark"}
-                      sx={(theme) => ({
-                        backgroundColor:
-                          colorScheme == "dark"
-                            ? theme.white
-                            : theme.colors.dark[8],
-                        color:
-                          colorScheme == "dark"
-                            ? theme.colors.dark[8]
-                            : theme.white,
-                        [":hover"]: {
-                          backgroundColor:
-                            colorScheme == "dark"
-                              ? theme.white
-                              : theme.colors.dark[8],
-                        },
-                      })}
-                      radius="xl"
+                <Card
+                  sx={{
+                    boxShadow: theme.shadows.xl,
+                  }}
+                  pt={0}
+                  px={0}
+                  pb={0}
+                  radius="md"
+                >
+                  <Menu.Item
+                    onClick={() => {
+                      editor.commands.insertContent({
+                        type: "afridi-dev-editor-unsplash",
+                      });
+                      editor.commands.enter();
+                    }}
+                    icon={
+                      <ThemeIcon
+                        size={"lg"}
+                        variant="outline"
+                        sx={{
+                          border: 0,
+                        }}
+                        color={colorScheme == "dark" ? "gray.1" : "dark"}
+                        radius="xl"
+                      >
+                        <Unsplash size={14} />
+                      </ThemeIcon>
+                    }
+                  >
+                    <Text
+                      color={colorScheme == "dark" ? "gray.1" : "dark"}
+                      size="xs"
+                      weight={600}
                     >
-                      <Unsplash
-                        color={
-                          colorScheme == "dark"
-                            ? theme.colors.dark[8]
-                            : theme.colors.gray[3]
-                        }
-                        size={colorScheme == "dark" ? 14 : 12}
-                      />
-                    </ActionIcon>
-                  </Tooltip>
+                      Add Image from Unsplash
+                    </Text>
+                  </Menu.Item>
 
-                  <Tooltip label="Upload Image">
-                    <ActionIcon
-                      onClick={() => {
-                        editor.commands.insertContent({
-                          type: "afridi-dev-editor-image-upload",
-                        });
-                        editor.commands.enter();
-                      }}
-                      size={"lg"}
-                      variant="filled"
-                      color={"dark"}
-                      sx={(theme) => ({
-                        backgroundColor:
-                          colorScheme == "dark"
-                            ? theme.white
-                            : theme.colors.dark[8],
-                        color:
-                          colorScheme == "dark"
-                            ? theme.colors.dark[8]
-                            : theme.white,
-                        [":hover"]: {
-                          backgroundColor:
-                            colorScheme == "dark"
-                              ? theme.white
-                              : theme.colors.dark[8],
-                        },
-                      })}
-                      radius="xl"
+                  <Menu.Item
+                    onClick={() => {
+                      editor.commands.insertContent({
+                        type: "afridi-dev-editor-image-upload",
+                      });
+                      editor.commands.enter();
+                    }}
+                    icon={
+                      <ThemeIcon
+                        size={"lg"}
+                        variant="outline"
+                        sx={{
+                          border: 0,
+                        }}
+                        color={colorScheme == "dark" ? "gray.1" : "dark"}
+                        radius="xl"
+                      >
+                        <UploadSimple size={18} />
+                      </ThemeIcon>
+                    }
+                  >
+                    <Text
+                      color={colorScheme == "dark" ? "gray.1" : "dark"}
+                      size="xs"
+                      weight={600}
                     >
-                      <UploadSimple
-                        color={
-                          colorScheme == "dark"
-                            ? theme.colors.dark[8]
-                            : theme.colors.gray[3]
-                        }
-                        size={16}
-                      />
-                    </ActionIcon>
-                  </Tooltip>
+                      Upload Image/Video
+                    </Text>
+                  </Menu.Item>
 
                   <AfridiDevEditorHorizontalLine
                     colorScheme={colorScheme}
@@ -751,7 +753,7 @@ export const TextEditor = ({
                     editor={editor}
                     theme={theme}
                   />
-                </Group>
+                </Card>
               </Menu.Dropdown>
             </Menu>
           </Box>
@@ -761,32 +763,52 @@ export const TextEditor = ({
         //@ts-ignore
       }
       <Paper
+        pos="relative"
+        radius={0}
         //@ts-ignore
         component={isScrollable == true ? ScrollArea : "div"}
-        mih={"calc(100vh - 150px)"}
+        mih={"calc(100vh - 180px)"}
         style={{
           height: height ?? "100%",
         }}
         sx={(theme) => ({
           [theme.fn.smallerThan("lg")]: {
-            minHeight: "calc(100vh - 50px)",
+            minHeight: "calc(100vh - 200px)",
           },
         })}
+        bg={colorScheme == "dark" ? "dark.7" : "gray.0"}
       >
         <EditorContent height={"100%"} editor={editor} />
       </Paper>
-
-      <Group pb="xl" mt="xl">
-        <Text color="dimmed" size="sm">
-          {editor && editor.storage.characterCount.characters()} characters
-        </Text>
-        <Divider />
-        <Text color="dimmed" size="sm">
-          {editor && editor.storage.characterCount.words()} words
-        </Text>
-      </Group>
+      <Card
+        bg="transparent"
+        // w="100%"
+        pos="fixed"
+        top={140}
+        right={80}
+        // bg={colorScheme == "dark" ? "dark.7" : "gray.0"}
+        radius="md"
+        style={
+          {
+            // borderColor:
+            //   colorScheme == "dark" ? "transparent" : theme.colors.dark[8],
+            // boxShadow: theme.shadows.xl,
+          }
+        }
+        mt={0}
+      >
+        <Stack align="center">
+          <Text color={colorScheme == "dark" ? "gray" : "dark"} size="sm">
+            {editor && editor.storage.characterCount.characters()} characters
+          </Text>
+          <Divider color={colorScheme == "dark" ? "gray" : "dark"} w="100%" />
+          <Text color={colorScheme == "dark" ? "gray" : "dark"} size="sm">
+            {editor && editor.storage.characterCount.words()} words
+          </Text>
+        </Stack>
+      </Card>
     </Stack>
   );
 };
 
-export default TextEditor;
+export default EdtingsEditor;

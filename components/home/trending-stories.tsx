@@ -117,6 +117,7 @@ const TrendingStoriesHomepageSection = () => {
           }}
         >
           <ActionIcon
+            radius="xl"
             onClick={() => embla?.scrollPrev()}
             sx={{
               "&:active": {
@@ -139,6 +140,7 @@ const TrendingStoriesHomepageSection = () => {
             <CaretLeft />
           </ActionIcon>
           <ActionIcon
+            radius="xl"
             onClick={() => embla?.scrollNext()}
             sx={{
               "&:active": {

@@ -8,15 +8,8 @@ import {
   ColorSchemeProvider,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import {
-  DM_Serif_Text,
-  Inter,
-  Libre_Baskerville,
-  Oswald,
-  Playfair_Display,
-  Source_Serif_Pro,
-} from "next/font/google";
-import "../styles/globals.css";
+import { DM_Serif_Text, Inter, Oswald } from "next/font/google";
+import "../styles/globals.scss";
 import {
   createBrowserSupabaseClient,
   Session,
@@ -89,7 +82,7 @@ export default function App(
             primaryColor: "dark",
             primaryShade: 6,
             fontFamily: sans.style.fontFamily,
-            defaultRadius: "xl",
+            defaultRadius: "md",
           }}
           withGlobalStyles
           withNormalizeCSS

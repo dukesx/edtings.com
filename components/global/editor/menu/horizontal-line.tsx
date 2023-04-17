@@ -1,4 +1,4 @@
-import { ActionIcon, Tooltip } from "@mantine/core";
+import { ActionIcon, Menu, Text, ThemeIcon, Tooltip } from "@mantine/core";
 import { ArrowsOutLineVertical } from "@phosphor-icons/react";
 import { AfridiDevEditorMenuProps } from "./image-upload";
 
@@ -8,34 +8,38 @@ const AfridiDevEditorHorizontalLine = ({
   theme,
 }: AfridiDevEditorMenuProps) => {
   return (
-    <Tooltip label="Add a horizontal line">
-      <ActionIcon
-        onClick={() => {
-          editor
-            .chain()
-            .focus()
-            .insertContent({ type: "afridi-dev-editor-divider" })
-            .run();
+    <Menu.Item
+      onClick={() => {
+        editor
+          .chain()
+          .focus()
+          .insertContent({ type: "afridi-dev-editor-divider" })
+          .run();
 
-          editor.commands.enter();
-        }}
-        size="lg"
-        variant="filled"
-        color={"dark"}
-        sx={(theme) => ({
-          backgroundColor:
-            colorScheme == "dark" ? theme.white : theme.colors.dark[8],
-          color: colorScheme == "dark" ? theme.colors.dark[8] : theme.white,
-          [":hover"]: {
-            backgroundColor:
-              colorScheme == "dark" ? theme.white : theme.colors.dark[8],
-          },
-        })}
-        radius="xl"
+        editor.commands.enter();
+      }}
+      icon={
+        <ThemeIcon
+          size={"lg"}
+          variant="outline"
+          sx={{
+            border: 0,
+          }}
+          color={colorScheme == "dark" ? "gray.1" : "dark"}
+          radius="xl"
+        >
+          <ArrowsOutLineVertical size={16} />
+        </ThemeIcon>
+      }
+    >
+      <Text
+        color={colorScheme == "dark" ? "gray.1" : "dark"}
+        size="xs"
+        weight={600}
       >
-        <ArrowsOutLineVertical size={16} />
-      </ActionIcon>
-    </Tooltip>
+        Add Horizontal line
+      </Text>
+    </Menu.Item>
   );
 };
 

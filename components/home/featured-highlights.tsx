@@ -95,6 +95,7 @@ const FeaturedHighlightsHomepageSection = () => {
             onClick={() => embla?.scrollPrev()}
             color="dark"
             variant="default"
+            radius="xl"
           >
             <CaretLeft weight="bold" />
           </ActionIcon>
@@ -128,6 +129,7 @@ const FeaturedHighlightsHomepageSection = () => {
             onClick={() => embla?.scrollNext()}
             color="dark"
             variant="default"
+            radius="xl"
           >
             <CaretRight weight="bold" />
           </ActionIcon>

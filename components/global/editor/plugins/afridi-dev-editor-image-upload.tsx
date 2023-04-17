@@ -45,6 +45,7 @@ const MantineUploadImage = () => {
   return (
     <NodeViewWrapper>
       <Dropzone
+        radius="md"
         onDrop={async (files: any) => {
           const form = new FormData();
           form.append("file", files[0]);
