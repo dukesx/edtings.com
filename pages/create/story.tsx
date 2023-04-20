@@ -30,7 +30,7 @@ const CreateStory = () => {
       padding={false}
       navbar={false}
     >
-      <Container px={0} pt={80} h={"100vh"} size="100%" pos="relative">
+      <Container px={0} pt={80} h={"100%"} size="100%" pos="relative">
         <Container
           pos="relative"
           sx={{

@@ -8,7 +8,14 @@ import {
 } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 import { modals } from "@mantine/modals";
-import { Image, Upload, X } from "@phosphor-icons/react";
+import {
+  Image,
+  MonitorPlay,
+  Upload,
+  Video,
+  X,
+  YoutubeLogo,
+} from "@phosphor-icons/react";
 import {
   mergeAttributes,
   Node,
@@ -100,12 +107,16 @@ const MantineUploadImage = () => {
             <X size="3.2rem" />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <Image size="3.2rem" />
+            <Group spacing={4}>
+              <Image weight={"thin"} size="3.2rem" />
+              <Text size={40}>/</Text>
+              <Video weight={"thin"} size="3.2rem" />
+            </Group>
           </Dropzone.Idle>
 
           <div>
             <Text size="xl" inline>
-              Drag images here or click to select files
+              Drag images/videos here or click to select files
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
               Attach as many files as you like,{" "}
@@ -115,7 +126,7 @@ const MantineUploadImage = () => {
                 weight={600}
                 component="span"
               >
-                each file should not exceed 3MB
+                each file should not exceed 50MB
               </Text>
             </Text>
           </div>

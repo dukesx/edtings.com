@@ -82,6 +82,7 @@ const AppWrapper = ({
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   return (
     <AppShell
+      data-shell
       fixed={false}
       padding={padding == true ? "md" : 0}
       styles={{

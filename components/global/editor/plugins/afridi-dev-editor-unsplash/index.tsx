@@ -151,7 +151,7 @@ const Unsplash = (props: any) => {
             />
           )}
         </Stack>
-        <Paper>
+        <Paper bg="transparent">
           {loading ? (
             <Card w="100%">
               <Center w="100%" h="100%">
@@ -182,6 +182,7 @@ const Unsplash = (props: any) => {
           ) : image ? (
             <Stack align="center">
               <Card
+                bg="transparent"
                 p={0}
                 style={{
                   aspectRatio: image.width / image.height,

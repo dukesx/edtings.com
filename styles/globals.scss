@@ -13,6 +13,24 @@ html {
   background-color: #f8f9fa !important;
 }
 
+.active-toc {
+  color: #1a1b1e;
+  font-weight: 700;
+}
+
+.dark {
+  .active-toc {
+    color: #f1f3f5 !important;
+    font-weight: 600;
+  }
+}
+// .active-toc::after {
+//   content: "\2713";
+//   font-weight: 700;
+//   margin-right: 10px;
+//   font-size: 18px;
+// }
+
 .ProseMirror p.is-editor-empty:first-child::before {
   color: #adb5bd;
   font-size: 0.9rem;
@@ -38,6 +56,22 @@ p {
   font-weight: 400;
 }
 
+.partial-circle {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+.partial-circle:before {
+  content: "";
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  bottom: 0;
+  background: white;
+}
+
 .ProseMirror {
   height: 100%;
   outline: unset;
@@ -45,7 +79,7 @@ p {
   padding-left: 3rem;
   padding-right: 3em;
   padding-top: 0px;
-  padding-bottom: 10em !important;
+  // padding-bottom: 10em !important;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
