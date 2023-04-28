@@ -8,7 +8,7 @@ import {
   ColorSchemeProvider,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import { DM_Serif_Text, Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, Lora, DM_Serif_Display } from "next/font/google";
 import "../styles/globals.scss";
 import {
   createBrowserSupabaseClient,
@@ -26,7 +26,12 @@ export const condensed = Oswald({
   subsets: ["latin"],
 });
 
-export const serif = DM_Serif_Text({
+export const serif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+export const serifBody = Lora({
   subsets: ["latin"],
   weight: ["400"],
 });

@@ -229,7 +229,7 @@ const FeaturedHighlightsHomepageSection = () => {
                   }}
                   top={30}
                 >
-                  <Avatar size={40}>
+                  <Avatar radius="xl" size={40}>
                     <EdtingImage
                       width={40}
                       avatar
