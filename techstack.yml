@@ -1,7 +1,8 @@
 repo_name: dukesx/edtings.com
 report_id: c975bc98c469818ab47459e252a742f9
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-11T14:35:22+00:00'
+timestamp: '2024-01-05T08:51:03+00:00'
 requested_by: dukesx
 provider: github
 branch: main
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/dukesx/edtings.com
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/dukesx/edtings.com
   detection_source: Repo Metadata
 - name: TypeScript
   description: A superset of JavaScript that compiles to clean JavaScript output
@@ -35,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/dukesx/edtings.com
   detection_source: Repo Metadata
 - name: Next.js
   description: 'A small framework for server-rendered universal JavaScript apps '
@@ -45,7 +49,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/5936/nextjs.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-26 07:32:41.000000000 Z
@@ -58,6 +62,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-07 13:35:52.000000000 Z
@@ -71,7 +76,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -84,6 +89,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-07 13:35:52.000000000 Z
@@ -95,6 +101,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/dukesx/edtings.com
   detection_source: Repo Metadata
 - name: highlight.js
   description: Syntax highlighter in JavaScript
@@ -104,6 +111,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Text Editor
   image_url: https://img.stackshare.io/service/6888/c17e7d9688d86bd9f9506ec1fbd6d200_400x400.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -115,6 +123,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-07 13:35:52.000000000 Z
@@ -127,6 +136,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/10903/JLVo_YPe_400x400.jpg
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-26 07:32:41.000000000 Z
@@ -139,6 +149,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/dukesx/edtings.com
   detection_source: Repo Metadata
 - name: date-fns
   description: Modern JavaScript date utility library
@@ -149,6 +160,7 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/service/10865/default_5551fb8853689f607a2bc0d5a09355d5a3d52bf0.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-17 13:09:45.000000000 Z
@@ -157,6 +169,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/7677/no-img-open-source.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-17 13:09:45.000000000 Z
@@ -170,7 +183,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-09 16:41:36.000000000 Z
@@ -184,7 +197,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -198,7 +211,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15946/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -213,7 +226,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16833/default_5c6919c5e02b8e6c83f3a2b23db5b6962e3caca0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-18 15:45:41.000000000 Z
@@ -226,6 +239,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16761/default_c11d90814ded8fcd305b22fdc42b42a3111f1f6d.png
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-17 13:09:45.000000000 Z
@@ -239,7 +253,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17228/default_48f040bdc5f6c639c70bf350f8b8158ede27286c.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -253,7 +267,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17208/default_183829c5079b84333a720d8590a328efc043ba0e.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-18 15:45:41.000000000 Z
@@ -267,7 +281,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-28 06:32:36.000000000 Z
@@ -281,7 +295,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16057/default_5fd43aeff4d6a935abc13737de01a0355210499d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-04-17 13:09:45.000000000 Z
@@ -295,10 +309,17 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16806/default_31a4e0e11d348225088320f3a5c5ea6fa49c27ad.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-26 07:32:41.000000000 Z
+  vulnerabilities:
+  - name: sharp vulnerability in libwebp dependency CVE-2023-4863
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-54xq-cgqr-rpm3
+    detected_date: Nov 17
+    severity: high
+    first_patched: 0.32.6
 - name: slugify
   description: Slugifies a String
   package_url: https://www.npmjs.com/slugify
@@ -309,7 +330,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17389/default_33c3173e7d0e91f7cea0eab9883ca83b157bd4a5.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/dukesx/edtings.com/blob/main/package.json
   detection_source: package.json
   last_updated_by: dukesx
   last_updated_on: 2023-01-26 07:32:41.000000000 Z
