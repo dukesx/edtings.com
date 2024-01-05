@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 dukesx/edtings.com is built on the following main stack:
+
 - [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - [React](https://reactjs.org/) – Javascript UI Libraries
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
@@ -14,11 +15,13 @@ dukesx/edtings.com is built on the following main stack:
 - [pnpm](https://pnpm.js.org/) – Package Managers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 dukesx/edtings.com is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png' alt='Node.js'/> [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
@@ -31,14 +34,15 @@ dukesx/edtings.com is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/10903/JLVo_YPe_400x400.jpg' alt='pnpm'/> [pnpm](https://pnpm.js.org/) – Package Managers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [dukesx/edtings.com](https://github.com/dukesx/edtings.com)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|25<br/>Tools used|11/11/23 <br/>Report generated|
+|25<br/>Tools used|01/05/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -190,10 +194,10 @@ Full tech stack [here](/techstack.md)
 |[nanoid](https://www.npmjs.com/nanoid)|v4.0.0|01/18/23|dukesx |MIT|N/A|
 |[react-dom](https://www.npmjs.com/react-dom)|v18.2.0|04/28/23|dukesx |MIT|N/A|
 |[sass](https://www.npmjs.com/sass)|v1.62.0|04/17/23|dukesx |MIT|N/A|
-|[sharp](https://www.npmjs.com/sharp)|v0.31.3|01/26/23|dukesx |Apache-2.0|N/A|
+|[sharp](https://www.npmjs.com/sharp)|v0.31.3|01/26/23|dukesx |Apache-2.0|[](https://github.com/advisories/GHSA-54xq-cgqr-rpm3) (High)|
 |[slugify](https://www.npmjs.com/slugify)|v1.6.5|01/26/23|dukesx |MIT|N/A|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
